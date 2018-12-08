@@ -32,10 +32,12 @@ a {
     text-decoration: none !important; }
 
 p {
-  margin-bottom: 1.5em; }
+  margin-bottom: 1.5em;
+    color: black;
+}
 x{
     margin-bottom: 1.5em;
-    background-color:cornsilk;
+    background-color:darkkhaki;
     color: black;
     backface-visibility: visible;
 }
