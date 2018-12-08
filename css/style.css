@@ -33,13 +33,31 @@ a {
 
 p {
   margin-bottom: 1.5em; }
+x{
+    margin-bottom: 1.5em;
+    background-color:cornsilk;
+    color: black;
+    backface-visibility: visible;
+}
 
-h1, h2, h3, h4, h5, h6 {
+h1, h4, h5, h6 {
   color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
   margin: 0 0 30px 0; }
 
+h2{
+    color: #000;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 200;
+  margin: 0 0 20px 0;
+}
+h3{
+    color: #000;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 200;
+  margin: 0 0 30px 0;
+}
 figure {
   margin-bottom: 2.5em;
   float: left;
@@ -110,7 +128,7 @@ figure {
   #colorlib-aside #colorlib-logo {
     text-align: right;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 30px;
     margin-bottom: .5em;
     display: block;
     width: 100%; }
@@ -304,7 +322,7 @@ figure {
             #colorlib-hero .flexslider .slider-text > .slider-text-inner h1 {
               font-size: 28px; } }
         #colorlib-hero .flexslider .slider-text > .slider-text-inner h2 {
-          font-size: 18px;
+          font-size: 10px;
           line-height: 1.5;
           margin-bottom: 30px;
           font-weight: 300;
@@ -364,9 +382,9 @@ body.offcanvas {
 
 .colorlib-narrow-content {
   padding: 0 2.5em; }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 868px) {
     .colorlib-narrow-content {
-      padding: 0; } }
+      padding: 0 5em; } }
 
 .no-gutters {
   margin: 0;
@@ -378,6 +396,7 @@ body.offcanvas {
 .colorlib-blog,
 .colorlib-work,
 .colorlib-about,
+.colorlib-installation,
 .colorlib-services,
 .colorlib-contact {
   padding-top: 4em;
@@ -392,10 +411,11 @@ body.offcanvas {
     .colorlib-blog,
     .colorlib-work,
     .colorlib-about,
+    .colorlib-installation,
     .colorlib-services,
     .colorlib-contact {
       padding-top: 5em;
-      padding-bottom: 8em; } }
+      padding-bottom: 3em; } }
 
 .author-img {
   background-size: cover;
@@ -405,7 +425,7 @@ body.offcanvas {
 
 .colorlib-heading {
   font-size: 18px;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -415,7 +435,7 @@ body.offcanvas {
     display: block; }
   @media screen and (max-width: 768px) {
     .colorlib-heading {
-      margin-bottom: 3em; } }
+      margin-bottom: 2em; } }
 
 .heading-meta {
   margin-bottom: 15px;
@@ -429,7 +449,8 @@ body.offcanvas {
 .about-img {
   width: 100%;
   height: 600px;
-  margin-bottom: 30px; }
+  margin-bottom: 10px;
+margin-left: 10px;}
 
 .about-desc h3 {
   font-size: 18px;
