@@ -94,8 +94,8 @@ figure {
 
 #colorlib-aside {
   padding-top: 3em;
-  padding-bottom: 10px;
-  float: left;
+  padding-bottom: 5px;
+  float:left;
   width: 300px;
   position: fixed;
   overflow-y: scroll;
@@ -227,6 +227,10 @@ figure {
         margin: 0;
         display: inline;
         list-style: none; }
+#colorlib-aside .colorlib-footer h3 {
+          color:fuchsia;
+    font-family: cursive;
+          padding: 4px; }
         #colorlib-aside .colorlib-footer ul li a {
           color: rgba(255, 255, 255, 0.3);
           padding: 4px; }
@@ -401,8 +405,8 @@ body.offcanvas {
 .colorlib-installation,
 .colorlib-services,
 .colorlib-contact {
-  padding-top: 4em;
-  padding-bottom: 9em;
+  padding-top: 2em;
+  padding-bottom: 3em;
   clear: both;
   width: 100%;
   display: block; }
