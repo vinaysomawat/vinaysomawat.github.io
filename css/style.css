@@ -207,7 +207,7 @@ figure {
             -o-transform: scaleX(1);
             transform: scaleX(1); }
   #colorlib-aside .colorlib-footer {
-    font-size: 15px;
+    font-size: 20px;
     text-align: center;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
@@ -220,11 +220,11 @@ figure {
     #colorlib-aside .colorlib-footer span {
       display: block; }
     #colorlib-aside .colorlib-footer ul {
-      padding: 0;
-      margin: 0; }
+      padding: 0 20px;
+      margin: 0 0 10px 0; }
       #colorlib-aside .colorlib-footer ul li {
-        padding: 0;
-        margin: 0;
+        padding: 0 20px;
+        margin: 0 0 10px 0;
         display: inline;
         list-style: none; }
 #colorlib-aside .colorlib-footer h3 {
@@ -237,7 +237,7 @@ figure {
           #colorlib-aside .colorlib-footer ul li a:hover, #colorlib-aside .colorlib-footer ul li a:active, #colorlib-aside .colorlib-footer ul li a:focus {
             text-decoration: none;
             outline: none;
-            color: #2c98f0; }
+            color: black; }
 
 .container-wrap {
   max-width: 1170px;
@@ -857,15 +857,15 @@ margin-left: 10px;}
   text-align: left;
   width: 100%;
   float: left;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   position: relative; }
   .colorlib-feature .colorlib-icon {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100px;
-    height: 100px;
-    display: table;
+    width: 50px;
+    height: 50px;
+    display:table;
     text-align: center;
     background: #f2f3f7;
     -webkit-border-radius: 2px;
@@ -876,13 +876,13 @@ margin-left: 10px;}
       display: table-cell;
       vertical-align: middle;
       color: #2c98f0;
-      font-size: 60px;
-      height: 100px; }
+      font-size: 20px;
+      height: 50px; }
       @media screen and (max-width: 1200px) {
         .colorlib-feature .colorlib-icon i {
-          font-size: 40px; } }
+          font-size: 20px; } }
   .colorlib-feature .colorlib-text {
-    padding-left: 120px;
+    padding-left: 60px;
     width: 100%; }
     .colorlib-feature .colorlib-text h2, .colorlib-feature .colorlib-text h3 {
       margin: 0;
@@ -895,10 +895,10 @@ margin-left: 10px;}
       letter-spacing: 3px;
       text-transform: uppercase; }
   .colorlib-feature.colorlib-feature-sm .colorlib-text {
-    margin-top: 30px; }
+    margin-top: 10px; }
   .colorlib-feature.colorlib-feature-sm .colorlib-icon i {
     color: #2c98f0;
-    font-size: 40px; }
+    font-size: 20px; }
     @media screen and (max-width: 1200px) {
       .colorlib-feature.colorlib-feature-sm .colorlib-icon i {
         font-size: 28px; } }
