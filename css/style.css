@@ -60,6 +60,7 @@ h3{
   font-weight: 200;
   margin: 0 0 30px 0;
 }
+
 figure {
   margin-bottom: 2.5em;
   float: left;
@@ -229,8 +230,12 @@ figure {
         list-style: none; }
 #colorlib-aside .colorlib-footer h3 {
           color:fuchsia;
-    font-family: cursive;
+    font-family:inherit;
           padding: 4px; }
+#colorlib-aside .colorlib-footer h3 a
+{
+    color: #FA3675;
+}
         #colorlib-aside .colorlib-footer ul li a {
           color: rgba(255, 255, 255, 0.3);
           padding: 4px; }
@@ -422,6 +427,19 @@ body.offcanvas {
     .colorlib-contact {
       padding-top: 5em;
       padding-bottom: 3em; } }
+
+#colorlib-footer2 {
+    background: black;
+    width: 100%;
+    padding-bottom: 3em;
+    padding-top: 2em;
+    padding-right: 2em;
+    
+}
+#colorlib-footer2 .h2{
+    color: red;
+    text-align: center;
+}
 
 .author-img {
   background-size: cover;
@@ -1158,6 +1176,7 @@ margin-left: 10px;}
         text-decoration: none;
         color: #2c98f0; }
 
+
 #map {
   width: 100%;
   height: 700px; }
@@ -1472,3 +1491,39 @@ margin-left: 10px;}
 
 .js .animate-box {
   opacity: 0; }
+
+
+
+
+/*-----------------footer---------------------*/
+
+footer h1{
+    color: #FA3675;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 400;
+    font-family:inherit;
+}
+footer p{
+    color: #FA3675;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    font-family:inherit;
+}
+footer i{
+    font-size: 3em;
+    text-align: center;
+    color: #FA3675;
+    font-weight: 400;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+footer{
+    width: 100%;
+    background-color: white;
+    padding:40px 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
