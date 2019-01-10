@@ -952,8 +952,7 @@ margin-left: 10px;}
     margin-bottom: 25px;
     line-height: auto;
     font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     font-family: "Quicksand", Arial, sans-serif; }
     .blog-entry .desc h3 a {
       color: #000;

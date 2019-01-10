@@ -401,8 +401,8 @@ body.offcanvas {
 .colorlib-installation,
 .colorlib-services,
 .colorlib-contact {
-  padding-top: 4em;
-  padding-bottom: 9em;
+  padding-top: 3em;
+  padding-bottom: 1em;
   clear: both;
   width: 100%;
   display: block; }
@@ -416,8 +416,8 @@ body.offcanvas {
     .colorlib-installation,
     .colorlib-services,
     .colorlib-contact {
-      padding-top: 5em;
-      padding-bottom: 3em; } }
+      padding-top: 2em;
+      padding-bottom: 1em; } }
 
 .author-img {
   background-size: cover;
@@ -930,9 +930,19 @@ margin-left: 10px;}
     margin-bottom: 25px;
     line-height: auto;
     font-weight: 500;
+    letter-spacing: 0.5px;
+    font-family: "Quicksand", Arial, sans-serif; }
+    .blog-entry .desc h3 a {
+      color: #000;
+      text-decoration: none; }
+.blog-entry .desc h4 {
+    font-size: 16px;
+    margin-bottom: 25px;
+    line-height: auto;
+    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-family: "Quicksand", Arial, sans-serif; }
+    font-family:monospace, Arial, sans-serif; }
     .blog-entry .desc h3 a {
       color: #000;
       text-decoration: none; }
