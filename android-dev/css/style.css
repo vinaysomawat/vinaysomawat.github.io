@@ -459,6 +459,12 @@ margin-left: 10px;}
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 500; }
+.about-desc b{
+    font-size: 15px;
+    font-family: monospace;
+    font-weight: 300;
+    font-style: normal;
+}
 
 .hire {
   padding: 2em;
