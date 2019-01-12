@@ -32,7 +32,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 7vw;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 45px;
   margin-bottom: 40px;
 }
 p{
@@ -66,7 +66,7 @@ p{
 .text{
   font-size: 25px;
   margin-top: 20px;
-  margin-bottom: 0px;
+  margin-bottom: 20px;
   color:white;
   font-family: 'Raleway', sans-serif;
   font-family: 'Roboto', sans-serif;
