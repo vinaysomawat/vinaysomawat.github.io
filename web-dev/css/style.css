@@ -195,15 +195,17 @@ figure {
             color: black; }
             #colorlib-aside #colorlib-main-menu ul li a:hover:after {
               visibility: visible;
+                color: black;
               -webkit-transform: scaleX(1);
               -moz-transform: scaleX(1);
               -ms-transform: scaleX(1);
               -o-transform: scaleX(1);
               transform: scaleX(1); }
         #colorlib-aside #colorlib-main-menu ul li.active a {
-          color: #2c98f0; }
+          color: black; }
           #colorlib-aside #colorlib-main-menu ul li.active a:after {
             visibility: visible;
+              color: black;
             -webkit-transform: scaleX(1);
             -moz-transform: scaleX(1);
             -ms-transform: scaleX(1);
@@ -453,7 +455,7 @@ body.offcanvas {
   margin-bottom: 2em;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 1px;
   line-height: 1.8;
   position: relative; }
   .colorlib-heading span {
@@ -469,7 +471,7 @@ body.offcanvas {
   text-transform: uppercase;
   color: #999999;
   font-weight: 500;
-  letter-spacing: 5px; }
+  letter-spacing: 2px; }
 
 .about-img {
   width: 100%;
@@ -480,7 +482,7 @@ margin-left: 10px;}
 .about-desc h3 {
   font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-weight: 500; }
 
 .hire {
