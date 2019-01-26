@@ -233,11 +233,12 @@ figure {
         display: inline;
         list-style: none; }
 #colorlib-aside .colorlib-footer h3 {
-    font-family:inherit;
+    font-family:cursive;
           padding: 4px; }
 #colorlib-aside .colorlib-footer h3 a
 {
     color: black;
+    font-family:cursive;
 }
         #colorlib-aside .colorlib-footer ul li a {
           color: rgba(255, 255, 255, 0.3);
@@ -455,7 +456,7 @@ body.offcanvas {
   margin-bottom: 2em;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 5px;
   line-height: 1.8;
   position: relative; }
   .colorlib-heading span {
@@ -1176,7 +1177,7 @@ margin-left: 10px;}
       .colorlib-social li a:hover, .colorlib-social li a:active, .colorlib-social li a:focus {
         outline: none;
         text-decoration: none;
-        color: #2c98f0; }
+        color: black; }
 
 
 #map {
@@ -1262,7 +1263,7 @@ margin-left: 10px;}
     color: #2c98f0;
     border: 2px solid #2c98f0; }
     .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-      background: #2c98f0;
+      background: black;
       color: #fff; }
 
 .btn-success {
