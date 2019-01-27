@@ -2,9 +2,6 @@
 ## Main Page
 ###### https://vinaysomawat.github.io/
 
-## Intro page
-###### https://vinaysomawat.github.io/intro/
-
 ------------------------------------------------------------------
 To setup the project on your local machine:
 
