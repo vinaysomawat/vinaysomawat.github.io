@@ -216,7 +216,7 @@ figure {
     font-weight: 400;
     color: rgba(0, 0, 0, 0.5);
     padding: 0 20px;
-    width: 100%; }
+    width: 100%;}
     @media screen and (max-width: 768px) {
       #colorlib-aside .colorlib-footer {
         position: fixed;
@@ -237,9 +237,10 @@ figure {
 #colorlib-aside .colorlib-footer h3 a
 {
     color: #FF722C;
+    font-size: 18px;
 }
 #rcorners2 {
-  border-radius: 25px;
+  border-radius: 125px;
   background: black;
   padding: 20px; 
   width: 10px;
