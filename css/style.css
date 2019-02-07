@@ -122,7 +122,8 @@ figure {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    border-radius: 50%;}
+    border-radius: 50%;
+    border: 3px solid white;}
 #colorlib-aside h1{
     font-family:sans-serif;
 }
@@ -405,7 +406,8 @@ body.offcanvas {
   padding: 0 4.5em; }
   @media screen and (max-width: 878px) {
     .colorlib-narrow-content {
-      padding: 0 5em; } }
+        width: 100%;
+      padding: 0 1em; } }
 
 .no-gutters {
   margin: 0;
