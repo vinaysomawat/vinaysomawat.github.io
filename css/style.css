@@ -223,7 +223,8 @@ figure {
         position: fixed;
         bottom: 100px; } }
     #colorlib-aside .colorlib-footer span {
-      display: block; }
+      display: block;
+    position: fixed;}
     #colorlib-aside .colorlib-footer ul {
       padding: 0 20px;
       margin: 0 0 10px 0; }
