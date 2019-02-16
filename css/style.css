@@ -103,7 +103,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #EA5C42;
+    background-color: #D8EE59;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -116,7 +116,8 @@ figure {
       -o-transform: translateX(-300px);
       transform: translateX(-300px);
       padding-top: 4em;
-	  background: #EA5C42;} }
+	  background-color: #D8EE59;
+      } }
   #colorlib-aside .author-img {
     width: 150px;
     height: 150px;
@@ -128,7 +129,8 @@ figure {
     border-radius: 50%;
     border: 3px solid white;}
 #colorlib-aside h1{
-    font-family:sans-serif;
+    color: #000;
+  font-family: "Verdana", Times, sans-serif;
 }
   #colorlib-aside .position {
     display: block;
@@ -243,10 +245,10 @@ figure {
     font-size: 18px;
 }
 #rcorners2 {
-  border-radius: 125px;
+    border-radius: 15px;
   background: black;
   padding: 20px; 
-  width: 10px;
+  width: 50%;
   height: 40px; 
 }
         #colorlib-aside .colorlib-footer ul li a {
@@ -393,7 +395,7 @@ body.offcanvas {
     -o-transform: translateX(0);
     transform: translateX(0);
     width: 300px;
-    background: #EA5C42;
+    background-color: #D8EE59;
     z-index: 999;
     position: fixed; }
   body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
