@@ -1159,6 +1159,16 @@ footer i{
     margin-right: 20px;
     margin-left: 20px;
 }
+#rcorners2 {
+    font-family:sans-serif;
+    border-radius: 15px;
+  background-color: fuchsia;
+  padding: 8px; 
+  width: 80%;
+  height: 40px;
+    text-align: center;
+    align-content: center;
+} 
 
 footer{
     width: 100%;
