@@ -19,7 +19,11 @@ body {
   color: rgba(0, 0, 0, 0.7); }
   @media screen and (max-width: 992px) {
     body {
-      font-size: 16px; } }
+      font-size: 16px;}
+      h6 {
+          text-align: center;
+      }
+}
 
 a {
   color: #2c98f0;
@@ -42,7 +46,7 @@ x{
     backface-visibility: visible;
 }
 
-h1, h4, h5, h6 {
+h1, h4, h5 {
   color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
@@ -59,6 +63,20 @@ h3{
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 200;
   margin: 0 0 30px 0;
+}
+h6 {
+    color: blue;
+    font-family: inherit;
+    font-size: 18px;
+    margin-left: 20px;
+    
+}
+
+@media screen and (max-width: 480px) {
+    h6{
+        text-align: center;
+        align-content: center;
+    }
 }
 
 figure {
@@ -1159,16 +1177,6 @@ footer i{
     margin-right: 20px;
     margin-left: 20px;
 }
-#rcorners2 {
-    font-family:sans-serif;
-    border-radius: 15px;
-  background-color: fuchsia;
-  padding: 8px; 
-  width: 80%;
-  height: 40px;
-    text-align: center;
-    align-content: center;
-} 
 
 footer{
     width: 100%;

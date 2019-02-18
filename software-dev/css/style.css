@@ -42,7 +42,7 @@ x{
     backface-visibility: visible;
 }
 
-h1, h4, h5, h6 {
+h1, h4, h5 {
   color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
@@ -60,7 +60,20 @@ h3{
   font-weight: 200;
   margin: 0 0 30px 0;
 }
+h6 {
+    color: blue;
+    font-family: inherit;
+    font-size: 18px;
+    margin-left: 20px;
+    
+}
 
+@media screen and (max-width: 480px) {
+    h6{
+        text-align: center;
+        align-content: center;
+    }
+}
 figure {
   margin-bottom: 2.5em;
   float: left;
