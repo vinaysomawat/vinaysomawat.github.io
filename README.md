@@ -1,4 +1,4 @@
-# Personal Website.
+# Portfolio Website.
 ###### https://vinaysomawat.github.io/
 
 ### About me
