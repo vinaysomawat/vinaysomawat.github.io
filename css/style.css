@@ -427,7 +427,7 @@ body.offcanvas {
 .colorlib-services,
 .colorlib-contact {
   padding-top: 2em;
-  padding-bottom: 3em;
+  padding-bottom: 0em;
   clear: both;
   width: 100%;
   display: block; }
@@ -441,8 +441,8 @@ body.offcanvas {
     .colorlib-installation,
     .colorlib-services,
     .colorlib-contact {
-      padding-top: 5em;
-      padding-bottom: 3em; } }
+      padding-top: 2em;
+      padding-bottom: 0em; } }
 
 #colorlib-footer2 {
     background: black;
