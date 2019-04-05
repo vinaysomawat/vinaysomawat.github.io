@@ -494,10 +494,11 @@ body.offcanvas {
   margin-bottom: 10px;
 margin-left: 10px;}
 
+
 .about-desc h3 {
   font-size: 18px;
   text-transform: uppercase;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
   font-weight: 500; }
 
 .hire {
