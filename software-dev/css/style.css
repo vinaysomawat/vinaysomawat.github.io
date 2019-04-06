@@ -117,7 +117,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #FF722C;
+  background: #2c8cff;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -138,7 +138,8 @@ figure {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
-    border-radius: 50%; }
+    border-radius: 50%;
+border: 3px solid white;}
 #colorlib-aside h1{
     font-family:sans-serif;
 }
