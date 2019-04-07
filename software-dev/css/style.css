@@ -399,7 +399,7 @@ body.offcanvas {
     -o-transform: translateX(0);
     transform: translateX(0);
     width: 300px;
-    background: #f2f3f7;
+    background: #2c98f0;
     z-index: 999;
     position: fixed; }
   body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
@@ -734,6 +734,16 @@ margin-left: 10px;}
 
 #more-projects {
   display: none
+}
+
+.mobile {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .mobile {
+    display: block;
+    /* Add other properties here */
+  }
 }
 
 

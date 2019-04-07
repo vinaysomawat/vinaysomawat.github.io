@@ -413,7 +413,7 @@ body.offcanvas {
     -o-transform: translateX(0);
     transform: translateX(0);
     width: 300px;
-    background: #FF722C;
+    background: #b22cff;
     z-index: 999;
     position: fixed; }
   body.offcanvas #colorlib-main, body.offcanvas .colorlib-nav-toggle {
@@ -709,11 +709,11 @@ margin-left: 10px;}
   margin: 0 auto 30px auto;
   overflow: hidden;
   background: #fff;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
 .project-image {
-  float: left
+  float: left;
 }
 
 .project-info {
@@ -729,7 +729,7 @@ margin-left: 10px;}
   font-size: 1.5em;
   font-weight: 300;
   color: #374054;
-  margin: 0 0 15px 0
+  margin: 0 0 15px 0;
 }
 
 .project-info p {
