@@ -2,6 +2,7 @@
 ###### https://vinaysomawat.github.io/
 ###### https://vinaysomawat.surge.sh
 
+![Image](https://github.com/vinaysomawat/vinaysomawat.github.io/blob/master/web-dev/images/portfolio.png)
 ### About me
 * Competitive Programming
 * Web Designing
