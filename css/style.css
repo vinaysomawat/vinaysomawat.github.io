@@ -37,6 +37,7 @@ a {
 p {
   margin-bottom: 1.5em;
     color: black;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 x{
     margin-bottom: 1.5em;
@@ -53,13 +54,13 @@ h1, h4, h5, h6 {
 
 h2{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 20px 0;
 }
 h3{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 30px 0;
 }
@@ -74,7 +75,7 @@ figure {
     margin: 20px auto 0px auto;
     color: #b3b3b3;
     font-style: italic;
-    font-family: "Quicksand", Arial, sans-serif; }
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
     @media screen and (max-width: 480px) {
       figure figcaption {
         width: 100%; } }
@@ -103,7 +104,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-    background-color: #D8EE59;
+   background-color: #FFDAB9;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -129,8 +130,8 @@ figure {
     border-radius: 50%;
     border: 3px solid white;}
 #colorlib-aside h1{
-    color: #000;
-  font-family: "Verdana", Times, sans-serif;
+    color: #FFFFFF;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
   #colorlib-aside .position {
     display: block;
@@ -141,13 +142,14 @@ figure {
     text-align: right;
     font-weight: 700;
     font-size: 30px;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     margin-bottom: .5em;
     display: block;
     width: 100%; }
     #colorlib-aside #colorlib-logo a {
       display: block;
       text-align: center;
-      color: #000;
+      color: #FFFFFF;
       padding-right: .3em; }
   #colorlib-aside #colorlib-main-menu {
     display: block;
@@ -170,11 +172,11 @@ figure {
         text-transform: uppercase;
         letter-spacing: 1px; }
         #colorlib-aside #colorlib-main-menu ul li a {
-          color: rgba(0, 0, 0, 0.7);
+          color: #FFFFFF;
           text-decoration: none;
           position: relative;
           padding: 10px 0;
-          font-family: "Quicksand", Arial, sans-serif;
+          font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
           -webkit-transition: 0.3s;
           -o-transition: 0.3s;
           transition: 0.3s; }
