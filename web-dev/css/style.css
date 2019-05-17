@@ -12,7 +12,7 @@
 *
 * ======================================================= */
 body {
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
@@ -29,7 +29,7 @@ body {
 }
 
 a {
-  color: #2c98f0;
+  color: #F08080;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -51,25 +51,25 @@ x{
 
 h1, h5 {
   color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0; }
 
 h2{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 20px 0;
 }
 h3{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 30px 0;
 }
 h4 {
     color: #000;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-weight: 200;
     margin: 0 0 20px 0;
     margin-left: 20px;
@@ -99,7 +99,7 @@ figure {
     margin: 20px auto 0px auto;
     color: #b3b3b3;
     font-style: italic;
-    font-family: "Quicksand", Arial, sans-serif; }
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif; }
     @media screen and (max-width: 480px) {
       figure figcaption {
         width: 100%; } }
@@ -128,7 +128,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #b22cff;
+  background: #FFDAB9;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -152,7 +152,7 @@ figure {
     border-radius: 50%;
 border: 3px solid white;}
 #colorlib-aside h1{
-    font-family:sans-serif;
+    font-family:"Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
   #colorlib-aside .position {
     display: block;
@@ -163,6 +163,7 @@ border: 3px solid white;}
     text-align: right;
     font-weight: 700;
     font-size: 30px;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     margin-bottom: .5em;
     display: block;
     width: 100%; }
@@ -196,7 +197,7 @@ border: 3px solid white;}
           text-decoration: none;
           position: relative;
           padding: 10px 0;
-          font-family: "Quicksand", Arial, sans-serif;
+          font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
           -webkit-transition: 0.3s;
           -o-transition: 0.3s;
           transition: 0.3s; }
@@ -538,7 +539,7 @@ margin-left: 10px;}
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   background-color: #2c98f0;
   color: #fff;
   position: relative;
@@ -677,7 +678,7 @@ margin-left: 10px;}
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
   font-size: 20px;
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 500; }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
@@ -773,7 +774,7 @@ margin-left: 10px;}
 
 .progress-wrap h3 {
   font-size: 16px;
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   margin-bottom: 10px; }
 
 .progress {

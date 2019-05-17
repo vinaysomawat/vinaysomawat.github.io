@@ -12,7 +12,7 @@
 *
 * ======================================================= */
 body {
-  font-family: "Quicksand", Arial, sans-serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 400;
   font-size: 15px;
   line-height: 1.8;
@@ -29,7 +29,7 @@ body {
 }
 
 a {
-  color: #2c98f0;
+  color: #F08080;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -41,6 +41,7 @@ a {
 p {
   margin-bottom: 1.5em;
     color: black;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 x{
     margin-bottom: 1.5em;
@@ -51,25 +52,25 @@ x{
 
 h1, h5 {
   color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 400;
   margin: 0 0 30px 0; }
 
 h2{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 20px 0;
 }
 h3{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
+  font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
   font-weight: 200;
   margin: 0 0 30px 0;
 }
 h4 {
     color: #000;
-    font-family: "Playfair Display", Georgia, serif;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-weight: 200;
     margin: 0 0 20px 0;
     margin-left: 20px;
@@ -128,7 +129,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #b22cff;
+  background: #FFDAB9;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
