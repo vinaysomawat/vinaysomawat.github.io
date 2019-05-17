@@ -117,6 +117,7 @@ figure {
       transform: translateX(-300px);
       padding-top: 4em;
 	  background-color: #D8EE59;
+        height: auto;
       } }
   #colorlib-aside .author-img {
     width: 150px;
@@ -225,7 +226,8 @@ figure {
     width: 100%;}
     @media screen and (max-width: 768px) {
       #colorlib-aside .colorlib-footer {
-        position: fixed; } }
+        position: fixed;
+        height: auto;} }
     #colorlib-aside .colorlib-footer span {
       display: block;}
     #colorlib-aside .colorlib-footer ul {
