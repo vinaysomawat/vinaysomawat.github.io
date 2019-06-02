@@ -1,26 +1,23 @@
 # Portfolio Website.
 ###### https://vinaysomawat.github.io/
-###### https://vinaysomawat.surge.sh
 
 ![Image](https://github.com/vinaysomawat/vinaysomawat.github.io/blob/master/web-dev/images/portfolio.png)
 ### About me
-* Competitive Programming
-* Web Designing
-* Software Development
-* Android Application
-* Technical Writing
-* Machine Learning
-* Open Source 
+* Competitive Programming Page
+* Web Designing Page
+* Software Development Page
+* Android Application Page
+* Technical Writing Page
+* Machine Learning Page
+* Open Source Page
 
-### Counters
-* Course
-* Project and Apps
-* Published Articles
-* Percentile Internationally
-
+### Hire Me banner
 ### Skills
+* Skills with progress bar
+### Education
+* Undergrad
+* Intermediate
 ### Work Experience
-### Recent Blogs
 ### Contact
 * Mail Address
 * Location
