@@ -37,6 +37,7 @@ a {
 p {
   margin-bottom: 1.5em;
     color: black;
+    font-family: 'Montserrat', sans-serif;
 }
 x{
     margin-bottom: 1.5em;
@@ -131,7 +132,7 @@ figure {
     border: 3px solid white;}
 #colorlib-aside h1{
     color: #000;
-  font-family: "Verdana", Times, sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
   #colorlib-aside .position {
     display: block;
@@ -149,7 +150,7 @@ figure {
       display: block;
       text-align: center;
       color: #000;
-      padding-right: .3em; }
+      padding-right: .3em;}
   #colorlib-aside #colorlib-main-menu {
     display: block;
     width: 100%; }
