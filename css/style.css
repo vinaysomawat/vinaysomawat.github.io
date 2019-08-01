@@ -428,7 +428,8 @@ body.offcanvas {
 .colorlib-about,
 .colorlib-installation,
 .colorlib-services,
-.colorlib-contact {
+.colorlib-footer,
+.colorlib-contact{
   padding-top: 2em;
   padding-bottom: 0em;
   clear: both;
@@ -443,9 +444,10 @@ body.offcanvas {
     .colorlib-about,
     .colorlib-installation,
     .colorlib-services,
-    .colorlib-contact {
+      .colorlib-contact{
       padding-top: 2em;
       padding-bottom: 0em; } }
+
 
 #colorlib-footer2 {
     background: black;
@@ -1574,38 +1576,3 @@ align-items: stretch;}
 .js .animate-box {
   opacity: 0; }
 
-
-
-
-/*-----------------footer---------------------*/
-
-footer h1{
-    color: #FA3675;
-    text-align: center;
-    font-size: 40px;
-    font-weight: 400;
-    font-family:inherit;
-}
-footer p{
-    color: #FA3675;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 400;
-    font-family:inherit;
-}
-footer i{
-    font-size: 3em;
-    text-align: center;
-    color: #FA3675;
-    font-weight: 400;
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-footer{
-    width: 100%;
-    background-color: white;
-    padding:40px 0px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
