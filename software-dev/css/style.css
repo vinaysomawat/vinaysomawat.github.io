@@ -39,7 +39,7 @@ a {
     text-decoration: none !important; }
 
 p {
-  margin-bottom: 1.5em;
+  margin-bottom: 1em;
     color: black;
 }
 x{
@@ -63,9 +63,9 @@ h2{
 }
 h3{
     color: #000;
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 200;
-  margin: 0 0 30px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin: 0 0 0px 0;
 }
 h4 {
     color: #000;
@@ -128,7 +128,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-  background: #b22cff;
+  background: #DAF7A6;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -718,9 +718,10 @@ margin-left: 10px;}
 .project-image img{
      width: 730px ; 
     height: 355px ;
+    margin-top: 20px;
 }
 .project-image p {
-    margin-top: 3%;
+    margin-top: 10px;
 }
 .project-info {
   position: absolute;
