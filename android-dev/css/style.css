@@ -14,12 +14,11 @@
 body {
   font-family: "Quicksand", Arial, sans-serif;
   font-weight: 400;
-  font-size: 15px;
   line-height: 1.8;
   color: rgba(0, 0, 0, 0.7); }
   @media screen and (max-width: 992px) {
     body {
-      font-size: 16px;}
+      font-size: 12px;}
        h2{
           text-align: center;
       }
@@ -59,12 +58,11 @@ h2{
     color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 200;
-  margin: 0 0 20px 0;
+    margin-top: 20px;
 }
 h3{
     color: #000;
   font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
   margin: 0 0 0px 0;
 }
 h4 {
@@ -700,7 +698,6 @@ margin-left: 10px;}
 
 #projects h2 {
   color: #374054;
-  margin-bottom: 50px
 }
 
 .project {
