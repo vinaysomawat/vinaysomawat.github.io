@@ -201,7 +201,7 @@ int main()
 5 4 3 2 1 0
 0 1 2 3 4 5
 </code></pre>
-<h2 class="mb-4">List</h2>
+<h2 class="mb-4">List</h2><p>
 List is a sequence container which takes constant time in inserting and removing elements. List in STL is implemented  as Doubly Link List.</p>
 <p>The elements from List cannot be directly accessed. For example to access element of a particular position ,you have to iterate from a known position to that particular position. </p>
 <p>//declaration</p>
@@ -291,7 +291,7 @@ All elements of List LI are after reversing:
 Elements after removing all occurrence of 5  from List
 4 3 1
 </code></pre>
-<h2 class="mb-4">Pair</h2>
+<h2 class="mb-4">Pair</h2><p>
 Pair is a container that can be used to bind together a two values which may be of different types. Pair provides a way to store two heterogeneous objects as a single unit. </p>
 <pre style="background-color: azure"><code>pair &lt;int, char&gt; p1;                    // default
 pair &lt;int, char&gt; p2 (1, ‘a’);            // value inititialization
@@ -323,7 +323,7 @@ int main()
 <pre style="background-color: azure"><code>1 a
 2 b
 </code></pre>
-<h2 class="mb-4">Sets</h2>
+<h2 class="mb-4">Sets</h2><p>
 Sets are containers which store only unique values and permit easy look ups. The values in the sets are stored in some specific order (like ascending or descending). Elements can only be inserted or deleted, but cannot be modified.  We can access and traverse set elements using iterators just like vectors.</p>
 <pre style="background-color: azure"><code>set&lt;int&gt; s1;                               // Empty Set
 int a[]= {1, 2, 3, 4, 5, 5};
@@ -372,7 +372,7 @@ int main()
 <p><strong>Output:</strong></p>
 <pre style="background-color: azure"><code>1 2 3 4 5
 </code></pre>
-<h2 class="mb-4">Maps</h2>
+<h2 class="mb-4">Maps</h2><p>
 Maps are containers which store elements by mapping their value against a particular key. It stores the combination of key value and mapped value following a specific order.
 Here key value are used to uniquely identify the elements mapped to it. The data type of key value and mapped value can be different. Elements in map are always in sorted order by their corresponding key and can be accessed directly by their key using bracket operator ([ ]).  </p>
 <p>In map, key and mapped value have a pair type combination,i.e both key and mapped value can be accessed using pair type functionalities with the help of iterators. </p>
@@ -493,7 +493,7 @@ As mymap1 is empty so empty() function will return 1 : 1
 Number of elements with key = 'a' in map mp are : 1
 Map is not empty
 </code></pre>
-<h2 class="mb-4">Stacks</h2>
+<h2 class="mb-4">Stacks</h2><p>
 Stack is a container which follows the <strong>LIFO (Last In First Out)</strong> order and the elements are inserted and deleted from one end of the container. The element which is inserted last will be extracted first.</p>
 <p>Declaration:</p>
 <pre style="background-color: azure"><code>stack &lt;int&gt; s;
@@ -594,7 +594,7 @@ int main() {
 <p><strong>Output:</strong></p>
 <pre style="background-color: azure"><code>dabc
 </code></pre>
-<h2 class="mb-4">Priority Queue:</h2>
+<h2 class="mb-4">Priority Queue:</h2><p>
 A priority queue is a container that provides constant time extraction of the largest element, at the expense of logarithmic insertion. It is similar to the heap in which we can add element at any time but only the maximum element can be retrieved. In a priority queue, an element with high priority is served before an element with low priority. </p>
 <p>Declaration:</p>
 <pre style="background-color: azure"><code>priority_queue&lt;int&gt; pq;
@@ -630,12 +630,36 @@ int main()
 10
 5
 </code></pre>
-	          </div>
-					</div>
-				</div>
-			</div>
+                        <br><br>
+</div>
+                    <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://programmingdairies.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                            
+</div>
+</div>
+        
 		</section>
 
+
+<br>
 		<footer class="ftco-footer ftco-section">
       <div class="container">
         <div class="row">
