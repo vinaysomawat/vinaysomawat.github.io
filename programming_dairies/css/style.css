@@ -8257,6 +8257,16 @@ h1, h2, h3, h4, h5,
       width: 50%; }
     .hero-wrap.hero-wrap-2 .slider-text {
       height: 350px !important; }
+@media (max-width: 991.98px) {
+    .hero-wrap.hero-wrap-2 .slider-text {
+      height: 200px !important; }
+    .hero-wrap.hero-wrap-2 .overlay, .hero-wrap.hero-wrap-2 .overlay-2 {
+      width: 100%;
+      height: 150px; }
+    .hero-wrap.hero-wrap-2 {
+    height: 100px;
+    position: relative; }
+}
 
 .slider-text {
   height: 550px; }
@@ -8265,6 +8275,15 @@ h1, h2, h3, h4, h5,
     color: #000000;
     line-height: 1.1;
     font-weight: 400; }
+@media (max-width: 991.98px) {
+    .slider-text {
+  height: 150px; }
+    .slider-text h1 {
+    font-size: 40px;
+    color: #000000;
+    line-height: 1.0;
+    font-weight: 200;}
+}
     .slider-text h1 span {
       display: block; }
   .slider-text .icon-wrap .icon {
@@ -8298,10 +8317,18 @@ h1, h2, h3, h4, h5,
     color: rgba(0, 0, 0, 0.8); }
   .slider-text .breadcrumbs {
     font-size: 14px;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
     z-index: 99;
     text-transform: uppercase;
     font-weight: 500; }
+@media (max-width: 991.98px) {
+    .slider-text .breadcrumbs {
+    font-size: 14px;
+    margin-bottom: 10px;
+    z-index: 99;
+    text-transform: uppercase;
+    font-weight: 500; }
+}
     .slider-text .breadcrumbs span {
       color: rgba(0, 0, 0, 0.7); }
       .slider-text .breadcrumbs span i {
@@ -8898,8 +8925,7 @@ h1, h2, h3, h4, h5,
 
 @media (max-width: 767.98px) {
   .img-3 {
-    height: 600px;
-    margin-bottom: 30px; } }
+    display: none;} }
 
 .services-section {
   position: relative;
@@ -9116,7 +9142,7 @@ textarea.form-control {
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 2em 0; } }
+      padding: 0em 0; } }
 
 .ftco-no-pt {
   padding-top: 0; }
@@ -9361,7 +9387,7 @@ textarea.form-control {
     transform: translateY(-50%);
     width: 50px;
     height: 1px;
-    margin-top: -1px;
+    margin-top: 1px;
     background: #d4ca68; }
 
 .heading-section h2 {
@@ -9369,7 +9395,8 @@ textarea.form-control {
   font-weight: 600; }
   @media (max-width: 767.98px) {
     .heading-section h2 {
-      font-size: 28px; } }
+      font-size: 28px;
+      margin-top: 0px;} }
 
 .heading-section.heading-section-white .subheading {
   color: rgba(255, 255, 255, 0.9); }
