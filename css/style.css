@@ -768,10 +768,15 @@ margin-left: 10px;}
     border-bottom: 2px solid #a84cb8; }
     .services.color-4 .icon2 i {
       color: #a84cb8; }
-  .services.color-5 {
+  .services.color-5  {
     border-bottom: 2px solid #2fa499; }
+
+  .services.color-5 .icon2 i {
+    color: #2fa499; }
   .services.color-6 {
     border-bottom: 2px solid #4054b2; }
+.services.color-6 .icon2 i {
+    color: #4054b2; }
 
 .services {
   margin-bottom: 80px;
