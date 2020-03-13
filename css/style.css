@@ -430,7 +430,7 @@ body.offcanvas {
 .colorlib-services,
 .colorlib-footer,
 .colorlib-contact{
-  padding-top: 2em;
+  padding-top: 5em;
   padding-bottom: 0em;
   clear: both;
   width: 100%;
@@ -502,6 +502,11 @@ margin-left: 10px;}
   text-transform: uppercase;
   letter-spacing: 5px;
   font-weight: 500; }
+
+.about-desc h1 {
+  font-size: 38px;
+  font-weight: 400;
+font-family: "Montserrat", Georgia, serif;}
 
 .hire {
   padding: 2em;
