@@ -23,6 +23,12 @@ body {
       h2{
           text-align: center;
       }}
+canvas {
+  background: #EEE;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 a {
   color: #2c98f0;
