@@ -104,7 +104,7 @@ figure {
   width: 300px;
   position: fixed;
   z-index: 1001;
-    background-color: #f2f3f7;
+    background-color: #f9bf3f;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s; }
@@ -117,7 +117,7 @@ figure {
       -o-transform: translateX(-300px);
       transform: translateX(-300px);
       padding-top: 4em;
-	  background-color: #f2f3f7;
+	  background-color: #f9bf3f;
         height: auto;
       } }
   #colorlib-aside .author-img {
@@ -654,7 +654,7 @@ font-family: "Montserrat", Georgia, serif;}
   position: absolute;
   display: block;
   width: 4px;
-  background: #f2f3f7;
+  background: #f9bf3f;
   top: 20px;
   bottom: 20px;
   margin-left: 29px; }
@@ -703,7 +703,7 @@ font-family: "Montserrat", Georgia, serif;}
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
-  background: #f2f3f7;
+  background: #f9bf3f;
   padding: 1.5em;
   margin-left: 60px;
   -webkit-background-clip: padding-box;
