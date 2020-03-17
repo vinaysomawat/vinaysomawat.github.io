@@ -22,7 +22,13 @@ body {
       font-size: 16px; } 
       h2{
           text-align: center;
-      }}
+      }
+canvas {
+  background: #EEE;
+  position: fixed;
+  top: 0;
+  left: 0;
+}}
 canvas {
   background: #EEE;
   position: fixed;
