@@ -30,11 +30,19 @@ Web Portfolio to showcase projects and skills in better manner.
 
 ### Footer
 ------------------------------------------------------------------
-To setup the project on your local machine:
+To use the template on your github:
+
+1. Click on `Fork`
+2. Rename your repo `yourgithubpseudo.github.io`
+3. Activate github pages in `settings/GithubPages` by sourcing the targeted branch. Default : `master` (if it's not done automatically when renamed .github.io)
+4. `Clone` your fork `git clone https://github.com/yourgithubpseudo/vinaysomawat.github.io.git`
+5. You can now modify the `.html` files to suit your profile and model it after your information.
+
+To setup the project and contribute on your local machine:
 
 1. Click on `Fork`.
 2. Go to your fork and `clone` the project to your local machine.
-3. `git clone https://github.com/vinaysomawat/vinaysomawat.github.io.git`
+3. `git clone https://github.com/yourgithubpseudo/vinaysomawat.github.io.git`
 
 To contribute to the project:
 
