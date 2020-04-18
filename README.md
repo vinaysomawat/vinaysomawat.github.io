@@ -34,9 +34,8 @@ Web Portfolio to showcase projects and skills in better manner.
 
 1. Click on `Fork`
 2. Rename your repo `yourgithubpseudo.github.io`
-3. Activate github pages in `settings/GithubPages` by sourcing the targeted branch. Default : `master` (if it's not done automatically when renamed .github.io)
-4. `Clone` your fork `git clone https://github.com/yourgithubpseudo/vinaysomawat.github.io.git`
-5. You can now modify the `.html` files to suit your profile and model it after your information.
+3. Clone your fork `git clone https://github.com/yourgithubpseudo/vinaysomawat.github.io.git`
+4. Modify the `.html` files if you want to use the repository as a template.
 
 #### To setup the project and contribute on your local machine:
 
