@@ -7,7 +7,7 @@ https://pages.github.com/
 
 [![Support via PayPal](https://cdn.rawgit.com/twolfson/paypal-github-button/1.0.0/dist/button.svg)](https://www.paypal.me/vinaysomawat)
 
-###### https://vinaysomawat.github.io/
+###### https://ndajiya.github.io/
 
 ![Image](https://github.com/vinaysomawat/vinaysomawat.github.io/blob/master/vinaysomawatgithubio.gif)
 ### About me
