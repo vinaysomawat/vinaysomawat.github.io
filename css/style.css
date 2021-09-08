@@ -20,7 +20,7 @@ body {
   @media screen and (max-width: 992px) {
     body {
       font-size: 16px; } 
-      h2{
+      h2,h4 {
           text-align: center;
       }
 canvas {
@@ -58,7 +58,7 @@ x{
     backface-visibility: visible;
 }
 
-h1, h4, h5, h6 {
+h1, h5, h6 {
   color: #000;
   font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
@@ -76,6 +76,12 @@ h3{
   font-weight: 200;
   margin: 0 0 30px 0;
 }
+h4 {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+    font-size: 15px;
+  margin: 0 0 30px 0; }
 
 figure {
   margin-bottom: 2.5em;
@@ -131,7 +137,17 @@ figure {
       padding-top: 4em;
 	  background-color: #f9bf3f;
         height: auto;
-      } }
+      } 
+      .resume-content img {
+          width: 100%;
+           margin:0 0px;
+          float: left;
+      }
+}
+
+.resume-content img {
+           margin:0 10px;
+      }
   #colorlib-aside .author-img {
     width: 150px;
     height: 150px;
@@ -1620,7 +1636,7 @@ ul { list-style-type: none; }
   display: block;
   padding: 15px 15px 15px 15px;
   font-weight: 700;
-  border-bottom: 1px solid #CCC;
+  border-bottom: 1px solid gray;
   position: relative;
   -webkit-transition: all 0.4s ease;
   -o-transition: all 0.4s ease;
@@ -1668,20 +1684,21 @@ ul { list-style-type: none; }
   font-size: 14px;
 }
 
-.submenu li { border-bottom: 1px solid #4b4a5e; }
+.submenu li { border-bottom: 1px solid #000; }
 
 .submenu a {
   display: block;
   text-decoration: none;
   color: #d9d9d9;
   padding: 12px;
-  padding-left: 42px;
+  padding-left: 10px;
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
 
 .submenu a:hover {
-  background: #b63b4d;
+  background: yellow;
+    border-radius: 20px;
   color: #FFF;
 }
