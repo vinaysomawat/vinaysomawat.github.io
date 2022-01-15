@@ -73,7 +73,7 @@ h2{
 h3{
     color: #000;
   font-family: "Playfair Display", Georgia, serif;
-  font-weight: 200;
+  font-weight: 500;
   margin: 0 0 30px 0;
 }
 h4 {
@@ -139,14 +139,18 @@ figure {
         height: auto;
       } 
       .resume-content img {
-          width: 100%;
-           margin:0 0px;
-          float: left;
+        margin: 0 10px;
+        width: 100%;
+        max-width: 180px;
+        height: auto;
       }
 }
 
 .resume-content img {
-           margin:0 10px;
+  margin: 0 10px;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
       }
   #colorlib-aside .author-img {
     width: 150px;
@@ -533,7 +537,7 @@ margin-left: 10px;}
 
 .about-desc h1 {
   font-size: 38px;
-  font-weight: 400;
+  font-weight: 600;
 font-family: "Montserrat", Georgia, serif;}
 
 .hire {
@@ -991,7 +995,7 @@ padding-top: 2px;}
     .progress-bar.color-9 span {
       color: #a84cb8; }
 .progress-wrap h3{
-	padding-bottom: 8px;
+	padding-bottom: 2px;
 }
 .colorlib-feature {
   text-align: left;
@@ -1682,9 +1686,13 @@ ul { list-style-type: none; }
   display: none;
   background: #f9bf3f;
   font-size: 14px;
+  padding-left: 0px;
 }
 
-.submenu li { border-bottom: 1px solid #000; }
+.submenu li {
+  border-bottom: 1px solid #000;
+  padding: 10px;
+}
 
 .submenu a {
   display: block;
@@ -1697,8 +1705,41 @@ ul { list-style-type: none; }
   transition: all 0.25s ease;
 }
 
-.submenu a:hover {
+.submenu .project-card:hover {
   background: yellow;
     border-radius: 20px;
   color: #FFF;
+}
+
+.subheading {
+  margin-bottom: 0px;
+}
+
+.subheading p {
+  font-size: 12px;
+}
+
+.project-heading {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.project-description {
+  font-size: 12px;
+}
+
+.project-card {
+  height: 180px;
+}
+
+.img-fluid{
+  float: left;
+  width: 300px;
+}
+
+span {
+  font-family: 'Montserrat', sans-serif;
+  /* color: black; */
+  display: inline-block; /* change the display type           */
+  margin: 0 5px;
 }
