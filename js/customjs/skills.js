@@ -10,8 +10,8 @@ function populateHTML(items, id) {
         divProgress.className = "progress";
 
         var divProgressBar = document.createElement("div");
-        divProgressBar.className = "progress-bar " + `${items[i].color}`;
-        divProgressBar.style = items[i].percentage;
+        divProgressBar.className = "progress-bar color-" + items[i].color;
+        divProgressBar.style = "width:" + items[i].percentage + "%";
         divProgress.append(divProgressBar);
 
         var divProgressWrap = document.createElement("div");
