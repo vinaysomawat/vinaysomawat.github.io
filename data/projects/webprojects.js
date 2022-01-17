@@ -19,7 +19,7 @@ export default [
 		projectName: "Find Your Bank",
 		image: "images/findyourbank.png",
 		summary:
-			"Developed a single page application using Reactjs to render a list of banks fetched from API. Filtered the banks based on queries, marked favorites banks, pagination and storing the bank list in local storage.",
+			"Developed a React application to render a list of banks fetched from API. Filtered the banks based on queries from localstorage, marked favorites banks.",
 		preview: "https://clever-fermi-0d5d76.netlify.app",
 		techStack: ["Reactjs", "Bootstrap", "JavaScript", "Netlify"],
 	},
@@ -35,7 +35,7 @@ export default [
 		projectName: "Resume Builder",
 		image: "images/resume-builder.png",
 		summary:
-			"Web based editor to build Resumes in a customizable templates.",
+			"Browser based editor to build and download Resumes in a customizable templates.",
 		preview: "https://vinaysomawat.github.io/Resume-Builder",
 		techStack: ["HTML", "Bootstrap", "JavaScript"],
 	},

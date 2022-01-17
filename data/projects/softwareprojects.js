@@ -27,16 +27,8 @@ export default [
 		projectName: "Nodejs-Web-Crawling",
 		image: "images/nodejswebcrawling.png",
 		summary:
-			"By sending HTTP request to a particular URL and then by extracting HTML of that web page for getting useful information is known as crawling or web scraping.",
+			"Developed an application to send HTTP requests to a particular URL and then by extracting HTML of that web page for getting useful information.",
 		preview: "https://github.com/vinaysomawat/Nodejs-Web-Crawling",
 		techStack: ["HTML", "Nodejs", "JavaScript"],
-	},
-	{
-		projectName: "Calculator GUI",
-		image: "images/calculatorgui.png",
-		summary:
-			"Calculator GUI for mathematical calculation.",
-		preview: "https://github.com/vinaysomawat/Calculator-using-tkinter",
-		techStack: ["Tkinter", "Python"],
-	},
+	}
 ];

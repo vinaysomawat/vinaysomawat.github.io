@@ -82,7 +82,7 @@ h6 {
 
 h2 {
 	color: #000;
-	font-family: "Playfair Display", Georgia, serif;
+	font-family: "Montserrat", sans-serif;
 	font-weight: 200;
 	margin: 0 0 20px 0;
 }
@@ -167,7 +167,7 @@ figure figcaption {
 	.resume-content img {
 		margin: 0 10px;
 		width: 100%;
-		max-width: 180px;
+		max-width: 150px;
 		height: auto;
 	}
 }
@@ -175,7 +175,7 @@ figure figcaption {
 .resume-content img {
 	margin: 0 10px;
 	width: 100%;
-	max-width: 180px;
+	max-width: 150px;
 	height: auto;
 }
 #colorlib-aside .author-img {
@@ -648,6 +648,7 @@ body.offcanvas .colorlib-nav-toggle {
 }
 
 .about-desc h1 {
+	margin-bottom: 20px;
 	font-size: 38px;
 	font-weight: 600;
 	font-family: "Montserrat", Georgia, serif;
@@ -656,6 +657,7 @@ body.offcanvas .colorlib-nav-toggle {
 .hire {
 	padding: 2em;
 	background: #f9bf3f;
+	border-radius: 4px;
 }
 .hire h2 {
 	line-height: 1.5;
@@ -850,7 +852,7 @@ body.offcanvas .colorlib-nav-toggle {
 	float: left;
 }
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
-	color: #fff;
+	color: #000;
 }
 .timeline-centered
 	.timeline-entry
@@ -894,6 +896,7 @@ body.offcanvas .colorlib-nav-toggle {
 	-webkit-background-clip: padding-box;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
+	border-radius: 4px;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
@@ -915,8 +918,8 @@ body.offcanvas .colorlib-nav-toggle {
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 {
+	margin-bottom: 10px;
 	font-size: 20px;
-	font-family: "Quicksand", Arial, sans-serif;
 	font-weight: 500;
 }
 
@@ -1601,13 +1604,10 @@ body.offcanvas .colorlib-nav-toggle {
 	color: #2c98f0;
 }
 
-#map {
-	width: 100%;
-	height: 700px;
-}
 @media screen and (max-width: 768px) {
-	#map {
-		height: 200px;
+	.submenu a {
+		padding: 0px;
+		padding-left: 0px;
 	}
 }
 
@@ -2145,6 +2145,12 @@ ul {
 	padding: 10px;
 }
 
+.submenu li:hover {
+	background: yellow;
+	border-radius: 20px;
+	color: #fff;
+}
+
 .submenu a {
 	display: block;
 	text-decoration: none;
@@ -2154,12 +2160,6 @@ ul {
 	-webkit-transition: all 0.25s ease;
 	-o-transition: all 0.25s ease;
 	transition: all 0.25s ease;
-}
-
-.submenu .project-card:hover {
-	background: yellow;
-	border-radius: 20px;
-	color: #fff;
 }
 
 .subheading {
@@ -2177,10 +2177,8 @@ ul {
 
 .project-description {
 	font-size: 12px;
-}
-
-.project-card {
-	height: 180px;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .img-fluid {
@@ -2193,4 +2191,8 @@ span {
 	/* color: black; */
 	display: inline-block; /* change the display type           */
 	margin: 0 5px;
+}
+
+.finalText {
+	margin-bottom: 0px;
 }
