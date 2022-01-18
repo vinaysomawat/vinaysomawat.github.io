@@ -22,13 +22,5 @@ export default [
 			"GUI to transfer data to excel sheets and generate bills on the local shops.",
 		preview: "https://github.com/vinaysomawat/Bill-Generator",
 		techStack: ["Tkinter", "Openxlpy", "Python"],
-	},
-	{
-		projectName: "Nodejs-Web-Crawling",
-		image: "images/nodejswebcrawling.png",
-		summary:
-			"Developed an application to send HTTP requests to a particular URL and then by extracting HTML of that web page for getting useful information.",
-		preview: "https://github.com/vinaysomawat/Nodejs-Web-Crawling",
-		techStack: ["HTML", "Nodejs", "JavaScript"],
 	}
 ];

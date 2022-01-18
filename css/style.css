@@ -151,6 +151,7 @@ figure figcaption {
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
+	box-shadow: 0px 0px 3px 0px grey;
 }
 @media screen and (max-width: 768px) {
 	#colorlib-aside {
@@ -658,6 +659,7 @@ body.offcanvas .colorlib-nav-toggle {
 	padding: 2em;
 	background: #f9bf3f;
 	border-radius: 4px;
+	box-shadow: 0px 0px 3px 0px grey;
 }
 .hire h2 {
 	line-height: 1.5;
@@ -897,6 +899,7 @@ body.offcanvas .colorlib-nav-toggle {
 	-moz-background-clip: padding;
 	background-clip: padding-box;
 	border-radius: 4px;
+	box-shadow: 0px 0px 3px 0px grey;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
@@ -2079,6 +2082,7 @@ ul {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+	box-shadow: 0px 0px 3px 0px grey;
 }
 
 .accordion .link {
@@ -2146,7 +2150,7 @@ ul {
 }
 
 .submenu li:hover {
-	background: yellow;
+	background: rgba(255, 255, 0, 0.705);
 	border-radius: 20px;
 	color: #fff;
 }

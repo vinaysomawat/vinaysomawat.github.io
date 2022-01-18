@@ -8,14 +8,6 @@ export default [
 		techStack: ["Django", "SQLite", "Bootstrap", "JavaScript", "Heroku"],
 	},
 	{
-		projectName: "Travographer Portal",
-		image: "images/tg-portal.png",
-		summary:
-			"It is an implementation to Setup Amazon S3 in a Django Project, how to use S3 to handle user uploaded files.",
-		preview: "https://github.com/vinaysomawat/Travographer-Portal",
-		techStack: ["Django", "AWS", "Bootstrap", "JavaScript", "Heroku"],
-	},
-	{
 		projectName: "Find Your Bank",
 		image: "images/findyourbank.png",
 		summary:
