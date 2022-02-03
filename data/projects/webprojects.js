@@ -3,7 +3,7 @@ export default [
 		projectName: "Programming Diaries",
 		image: "images/programmingdiaries.png",
 		summary:
-			"Developed a blog application to provide content on tech related things to all the programmers across the internet.",
+			"Developed a full stack blog application to provide content on techical topics across the internet with admin interface.",
 		preview: "https://programmingdiaries.herokuapp.com/",
 		techStack: ["Django", "SQLite", "Bootstrap", "JavaScript", "Heroku"],
 	},
