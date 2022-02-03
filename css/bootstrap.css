@@ -4839,12 +4839,12 @@ a.label:focus {
 	min-width: 10px;
 	padding: 3px 7px;
 	font-size: 12px;
-	color: #000;
+	color: #fff;
 	line-height: 1;
 	vertical-align: middle;
 	white-space: nowrap;
 	text-align: center;
-	background-color: goldenrod;
+	background-color: brown;
 	border-radius: 10px;
 }
 .badge:empty {

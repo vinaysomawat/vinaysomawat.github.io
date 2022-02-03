@@ -10,6 +10,10 @@
 	font-style: normal;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 /* =======================================================
 *
 * 	Template Style 
@@ -31,18 +35,6 @@ body {
 	h4 {
 		text-align: center;
 	}
-	canvas {
-		background: #eee;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-}
-canvas {
-	background: #eee;
-	position: fixed;
-	top: 0;
-	left: 0;
 }
 
 a {
@@ -238,7 +230,7 @@ figure figcaption {
 	font-size: 12px;
 	font-weight: 500;
 	text-transform: uppercase;
-	letter-spacing: 1px;
+	letter-spacing: 0.5px;
 }
 #colorlib-aside #colorlib-main-menu ul li a {
 	color: rgba(0, 0, 0, 0.7);
@@ -2145,13 +2137,16 @@ ul {
 }
 
 .submenu li {
-	border-bottom: 1px solid #000;
+	/* border-bottom: 1px solid #000; */
+	margin-top: 10px;
+	margin-bottom: 10px;
 	padding: 10px;
 }
 
 .submenu li:hover {
 	background: rgba(255, 255, 0, 0.705);
-	border-radius: 20px;
+	box-shadow: -1px 1px 51px -20px rgba(0,0,0,1);
+	border-radius: 5px;
 	color: #fff;
 }
 
@@ -2176,7 +2171,7 @@ ul {
 
 .project-heading {
 	font-weight: 500;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 }
 
 .project-description {
@@ -2200,3 +2195,16 @@ span {
 .finalText {
 	margin-bottom: 0px;
 }
+
+.col-image {
+	float: left;
+	width: 33.33%;
+	padding: 5px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row-image::after {
+	content: "";
+	clear: both;
+	display: table;
+  }

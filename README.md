@@ -1,5 +1,4 @@
 # Portfolio Website.
-Web Portfolio to showcase projects and skills in better manner. 
 
 **If you enjoy this project, please consider [supporting me](https://www.paypal.me/vinaysomawat) to continue developing and maintaining it.**
 
@@ -7,25 +6,12 @@ Web Portfolio to showcase projects and skills in better manner.
 
 ###### https://vinaysomawat.github.io/
 
-### About me
-* Competitive Programming Page
-* Web Designing Page
-* Software Development Page
-* Android Application Page
-* Technical Writing Page
-* Machine Learning Page
-* Open Source Page
-
-### Hire Me banner
+### About
 ### Skills
-* Skills with progress bar
-### Education
-* Undergrad
-* Intermediate
+### Projects
 ### Work Experience
+### Education
 ### Contact
-* Mail Address
-* Location
 
 ### Footer
 ------------------------------------------------------------------
