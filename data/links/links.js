@@ -39,5 +39,12 @@ export default [
 		style: 'width: 80%',
 		imgLink: 'https://cdn-images-1.medium.com/max/1600/0*GePc7lo4CF4A3guP.png',
 	    link: "https://leetcode.com/somawatvinay/"
+	},
+	{
+		text: "Linkdin",
+		color: "black",
+		style: 'width: 80%',
+		imgLink: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1280px-LinkedIn_Logo.svg.png',
+	    link: "https://www.linkedin.com/in/vinaysomawat/"
     }
 ];

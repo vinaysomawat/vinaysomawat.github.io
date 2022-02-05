@@ -2198,7 +2198,7 @@ span {
 
 .col-image {
 	float: left;
-	width: 33.33%;
+	width: 25%;
 	padding: 5px;
   }
   
@@ -2207,4 +2207,16 @@ span {
 	content: "";
 	clear: both;
 	display: table;
+  }
+
+  @media screen and (max-width: 992px) {
+	.col-image {
+		width: 100%;
+		padding: 25px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		display: table-cell;
+		vertical-align: middle
+	  }
   }
