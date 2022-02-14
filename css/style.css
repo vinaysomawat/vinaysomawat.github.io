@@ -14,6 +14,11 @@
 	box-sizing: border-box;
 }
 
+.dark-mode {
+	background-color: black;
+	color: white;
+  }
+
 /* =======================================================
 *
 * 	Template Style 
@@ -25,7 +30,7 @@ body {
 	font-weight: 400;
 	font-size: 15px;
 	line-height: 1.8;
-	color: rgba(0, 0, 0, 0.7);
+	color: black;
 }
 @media screen and (max-width: 992px) {
 	body {
@@ -53,39 +58,33 @@ a:focus {
 
 p {
 	margin-bottom: 1.5em;
-	color: black;
 	font-family: "Montserrat", sans-serif;
 }
 x {
 	margin-bottom: 1.5em;
 	background-color: darkkhaki;
-	color: black;
 	backface-visibility: visible;
 }
 
 h1,
 h5,
 h6 {
-	color: #000;
 	font-family: "Playfair Display", Georgia, serif;
 	font-weight: 400;
 	margin: 0 0 30px 0;
 }
 
 h2 {
-	color: #000;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 200;
 	margin: 0 0 20px 0;
 }
 h3 {
-	color: #000;
 	font-family: "Playfair Display", Georgia, serif;
 	font-weight: 500;
 	margin: 0 0 30px 0;
 }
 h4 {
-	color: #000;
 	font-family: "Montserrat", sans-serif;
 	font-weight: 300;
 	font-size: 15px;
@@ -183,7 +182,6 @@ figure figcaption {
 	border: 3px solid white;
 }
 #colorlib-aside h1 {
-	color: #000;
 	font-family: "Raleway", sans-serif;
 }
 #colorlib-aside .position {
@@ -485,13 +483,11 @@ figure figcaption {
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: #000;
 	padding: 10px 15px !important;
 	border: none;
 	font-weight: 400;
 }
 #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
-	color: #000;
 	border: 1px solid #000;
 	background: transparent !important;
 }
@@ -650,6 +646,7 @@ body.offcanvas .colorlib-nav-toggle {
 .hire {
 	padding: 2em;
 	background: #f9bf3f;
+	color: #000;
 	border-radius: 4px;
 	box-shadow: 0px 0px 3px 0px grey;
 }
@@ -657,7 +654,6 @@ body.offcanvas .colorlib-nav-toggle {
 	line-height: 1.5;
 }
 .hire .btn-hire {
-	color: #000;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	border: 1px solid #000;
@@ -845,9 +841,6 @@ body.offcanvas .colorlib-nav-toggle {
 	line-height: 40px;
 	float: left;
 }
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-icon i {
-	color: #000;
-}
 .timeline-centered
 	.timeline-entry
 	.timeline-entry-inner
@@ -885,6 +878,7 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
 	position: relative;
 	background: #f9bf3f;
+	color: #000;
 	padding: 1.5em;
 	margin-left: 60px;
 	-webkit-background-clip: padding-box;
@@ -916,10 +910,6 @@ body.offcanvas .colorlib-nav-toggle {
 	margin-bottom: 10px;
 	font-size: 20px;
 	font-weight: 500;
-}
-
-.timeline-centered .timeline-entry .timeline-entry-inner .timeline-label h2 a {
-	color: #000;
 }
 
 .timeline-centered
@@ -1116,7 +1106,6 @@ body.offcanvas .colorlib-nav-toggle {
 	box-shadow: none;
 	font-size: 12px;
 	line-height: 1.2;
-	color: #000;
 	font-weight: 600;
 	text-align: right;
 	position: relative;
@@ -1333,7 +1322,6 @@ body.offcanvas .colorlib-nav-toggle {
 	font-family: "Quicksand", Arial, sans-serif;
 }
 .blog-entry .desc h3 a {
-	color: #000;
 	text-decoration: none;
 }
 .blog-entry .desc span {
@@ -1352,7 +1340,6 @@ body.offcanvas .colorlib-nav-toggle {
 	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	color: #000;
 }
 .blog-entry:hover .blog-img img {
 	-webkit-transform: scale(1.1);
@@ -1367,9 +1354,6 @@ body.offcanvas .colorlib-nav-toggle {
 }
 .work-menu span:first-child {
 	margin-left: 0;
-}
-.work-menu span a {
-	color: #000;
 }
 .work-menu span a.active {
 	color: #2c98f0;
@@ -1572,7 +1556,6 @@ body.offcanvas .colorlib-nav-toggle {
 }
 .colorlib-social li a {
 	font-size: 22px;
-	color: #000;
 	padding: 10px;
 	display: -moz-inline-stack;
 	display: inline-block;
@@ -1609,50 +1592,6 @@ body.offcanvas .colorlib-nav-toggle {
 .colorlib-bg-color {
 	background: #fafafa;
 	position: relative;
-}
-
-.pagination {
-	padding: 0;
-}
-.pagination li {
-	margin: 2px;
-}
-.pagination li a {
-	color: #000;
-	background: transparent;
-	color: #000;
-	margin: 2px;
-	-webkit-border-radius: 0;
-	-moz-border-radius: 0;
-	-ms-border-radius: 0;
-	border-radius: 0;
-}
-.pagination li a:first-child {
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-ms-border-radius: 2px;
-	border-radius: 2px;
-}
-.pagination li a:hover,
-.pagination li a:focus {
-	background: #2c98f0;
-	color: #fff;
-	border: 1px solid #2c98f0;
-}
-@media screen and (max-width: 768px) {
-	.pagination li a {
-		padding: 7px 15px;
-	}
-}
-.pagination li.active a {
-	background: #2c98f0;
-	border: 1px solid #2c98f0 !important;
-}
-.pagination li.active a:hover,
-.pagination li.active a:focus {
-	background: #2c98f0;
-	color: #fff;
-	border: 1px solid #2c98f0 !important;
 }
 
 .btn {
@@ -1878,11 +1817,9 @@ body.offcanvas .colorlib-nav-toggle {
 	*display: inline;
 	width: 30px;
 	height: 2px;
-	color: #000;
 	font: bold 14px/0.4 Helvetica;
 	text-transform: uppercase;
 	text-indent: -55px;
-	background: #000;
 	-webkit-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
@@ -1892,7 +1829,6 @@ body.offcanvas .colorlib-nav-toggle {
 	content: "";
 	width: 30px;
 	height: 2px;
-	background: #000;
 	position: absolute;
 	left: 0;
 	-webkit-transition: 0.2s;
@@ -1901,15 +1837,12 @@ body.offcanvas .colorlib-nav-toggle {
 }
 .colorlib-nav-toggle.dark i {
 	position: relative;
-	color: #000;
-	background: #000;
 	-webkit-transition: all 0.2s ease-out;
 	-o-transition: all 0.2s ease-out;
 	transition: all 0.2s ease-out;
 }
 .colorlib-nav-toggle.dark i::before,
 .colorlib-nav-toggle.dark i::after {
-	background: #000;
 	-webkit-transition: 0.2s;
 	-o-transition: 0.2s;
 	transition: 0.2s;
@@ -2071,6 +2004,7 @@ ul {
 	padding-right: 20px;
 	margin: 30px auto 20px;
 	background: #f9bf3f;
+	color: #000;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
@@ -2172,12 +2106,14 @@ ul {
 .project-heading {
 	font-weight: 500;
 	margin-bottom: 10px;
+	color: #000;
 }
 
 .project-description {
 	font-size: 12px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	color: #000;
 }
 
 .img-fluid {
@@ -2220,3 +2156,72 @@ span {
 		vertical-align: middle
 	  }
   }
+
+  .switch {
+	position: relative;
+	display: inline-block;
+	width: 70px;
+	height: 34px;
+  }
+  
+  .switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  
+  .slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0px;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  .slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+  }
+  
+  input:checked + .slider {
+	background-color: #000;
+  }
+  
+  input:focus + .slider {
+	box-shadow: 0 0 1px #000;
+  }
+  
+  input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+  }
+  
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+.toggle-slider {
+	margin-top: 40px;
+}
+
+.darkmodetoggler {
+	color: #000;
+	margin-bottom: 0px;
+}
