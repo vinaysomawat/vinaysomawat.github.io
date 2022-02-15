@@ -514,7 +514,7 @@ body.offcanvas #colorlib-aside {
 	-ms-transform: translateX(0);
 	-o-transform: translateX(0);
 	transform: translateX(0);
-	width: 300px;
+	width: 372px;
 	background-color: #f9bf3f;
 	z-index: 999;
 	position: fixed;
@@ -1817,6 +1817,7 @@ body.offcanvas .colorlib-nav-toggle {
 	*display: inline;
 	width: 30px;
 	height: 2px;
+	background-color: #000;
 	font: bold 14px/0.4 Helvetica;
 	text-transform: uppercase;
 	text-indent: -55px;
@@ -1829,6 +1830,7 @@ body.offcanvas .colorlib-nav-toggle {
 	content: "";
 	width: 30px;
 	height: 2px;
+	background-color: #000;
 	position: absolute;
 	left: 0;
 	-webkit-transition: 0.2s;
@@ -1992,6 +1994,10 @@ body.offcanvas .colorlib-nav-toggle {
 	box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
 	opacity: 0.85 !important;
 	color: #ffffff !important;
+}
+
+.bmc-div {
+	margin-top: 15px;
 }
 
 ul {
@@ -2160,8 +2166,8 @@ span {
   .switch {
 	position: relative;
 	display: inline-block;
-	width: 70px;
-	height: 34px;
+	width: 60px;
+	height: 25px;
   }
   
   .switch input { 
@@ -2185,8 +2191,8 @@ span {
   .slider:before {
 	position: absolute;
 	content: "";
-	height: 26px;
-	width: 26px;
+	height: 18px;
+	width: 18px;
 	left: 4px;
 	bottom: 4px;
 	background-color: white;
@@ -2219,9 +2225,4 @@ span {
 
 .toggle-slider {
 	margin-top: 40px;
-}
-
-.darkmodetoggler {
-	color: #000;
-	margin-bottom: 0px;
 }
