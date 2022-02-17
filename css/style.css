@@ -273,7 +273,8 @@ figure figcaption {
 	transform: scaleX(1);
 }
 #colorlib-aside #colorlib-main-menu ul li.active a {
-	color: #2c98f0;
+	font-size: 15px;
+	font-weight: 600;
 }
 #colorlib-aside #colorlib-main-menu ul li.active a:after {
 	visibility: visible;

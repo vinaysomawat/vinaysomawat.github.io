@@ -4,13 +4,14 @@ function populateHTML(items, id) {
     var externalLink = document.getElementById(id);
 
     for (var i = 0; i < items.length; i++) {
-        var p = document.createElement("img");
-        p.src = items[i].imgLink;
-        p.style = 'width:60%';
+        var img = document.createElement("img");
+        img.src = items[i].imgLink;
+        img.style = 'width:60%';
+        img.alt = items[i].alt;
 
         var a = document.createElement("a");
         a.href = items[i].link;
-        a.append(p);
+        a.append(img);
 
         var divAnimate = document.createElement("div");
         divAnimate.className = "col-image";
