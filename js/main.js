@@ -302,7 +302,6 @@
 var Accordion = function (el, multiple) {
 	this.el = el || {};
 	this.multiple = multiple || false;
-
 	// Variables privadas
 	var links = this.el.find(".link");
 	// Evento
@@ -327,4 +326,4 @@ var accordion = new Accordion($("#accordion"), false);
 function enableDarkMode() {
 	var element = document.body;
 	element.classList.toggle("dark-mode");
- }
+}

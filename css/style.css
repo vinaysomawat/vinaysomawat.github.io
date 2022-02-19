@@ -167,6 +167,7 @@ figure figcaption {
 	margin: 0 10px;
 	width: 100%;
 	max-width: 150px;
+	max-height: 100px;
 	height: auto;
 }
 #colorlib-aside .author-img {
@@ -552,8 +553,9 @@ body.offcanvas .colorlib-nav-toggle {
 
 .colorlib-experience,
 .colorlib-skills,
+.colorlib-projects,
 .colorlib-education,
-.colorlib-blog,
+.colorlib-blogs,
 .colorlib-work,
 .colorlib-about,
 .colorlib-installation,
@@ -569,8 +571,9 @@ body.offcanvas .colorlib-nav-toggle {
 @media screen and (max-width: 768px) {
 	.colorlib-experience,
 	.colorlib-skills,
+	.colorlib-projects,
 	.colorlib-education,
-	.colorlib-blog,
+	.colorlib-blogs,
 	.colorlib-work,
 	.colorlib-about,
 	.colorlib-installation,
@@ -691,6 +694,10 @@ body.offcanvas .colorlib-nav-toggle {
 
 .project-image {
 	float: left;
+}
+
+.project-card {
+	height: 150px;
 }
 
 .project-info {
@@ -2051,6 +2058,8 @@ ul {
 	background: #f9bf3f;
 	font-size: 14px;
 	padding-left: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 .submenu li {
@@ -2284,5 +2293,14 @@ span {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	color: black;
+}
+
+.readmore {
+	color: #000;
+}
+.readmore p{
+	padding-bottom: 10px;
+    text-align: right;
+    font-weight: 600;
 }
   

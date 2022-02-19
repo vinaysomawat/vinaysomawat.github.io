@@ -1,25 +1,38 @@
 import { default as data } from "../db/db.js";
 
+/*
+	fetching latest blogs from medium.com
+*/
+function fetchBlogsFromMedium() {
+	fetch(
+		"https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@vinaysomawat"
+	)
+		.then((response) => response.json())
+		.then((data) => {
+			populateBlogs(data["items"], "blogs", "read-more-blogs");
+		});
+}
+
 function populateSkills(items, id) {
-	var skillsTag = document.getElementById(id);
-	for (var i = 0; i < items.length; i++) {
-		var h3 = document.createElement("h3");
+	let skillsTag = document.getElementById(id);
+	for (let i = 0; i < items.length; i++) {
+		let h3 = document.createElement("h3");
 		h3.innerHTML = items[i].skillName;
 
-		var divProgress = document.createElement("div");
+		let divProgress = document.createElement("div");
 		divProgress.className = "progress";
 
-		var divProgressBar = document.createElement("div");
+		let divProgressBar = document.createElement("div");
 		divProgressBar.className = "progress-bar color-" + items[i].color;
 		divProgressBar.style = "width:" + items[i].percentage + "%";
 		divProgress.append(divProgressBar);
 
-		var divProgressWrap = document.createElement("div");
+		let divProgressWrap = document.createElement("div");
 		divProgressWrap.className = "progress-wrap";
 		divProgressWrap.append(h3);
 		divProgressWrap.append(divProgress);
 
-		var divAnimateBox = document.createElement("div");
+		let divAnimateBox = document.createElement("div");
 		divAnimateBox.className = "col-md-6 animate-box";
 		divAnimateBox.append(divProgressWrap);
 
@@ -28,58 +41,120 @@ function populateSkills(items, id) {
 }
 
 function populateProjects(items, id) {
-	var projectdesign = document.getElementById(id);
-	for (var i = 0; i < items.length; i++) {
-		var h4 = document.createElement("h4");
+	let projectdesign = document.getElementById(id);
+	for (let i = 0; i < items.length; i++) {
+		let h4 = document.createElement("h4");
 		h4.className = "project-heading";
 		h4.innerHTML = items[i].projectName;
 
-		var a = document.createElement("a");
+		let a = document.createElement("a");
 		a.href = items[i].preview;
+		a.target = "_blank";
 		a.append(h4);
 
-		var img = document.createElement("img");
+		let img = document.createElement("img");
 		img.src = items[i].image;
 		img.className = "img-fluid";
 
-		var divResumeContentLeft = document.createElement("div");
+		let divResumeContentLeft = document.createElement("div");
 		divResumeContentLeft.className = "resume-content";
 		divResumeContentLeft.id = "left-div";
 		divResumeContentLeft.append(img);
 
-		var divResumeContentRight = document.createElement("div");
+		let divResumeContentRight = document.createElement("div");
 		divResumeContentRight.className = "resume-content";
 		divResumeContentRight.id = "right-div";
 
-		var p = document.createElement("p");
+		let p = document.createElement("p");
 		p.className = "project-description";
 		p.innerHTML = items[i].summary;
 
-		var divSpan = document.createElement("div");
-		for (var k = 0; k < items[i].techStack.length; k++) {
-			var span = document.createElement("span");
+		let divSpan = document.createElement("div");
+		for (let k = 0; k < items[i].techStack.length; k++) {
+			let span = document.createElement("span");
 			span.className = "badge badge-secondary";
 			span.innerHTML = items[i].techStack[k];
 			divSpan.append(span);
 		}
 
-		var divSubHeading = document.createElement("div");
+		let divSubHeading = document.createElement("div");
 		divSubHeading.className = "sub-heading";
 		divSubHeading.append(p);
 		divSubHeading.append(divSpan);
 		divResumeContentRight.append(divSubHeading);
 
-		var divResumeItem = document.createElement("div");
+		let divResumeItem = document.createElement("div");
 		divResumeItem.className = "resume-item";
 		divResumeItem.append(divResumeContentLeft);
 		divResumeItem.append(divResumeContentRight);
 		a.append(divResumeItem);
 
-		var divProjectCard = document.createElement("div");
+		let divProjectCard = document.createElement("div");
 		divProjectCard.className = "project-card";
 		divProjectCard.append(a);
 
-		var li = document.createElement("li");
+		let li = document.createElement("li");
+		li.append(divProjectCard);
+		projectdesign.append(li);
+	}
+}
+
+function populateBlogs(items, id, subid) {
+	let projectdesign = document.getElementById(id);
+	for (let i = 0; i < 3; i++) {
+		let h4 = document.createElement("h4");
+		h4.className = "project-heading";
+		h4.innerHTML = items[i].title;
+
+		let a = document.createElement("a");
+		a.href = items[i].link;
+		a.target = "_blank";
+		a.append(h4);
+
+		let img = document.createElement("img");
+		img.src = items[i].thumbnail;
+		img.className = "img-fluid";
+
+		let divResumeContentLeft = document.createElement("div");
+		divResumeContentLeft.className = "resume-content";
+		divResumeContentLeft.id = "left-div";
+		divResumeContentLeft.append(img);
+
+		let divResumeContentRight = document.createElement("div");
+		divResumeContentRight.className = "resume-content";
+		divResumeContentRight.id = "right-div";
+
+		let p = document.createElement("p");
+		p.className = "project-description";
+		let html = items[i].content;
+		let doc = /<p>(.*?)<\/p>/g.exec(html);
+		p.innerHTML = doc[1];
+
+		let divSpan = document.createElement("div");
+		for (let k = 0; k < items[i].categories.length; k++) {
+			let span = document.createElement("span");
+			span.className = "badge badge-secondary";
+			span.innerHTML = items[i].categories[k];
+			divSpan.append(span);
+		}
+
+		let divSubHeading = document.createElement("div");
+		divSubHeading.className = "sub-heading";
+		divSubHeading.append(p);
+		divSubHeading.append(divSpan);
+		divResumeContentRight.append(divSubHeading);
+
+		let divResumeItem = document.createElement("div");
+		divResumeItem.className = "resume-item";
+		divResumeItem.append(divResumeContentLeft);
+		divResumeItem.append(divResumeContentRight);
+		a.append(divResumeItem);
+
+		let divProjectCard = document.createElement("div");
+		divProjectCard.className = "project-card";
+		divProjectCard.append(a);
+
+		let li = document.createElement("li");
 		li.append(divProjectCard);
 		projectdesign.append(li);
 	}
@@ -155,7 +230,7 @@ function populateExp_Edu(items, id) {
 }
 
 function populateLinks(items, id) {
-	var footer = document.getElementById(id);
+	let footer = document.getElementById(id);
 
 	for (let i = 0; i < items.length; i++) {
 		if (items[i].label != "copyright-text") {
@@ -173,14 +248,14 @@ function populateLinks(items, id) {
 			let ul = document.createElement("ul");
 			for (let j = 0; j < items[i].data.length; j++) {
 				let li = document.createElement("li");
-                let a = document.createElement("a");
-                if (items[i].data[j].link) {
-				    a.href = items[i].data[j].link;
-                    a.target = "_blank";
-                }
-                if (items[i].data[j].func) {
-                    a.setAttribute("onclick", items[i].data[j].func);
-                }
+				let a = document.createElement("a");
+				if (items[i].data[j].link) {
+					a.href = items[i].data[j].link;
+					a.target = "_blank";
+				}
+				if (items[i].data[j].func) {
+					a.setAttribute("onclick", items[i].data[j].func);
+				}
 				a.innerHTML = items[i].data[j].text;
 
 				li.append(a);
@@ -192,19 +267,21 @@ function populateLinks(items, id) {
 		}
 
 		if (items[i].label == "copyright-text") {
-            let div = document.createElement('div');
-            div.className = 'copyright-text no-print';
-            for (let k = 0; k < items[i].data.length; k++) {
-                let p = document.createElement('p');
-                p.innerHTML = items[i].data[k];
-                div.append(p);
-            }
-            footer.append(div);
+			let div = document.createElement("div");
+			div.className = "copyright-text no-print";
+			for (let k = 0; k < items[i].data.length; k++) {
+				let p = document.createElement("p");
+				p.innerHTML = items[i].data[k];
+				div.append(p);
+			}
+			footer.append(div);
 		}
 	}
 }
 
 populateSkills(data.skills, "skills");
+
+fetchBlogsFromMedium();
 
 populateProjects(data.projects.web, "web-projects");
 populateProjects(data.projects.software, "software-projects");

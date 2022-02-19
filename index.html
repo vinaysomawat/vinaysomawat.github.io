@@ -10,7 +10,7 @@
       <meta name="keywords"
           content="portfolio,website,personal website,github,projects,computer science and engineering" />
       <meta name="author" content="Vinay Somawat" />
-      <!--Social Media icons-->
+      <!--------------------Social Media icons------------------------>
       <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -33,8 +33,8 @@
       <!-- Modernizr JS -->
       <script src="js/modernizr-2.6.2.min.js"></script>
       <!-----Google adsense code---->
-      <script data-ad-client="ca-pub-2147632065762164" async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- <script data-ad-client="ca-pub-2147632065762164" async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
       <script type="module" src="js/populateHTML.js"></script>
    </head>
 
@@ -44,12 +44,12 @@
             <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"
                 data-toggle="collapse" data-target="#navbar"
                 aria-expanded="false" aria-controls="navbar"><i></i></a>
-            <!----Side bar--->
+            <!--------------------[START] Side Bar-------------------------->
             <aside id="colorlib-aside" role="complementary"
                 class="border js-fullheight no-print">
                <div class="text-center">
                   <div class="author-img">
-                      <img src="images/logo.png">
+                     <img src="images/logo.png">
                   </div>
                   <h1 id="colorlib-logo"><a href="./index.html">Vinay
                         Somawat</a>
@@ -63,6 +63,8 @@
                         <li><a href="#" data-nav-section="skills">Skills</a>
                         </li>
                         <li><a href="#" data-nav-section="projects">Projects</a>
+                        </li>
+                        <li><a href="#" data-nav-section="blogs">Blogs</a>
                         </li>
                         <li><a href="#" data-nav-section="experience">Work
                               Experience</a></li>
@@ -82,9 +84,10 @@
                   </label>
                </div>
             </aside>
-            <!----- main page--------->
+            <!--------------------[END] Side Bar---------------------------->
+            <!--------------------[START] Main Page------------------------->
             <div id="colorlib-main">
-               <!---------------About me---------------------->
+               <!--------------------[START] About me-------------------------->
                <section class="colorlib-about" data-section="about">
                   <div class="colorlib-narrow-content">
                      <div class="row animate-box"
@@ -108,7 +111,8 @@
                      </div>
                   </div>
                </section>
-               <!---------------Skills---------------->
+               <!--------------------[END] About me---------------------------->
+               <!--------------------[START] Skills---------------------------->
                <section class="colorlib-skills" data-section="skills">
                   <div class="colorlib-narrow-content">
                      <div class="row row-bottom-padded-sm animate-box"
@@ -121,8 +125,9 @@
                      </div>
                   </div>
                </section>
-               <!--------------Projects---------------->
-               <section class="colorlib-skills" data-section="projects">
+               <!--------------------[END] Skills------------------------------>
+               <!--------------------[START] Projects-------------------------->
+               <section class="colorlib-projects" data-section="projects">
                   <div class="colorlib-narrow-content">
                      <div class="row row-bottom-padded-sm animate-box"
                          data-animate-effect="fadeInLeft">
@@ -170,7 +175,34 @@
                      </ul>
                   </div>
                </section>
-               <!---------------Work Experience----------->
+               <!--------------------[END] Projects---------------------------->
+               <!--------------------[START] Blogs----------------------------->
+               <section class="colorlib-blogs" data-section="blogs">
+                  <div class="colorlib-narrow-content">
+                     <div class="row row-bottom-padded-sm animate-box"
+                         data-animate-effect="fadeInLeft">
+                        <div class="about-desc">
+                           <h1>Latest <span style="color: #f9bf3f">Blogs</span>
+                           </h1>
+                        </div>
+                     </div>
+                     <ul id="accordion" class="accordion animate-box"
+                         data-animate-effect="fadeInLeft">
+                        <li class="open">
+                           <ul id="blogs" class="submenu"
+                               style="display: block;">
+                           </ul>
+                        </li>
+                        <a class="readmore"
+                            href="https://vinaysomawat.medium.com/"
+                            target="_blank">
+                           <p>Read more &RightArrow;</p>
+                        </a>
+                     </ul>
+                  </div>
+               </section>
+               <!--------------------[END] Blogs------------------------------->
+               <!--------------------[START] Work Experience------------------->
                <section class="colorlib-experience" data-section="experience">
                   <div class="colorlib-narrow-content">
                      <div class="row row-bottom-padded-sm animate-box fadeInLeft animated"
@@ -185,7 +217,8 @@
                      </div>
                   </div>
                </section>
-               <!---------------Education----------->
+               <!--------------------[END] Work Experience--------------------->
+               <!--------------------[START] Education------------------------->
                <section class="colorlib-education" data-section="education">
                   <div class="colorlib-narrow-content">
                      <div class="row row-bottom-padded-sm animate-box fadeInLeft animated"
@@ -198,7 +231,8 @@
                      </div>
                   </div>
                </section>
-               <!---------------Contact---------->
+               <!--------------------[END] Education--------------------------->
+               <!--------------------[START] Contact--------------------------->
                <section class="colorlib-contact" data-section="contact">
                   <div class="colorlib-narrow-content">
                      <div class="row row-bottom-padded-sm animate-box"
@@ -208,19 +242,23 @@
                         </div>
                         <p>If you would like to get in touch with me, be it for
                            exploring a technology, a business, or to just say
-                           hi, feel free to send me an email at vinaysomawat40@gmail.com
+                           hi, feel free to send me an email at
+                           vinaysomawat40@gmail.com
                         </p>
                      </div>
                   </div>
                </section>
-               <!---------------Footer------------->
+               <!--------------------[END] Contact----------------------------->
+               <!--------------------[START] Footer---------------------------->
                <section class="colorlib-footer no-print" data-section="footer">
                   <div class="colorlib-narrow-content">
                      <footer class="footer" id="footer">
                      </footer>
                   </div>
                </section>
+               <!--------------------[END] Footer------------------------------>
             </div>
+            <!-----[END] Main Page--------->
          </div>
       </div>
       <!-- jQuery -->
