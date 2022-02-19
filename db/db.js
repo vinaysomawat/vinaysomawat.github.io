@@ -261,7 +261,7 @@ export default {
 			label: "Resources",
 			data: [
 				{
-					text: "Enable Dark Theme",
+					text: "Enable Dark/Light Mode",
 					func: "enableDarkMode()",
 				},
 				{
