@@ -142,7 +142,6 @@ figure figcaption {
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
-	box-shadow: 0px 0px 3px 0px grey;
 }
 @media screen and (max-width: 768px) {
 	#colorlib-aside {
@@ -179,7 +178,13 @@ figure figcaption {
 	-moz-border-radius: 50%;
 	-ms-border-radius: 50%;
 	border-radius: 50%;
-	border: 3px solid white;
+	/* border: 3px solid white; */
+}
+
+#colorlib-aside .author-img img{
+	height: 100%; 
+    object-fit: contain;
+	padding: 30px;
 }
 #colorlib-aside h1 {
 	font-family: "Raleway", sans-serif;
@@ -235,7 +240,7 @@ figure figcaption {
 	text-decoration: none;
 	position: relative;
 	padding: 10px 0;
-	font-family: "Quicksand", Arial, sans-serif;
+	font-family: "Montserrat", sans-serif;;
 	-webkit-transition: 0.3s;
 	-o-transition: 0.3s;
 	transition: 0.3s;
@@ -649,7 +654,6 @@ body.offcanvas .colorlib-nav-toggle {
 	background: #f9bf3f;
 	color: #000;
 	border-radius: 4px;
-	box-shadow: 0px 0px 3px 0px grey;
 }
 .hire h2 {
 	line-height: 1.5;
@@ -887,7 +891,6 @@ body.offcanvas .colorlib-nav-toggle {
 	-moz-background-clip: padding;
 	background-clip: padding-box;
 	border-radius: 4px;
-	box-shadow: 0px 0px 3px 0px grey;
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label:after {
@@ -1970,49 +1973,9 @@ body.offcanvas .colorlib-nav-toggle {
 	opacity: 0;
 }
 
-/* Buy me a coffe button css*/
-.bmc-button img {
-	width: 27px !important;
-	margin-bottom: 0px !important;
-	box-shadow: none !important;
-	border: none !important;
-	vertical-align: middle !important;
-}
-.bmc-button {
-	line-height: 36px !important;
-	height: 37px !important;
-	text-decoration: none !important;
-	color: #ffffff !important;
-	background-color: #000 !important;
-	border-radius: 3px !important;
-	border: 1px solid transparent !important;
-	padding: 1px 9px !important;
-	font-size: 22px !important;
-	letter-spacing: 0.6px !important;
-	box-shadow: 0px 1px 2px rgba(190, 190, 190, 0.5) !important;
-	-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
-	margin: 10px 20px !important;
-	font-family: "Cookie", cursive !important;
-	-webkit-box-sizing: border-box !important;
-	box-sizing: border-box !important;
-	-o-transition: 0.3s all linear !important;
-	-webkit-transition: 0.3s all linear !important;
-	-moz-transition: 0.3s all linear !important;
-	-ms-transition: 0.3s all linear !important;
-	transition: 0.3s all linear !important;
-}
-.bmc-button:hover,
-.bmc-button:active,
-.bmc-button:focus {
-	-webkit-box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
-	text-decoration: none !important;
-	box-shadow: 0px 1px 2px 2px rgba(190, 190, 190, 0.5) !important;
-	opacity: 0.85 !important;
-	color: #ffffff !important;
-}
-
 .bmc-div {
 	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 ul {
@@ -2029,7 +1992,6 @@ ul {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	box-shadow: 0px 0px 3px 0px grey;
 }
 
 .accordion .link {
@@ -2253,3 +2215,74 @@ span {
 		display: none !important;
 	}
 }
+
+:root {
+	--footer-bg: #f9bf3f;
+	--color: #000;
+	--color-smooth: #000;
+	--input-border: #3a456a;
+	--btn-bg-color: #f1f2fc;
+	--btn-hover-bg: #d5d9f6;
+	--btn-color: #1e2641;
+  }
+  
+  footer {
+	font-size: 13px;
+	background: var(--footer-bg);
+	padding: 2em 4em;
+	/* display: flex; */
+	align-items: start;
+	justify-content: center;
+	gap: 1em;
+	border-radius: 5px;
+  }
+  
+  footer ul {
+	list-style: none;
+	padding-left: 0px;
+  }
+  
+  .col {
+	flex: 1;
+	margin: 0 35px;
+	display: inline-grid;
+  }
+  
+  .col-title {
+	color: var(--color);
+	font-size: 1.1em;
+	font-weight: 600;
+	padding: 0.5em 0;
+  }
+  
+  .col-list a {
+	color: var(--color-smooth);
+	text-decoration: none;
+	line-height: 1.4;
+	font-weight: 400;
+	cursor: pointer;
+  }
+  
+  .col-list a:hover,
+  .col-list a:focus {
+	text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 750px) {
+	footer {
+	  padding: 2em;
+	  flex-direction: column;
+	}
+  }
+
+.copyright-text {
+	text-align: right;
+	font-size: 10px
+}
+
+.copyright-text p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: black;
+}
+  

@@ -1,28 +1,18 @@
 export default {
-    bio: {
-        about: {
-            text : [
-                "Hi &#128075;",
-                "I'm Vinay Somawat. I’m currently working as a software engineer@Novopay specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
-                "I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
-                "I love to read, listen to music, and travel.",
-            ]
-        },
-        buymecoffee: {
-            text: "If you like my work and efforts, please consider buying me a coffee. Thank you for your support!",
-            imgLink: "images/BMC-btn-logo.svg",
-            link: "https://www.buymeacoffee.com/r194dME8y",
-            class: "bmc-button",
-            label: "Buy me a coffee"
-        },
-        contact: {
-            text : [
-                "If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: vinaysomawat40@gmail.com",
-            ]
-        },
-        footer: {
-            text: "&copy; No Copyrights, feel free to use this template &#128279;"
-        }
+	bio: {
+		about: {
+			text: [
+				"Hi &#128075;",
+				"I'm Vinay Somawat. I’m currently working as a software engineer@Novopay specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
+				"I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
+				"I love to read, listen to music, and travel.",
+			],
+		},
+		contact: {
+			text: [
+				"If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: vinaysomawat40@gmail.com",
+			],
+		},
 	},
 	skills: [
 		{
@@ -249,40 +239,64 @@ export default {
 			icon: "book",
 		},
 	],
-	links: [
+	footer: [
 		{
-			text: "StackOverflow",
-			color: "darkorange",
-			style: "width: 80%",
-			alt: "stackoverflow profile",
-			imgLink: "https://i.stack.imgur.com/BDie5.png",
-			link: "https://stackoverflow.com/users/8461233/vinay-somawat",
+			label: "Dev Profiles",
+			data: [
+				{
+					text: "Stackoverflow",
+					link: "https://stackoverflow.com/users/8461233/vinay-somawat",
+				},
+				{
+					text: "GitHub",
+					link: "https://github.com/vinaysomawat",
+				},
+				{
+					text: "LeetCode",
+					link: "https://leetcode.com/somawatvinay/",
+				},
+			],
 		},
 		{
-			text: "GitHub",
-			color: "black",
-			style: "width: 80%",
-			alt: "GitHub Profile",
-			imgLink: "https://pngimg.com/uploads/github/github_PNG15.png",
-			link: "https://github.com/vinaysomawat",
+			label: "Resources",
+			data: [
+				{
+					text: "Enable Dark Theme",
+					func: "enableDarkMode()",
+				},
+				{
+					text: "Print this page",
+					func: "window.print()",
+				},
+				{
+					text: "Clone this page",
+					link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+				},
+			],
 		},
 		{
-			text: "LeetCode",
-			color: "black",
-			style: "width: 80%",
-			alt: "Leetcode Profile",
-			imgLink:
-				"https://cdn-images-1.medium.com/max/1600/0*GePc7lo4CF4A3guP.png",
-			link: "https://leetcode.com/somawatvinay/",
+			label: "Social Profiles",
+			data: [
+				{
+					text: "Linkedin",
+					link: "https://www.linkedin.com/in/vinaysomawat/",
+				},
+				{
+					text: "Twitter",
+					link: "https://twitter.com/thesigmakid",
+				},
+				{
+					text: "Buy me a coffee",
+					link: "https://www.buymeacoffee.com/r194dME8y",
+				},
+			],
 		},
 		{
-			text: "Linkdin",
-			color: "black",
-			style: "width: 80%",
-			alt: "Linkedin Profile",
-			imgLink:
-				"https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/1280px-LinkedIn_Logo.svg.png",
-			link: "https://www.linkedin.com/in/vinaysomawat/",
+			label: "copyright-text",
+			data: [
+				"Made with &hearts; by Vinay Somawat.",
+				"&copy; No Copyrights. Feel free to use this template."
+			],
 		},
 	],
 };
