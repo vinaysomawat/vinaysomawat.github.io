@@ -3,7 +3,7 @@ export default {
 		about: {
 			text: [
 				"Hi &#128075;",
-				"I'm Vinay Somawat. I’m currently working as a software engineer@Novopay specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
+				"I'm Vinay Somawat. I’m currently working as a Software Engineer at Biofourmis India specialized in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
 				"I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
 				"I love to read, listen to music, and travel.",
 			],
@@ -178,9 +178,26 @@ export default {
 	},
 	experience: [
 		{
+			title: "Biofourmis India Pvt. Ltd.",
+			duration: "April 2022 - Present",
+			subtitle: "Software Engineer",
+			details: [
+				"Coming soon.."
+			],
+			tags: [
+				"JavaScript",
+				"Angular",
+				"React",
+				"Bootstrap",
+				"Nodejs",
+				"Jenkins",
+			],
+			icon: "heartbeat",
+		},
+		{
 			title: "Novopay Solutions Pvt. Ltd.",
-			duration: "June 2020 - Present",
-			subtitle: "Software Engineer, SDE Intern",
+			duration: "June 2020 - April 2022",
+			subtitle: "Software Engineer",
 			details: [
 				"Supporting both frontend & backend teams for AEPS, DMT transaction, CMS Service, gateways.",
 				"Working on biometric eKYCs, CDM card and onboarding retailers flows.",
