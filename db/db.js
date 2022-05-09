@@ -182,7 +182,7 @@ export default {
 			duration: "April 2022 - Present",
 			subtitle: "Software Engineer",
 			details: [
-				"Coming soon.."
+				"Remote Patient Monitoring System"
 			],
 			tags: [
 				"JavaScript",
