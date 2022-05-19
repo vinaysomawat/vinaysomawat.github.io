@@ -16,11 +16,10 @@ function fetchBlogsFromMedium() {
 function populateSkills(items, id) {
 	let skillsTag = document.getElementById(id);
 	for (let i = 0; i < items.length; i++) {
-		let h3 = document.createElement("h3");
+		let h3 = getElement('h3',null);
 		h3.innerHTML = items[i].skillName;
 
-		let divProgress = document.createElement("div");
-		divProgress.className = "progress";
+		let divProgress = getElement('div','progress');
 
 		let divProgressBar = document.createElement("div");
 		divProgressBar.className = "progress-bar color-" + items[i].color;
@@ -96,12 +95,18 @@ function populateProjects(items, id) {
 		let li = document.createElement("li");
 		li.append(divProjectCard);
 		projectdesign.append(li);
+
+		if(i != items.length-1) {
+			let hr = document.createElement('hr');
+			projectdesign.append(hr);
+		}
 	}
 }
 
 function populateBlogs(items, id, subid) {
 	let projectdesign = document.getElementById(id);
-	for (let i = 0; i < 3; i++) {
+	let count = 3;
+	for (let i = 0; i < count; i++) {
 		let h4 = document.createElement("h4");
 		h4.className = "project-heading";
 		h4.innerHTML = items[i].title;
@@ -157,6 +162,9 @@ function populateBlogs(items, id, subid) {
 		let li = document.createElement("li");
 		li.append(divProjectCard);
 		projectdesign.append(li);
+		if(i!=count-1) {
+			projectdesign.append(document.createElement("hr"));
+		}
 	}
 }
 
@@ -278,6 +286,13 @@ function populateLinks(items, id) {
 		}
 	}
 }
+
+function getElement(tagName,className) {
+	let item = document.createElement(tagName);
+	item.className = className;
+	return item;
+}
+
 
 populateSkills(data.skills, "skills");
 

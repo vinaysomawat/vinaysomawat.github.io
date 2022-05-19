@@ -570,7 +570,6 @@ body.offcanvas .colorlib-nav-toggle {
 	.colorlib-skills,
 	.colorlib-projects,
 	.colorlib-education,
-	.colorlib-blogs,
 	.colorlib-work,
 	.colorlib-about,
 	.colorlib-installation,
@@ -578,6 +577,10 @@ body.offcanvas .colorlib-nav-toggle {
 	.colorlib-contact {
 		padding-top: 2em;
 		padding-bottom: 0em;
+	}
+	
+	.colorlib-blogs {
+		display: none;
 	}
 }
 
@@ -1990,7 +1993,7 @@ ul {
 	width: 100%;
 	padding-left: 20px;
 	padding-right: 20px;
-	margin: 30px auto 20px;
+	/* margin: 30px auto 20px; */
 	background: #f9bf3f;
 	color: #000;
 	-webkit-border-radius: 4px;

@@ -182,12 +182,11 @@ export default {
 			duration: "April 2022 - Present",
 			subtitle: "Software Engineer",
 			details: [
-				"Remote Patient Monitoring System"
+				"Working on the products in the healthcare/digital therapeutics domain."
 			],
 			tags: [
 				"JavaScript",
 				"Angular",
-				"React",
 				"Bootstrap",
 				"Nodejs",
 				"Jenkins",
@@ -199,8 +198,9 @@ export default {
 			duration: "June 2020 - April 2022",
 			subtitle: "Software Engineer",
 			details: [
-				"Supporting both frontend & backend teams for AEPS, DMT transaction, CMS Service, gateways.",
-				"Working on biometric eKYCs, CDM card and onboarding retailers flows.",
+				"Implemented Aadhaar Enabled Payment services such as Bio-metric eKYC, Cash Withdrawal, Balance Enquiry, Mini-Statements, and Money transfer; completed more than 20 story points in each sprint.",
+				"Integrated QR Code and reduced the effective time by 50 percent to load money into wallet, Clevertap events to track user actions, Freshdesk ticketing service and chat-bot services. Worked on user onboarding, approval, and finance interfaces.",
+				"Co-ordinated closely with the product team, backend team, android team, and QA team to deliver the product builds before deadlines.",
 			],
 			tags: [
 				"JavaScript",
