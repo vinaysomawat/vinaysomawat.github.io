@@ -550,6 +550,7 @@ body.offcanvas .colorlib-nav-toggle {
 
 .colorlib-experience,
 .colorlib-skills,
+.colorlib-profile,
 .colorlib-projects,
 .colorlib-education,
 .colorlib-blogs,
@@ -565,9 +566,15 @@ body.offcanvas .colorlib-nav-toggle {
 	width: 100%;
 	display: block;
 }
+
+.profile-cards {
+	display: flex;
+}
+
 @media screen and (max-width: 768px) {
 	.colorlib-experience,
 	.colorlib-skills,
+	.colorlib-profile,
 	.colorlib-projects,
 	.colorlib-education,
 	.colorlib-work,
@@ -581,6 +588,11 @@ body.offcanvas .colorlib-nav-toggle {
 	
 	.colorlib-blogs {
 		display: none;
+	}
+
+	.profile-cards {
+		display: flex;
+		flex-direction: column;
 	}
 }
 
@@ -2189,7 +2201,7 @@ span {
   
   .col {
 	flex: 1;
-	margin: 0 35px;
+	margin: 0 30px;
 	display: inline-grid;
   }
   

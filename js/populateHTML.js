@@ -11,7 +11,7 @@ import {
 const { about, contact } = bio;
 const { webProjects, softwareProjects, androidProjects, freelanceProjects } =
   projects;
-const { mediumProfile } = URLs;
+const { mediumURL } = URLs;
 
 /**
  * Fetches blogs from Medium profile.
@@ -380,7 +380,7 @@ function getElement(tagName, className) {
 
 populateSkills(skills, "skills");
 
-fetchBlogsFromMedium(mediumProfile);
+fetchBlogsFromMedium(mediumURL);
 
 populateProjects(webProjects, "web-projects");
 populateProjects(softwareProjects, "software-projects");
