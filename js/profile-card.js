@@ -58,7 +58,6 @@ window.addEventListener("DOMContentLoaded", async function () {
         const username = el.getAttribute("username");
 
         const response = await get(`https://api.github.com/users/${username}`);
-        console.log(response);
         const { name, avatar_url, public_repos, followers, html_url, following } = response;
 
         el.innerHTML = `
