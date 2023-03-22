@@ -8,8 +8,7 @@ import {
   footer,
 } from "../db/db.js";
 
-const { about, contact } = bio;
-const { webProjects, softwareProjects, androidProjects, freelanceProjects } =
+const { disclaimer, webProjects, softwareProjects, androidProjects, freelanceProjects } =
   projects;
 const { mediumURL } = URLs;
 
@@ -34,6 +33,26 @@ async function fetchBlogsFromMedium(url) {
       `Error in fetching the blogs from Medium profile: ${error}`
     );
   }
+}
+
+/**
+ * Populates bio to the HTML page.
+ *
+ * @function
+ *
+ * @param {Array} items - An array of objects that contain bio information.
+ * @param {string} id - The id of the HTML element to which bio will be appended.
+ *
+ * @returns {void}
+ */
+
+function populateBio(items, id) {
+  const bioTag = document.getElementById(id);
+  items.forEach((bioItem) => {
+    const p = getElement("p", null);
+    p.innerHTML = bioItem;
+    bioTag.append(p);
+  });
 }
 
 /**
@@ -178,6 +197,7 @@ function populateBlogs(items, id) {
     const img = document.createElement("img");
     img.src = items[i].thumbnail;
     img.className = "img-fluid";
+    img.alt = items[i].title;
 
     const divResumeContentLeft = document.createElement("div");
     divResumeContentLeft.className = "resume-content";
@@ -364,6 +384,11 @@ function populateLinks(items, id) {
   });
 }
 
+function populateDisclaimer(item, id) {
+  let element = document.getElementById(id);
+  element.innerHTML = item;
+}
+
 /**
  * Creates a new element with specified tag name and class name.
  *
@@ -378,6 +403,8 @@ function getElement(tagName, className) {
   return item;
 }
 
+populateBio(bio, "bio");
+
 populateSkills(skills, "skills");
 
 fetchBlogsFromMedium(mediumURL);
@@ -386,6 +413,7 @@ populateProjects(webProjects, "web-projects");
 populateProjects(softwareProjects, "software-projects");
 populateProjects(androidProjects, "android-projects");
 populateProjects(freelanceProjects, "freelance-projects");
+populateDisclaimer(disclaimer, "project-disclaimer");
 
 populateExp_Edu(experience, "experience");
 populateExp_Edu(education, "education");

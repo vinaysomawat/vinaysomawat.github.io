@@ -1,53 +1,33 @@
-export const bio = {
-  about: {
-    text: [
-      "Hi &#128075;",
-      "I'm Vinay Somawat. I’m currently working as a Software Engineer at Biofourmis India specialize in JavaScript Applications. I did my undergrad in CS from NIT Warangal.",
-      "I'm a developer, geek and curious human besides being an OpenSource enthusiast. I have experience of delivering solutions for interesting problems from startup and industry space.",
-      "I love to read, listen to music, and travel.",
-    ],
-  },
-  contact: {
-    text: [
-      "If you would like to get in touch with me, be it for exploring a technology, a business, or to just say hi, feel free to send me an email. My email address is: vinaysomawat40@gmail.com",
-    ],
-  },
-};
+export const bio = [
+  "Hello there &#128075;",
+  "I'm Vinay Somawat, a Software Engineer at Biofourmis India with a specialization in JavaScript Applications. I have a passion for all things tech and consider myself a curious and enthusiastic developer.",
+  "Apart from coding, I love to read, listen to music, and travel.",
+  "As a lifelong learner, I'm always seeking new knowledge and experiences to broaden my perspective and enhance my skills.",
+  "Thanks for taking the time to learn a little about me!",
+];
 
 export const skills = [
   {
     title: "Languages",
-    skillName: "JavaScript, C++",
+    skillName: "JavaScript, TypeScript",
     color: "1",
-    percentage: "70",
+    percentage: "80",
   },
   {
     title: "Frameworks/Libraries",
-    skillName: "Angular, Reactjs",
+    skillName: "Angular, Rxjs, Ngxs",
     color: "6",
-    percentage: "50",
-  },
-  {
-    title: "Backend",
-    skillName: "Nodejs, MongoDB",
-    color: "2",
-    percentage: "40",
-  },
-  {
-    title: "Clouds",
-    skillName: "AWS(EC2, S3), Heroku, Netlify",
-    color: "3",
-    percentage: "30",
+    percentage: "70",
   },
   {
     title: "Design",
-    skillName: "HTML, Bootstrap, SCSS",
+    skillName: "HTML, Bootstrap, Tailwind",
     color: "4",
     percentage: "70",
   },
   {
     title: "Version Control",
-    skillName: "GitHub, JIRA, Trello",
+    skillName: "GitHub, JIRA, Bitbucket",
     color: "7",
     percentage: "70",
   },
@@ -58,8 +38,8 @@ export const skills = [
     percentage: "80",
   },
   {
-    title: "Saas products",
-    skillName: "CleverTap, FreshDesk",
+    title: "Analytics",
+    skillName: "CleverTap, Countly",
     color: "5",
     percentage: "50",
   },
@@ -72,6 +52,8 @@ export const skills = [
 ];
 
 export const projects = {
+  disclaimer:
+    "*** All the projects I listed were completed during my college-level development journey. As for my work at the industry level, those projects are confidential and cannot be disclosed.",
   webProjects: [
     {
       projectName: "Programming Diaries",
@@ -176,7 +158,7 @@ export const experience = [
     duration: "April 2022 - Present",
     subtitle: "Software Engineer",
     details: [
-      "Working on the products in the healthcare/digital therapeutics domain.",
+      "Currently involved in developing healthcare and digital therapeutics products."
     ],
     tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
     icon: "heartbeat",
@@ -186,9 +168,9 @@ export const experience = [
     duration: "June 2020 - April 2022",
     subtitle: "Software Engineer",
     details: [
-      "Implemented Aadhaar Enabled Payment services such as Bio-metric eKYC, Cash Withdrawal, Balance Enquiry, Mini-Statements, and Money transfer; completed more than 20 story points in each sprint.",
-      "Integrated QR Code and reduced the effective time by 50 percent to load money into wallet, Clevertap events to track user actions, Freshdesk ticketing service and chat-bot services. Worked on user onboarding, approval, and finance interfaces.",
-      "Co-ordinated closely with the product team, backend team, android team, and QA team to deliver the product builds before deadlines.",
+      "Successfully implemented Aadhaar Enabled Payment services, including Bio-metric eKYC, Cash Withdrawal, Balance Enquiry, Mini-Statements, and Money Transfer, achieving more than 20 story points in each sprint.",
+      "Streamlined the process of loading money into the wallet by integrating QR Code, which reduced the time required by 50%. Also implemented Clevertap events to track user actions, Freshdesk ticketing service, and chat-bot services. Contributed to user onboarding, approval, and finance interfaces.",
+      "Collaborated closely with cross-functional teams such as product, backend, android, and QA, ensuring timely delivery of product builds to meet deadlines",
     ],
     tags: ["JavaScript", "Angular", "React", "Bootstrap", "Nodejs", "Jenkins"],
     icon: "qrcode",
@@ -198,8 +180,8 @@ export const experience = [
     duration: "May 2019 - June 2019",
     subtitle: "SDE Intern",
     details: [
-      "Worked as a full stack developer to support tech team.",
-      "Developed a customer Web Application from scratch for social media management.",
+      "Contributed as a full-stack developer to provide technical support to the team",
+      "Designed and developed a comprehensive Web Application for social media management, starting from the ground up, to cater to customer needs.",
     ],
     tags: ["JavaScript", "Angular", "Bootstrap", "Java", "Spring Boot"],
     icon: "group",
@@ -212,9 +194,9 @@ export const education = [
     duration: "",
     subtitle: "National Institute of Technology, Warangal",
     details: [
-      "Qualified GATE-2020.",
-      "Active Competitive Programmer with CodeChef Rating 1841*.",
-      "Received 500+ stars and 300+ forks on GitHub projects.",
+      "I successfully qualified GATE-2020, demonstrating my aptitude and expertise in the field.",
+      "As an active competitive programmer, I have achieved a CodeChef rating of 1841*, showcasing my skills in solving complex programming problems.",
+      "My GitHub projects have earned over 1k stars and forks, a testament to my ability to create high-quality and impactful code.",
     ],
     tags: [
       "Data Structures & Algorithms",
@@ -231,8 +213,8 @@ export const education = [
     duration: "",
     subtitle: "Board of Secondary Education, Rajasthan",
     details: [
-      "Qualified JEE Advanced, Main & BITSAT.",
-      "Secured 99.5 percentile in Class 12th Boards Examinations.",
+      "I have successfully qualified JEE Advanced, Main, and BITSAT, demonstrating my strong aptitude and skills in these highly competitive exams.",
+      "Additionally, I am proud to have achieved an exceptional 99.5 percentile in my Class 12th Boards Examinations, reflecting my dedication and hard work towards academic excellence.",
     ],
     tags: ["Physics", "Chemistry", "Mathematics"],
     icon: "book",
@@ -300,9 +282,9 @@ export const footer = [
   },
 ];
 
-const gitUserName = 'vinaysomawat';
-const mediumUserName = 'vinaysomawat';
+const gitUserName = "vinaysomawat";
+const mediumUserName = "vinaysomawat";
 
 export const URLs = {
-	mediumURL: `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
+  mediumURL: `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
 };

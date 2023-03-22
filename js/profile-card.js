@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         const { gold, silver, bronze } = user.badge_counts;
 
         el.innerHTML = `
-        <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border: 1px solid #e1e4e8; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
+        <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
                 <div style="display: flex; align-items: center;">
                     <img style="width: 48px; height: 48px; border-radius: 50%" src="${profile_image}" alt="Profile image"></img>
                     <div style="display: flex; flex-direction: column; margin-left: 12px">
@@ -61,7 +61,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         const { name, avatar_url, public_repos, followers, html_url, following } = response;
 
         el.innerHTML = `
-            <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border: 1px solid #e1e4e8; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
+            <div style="font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji; border-radius: 6px; line-height: 1.5; padding: 16px; font-size: 14px; color: #24292e; background-color: #f9bf3f;">
                 <div style="display: flex; align-items: center; margin-top: -4px">
                     <img style="width: 48px; height: 48px; border-radius: 50%" src="${avatar_url}" alt="Profile image"></img>
                     <div style="display: flex; flex-direction: column; margin-left: 12px">
