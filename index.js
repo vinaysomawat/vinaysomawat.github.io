@@ -8,8 +8,7 @@ import {
     footer,
   } from "./data.js";
   
-  const { webProjects, softwareProjects, androidProjects, freelanceProjects } =
-    projects;
+
   const { mediumURL } = URLs;
   
   /**
@@ -404,10 +403,7 @@ import {
   
   fetchBlogsFromMedium(mediumURL);
   
-  populateProjects(webProjects, "web-projects");
-  populateProjects(softwareProjects, "software-projects");
-  populateProjects(androidProjects, "android-projects");
-  populateProjects(freelanceProjects, "freelance-projects");
+
   
   populateExp_Edu(experience, "experience");
   populateExp_Edu(education, "education");
