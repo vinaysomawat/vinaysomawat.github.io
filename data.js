@@ -159,7 +159,7 @@ export const experience = [
             "Working in support and escalation team."
         ],
         tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
-        icon: "heartbeat",
+        icon: "truck ",
     },
     {
         title: "Biofourmis India Private Limited",
@@ -297,10 +297,3 @@ export const footer = [
         ],
     },
 ];
-
-const gitUserName = "vinaysomawat";
-const mediumUserName = "vinaysomawat";
-
-export const URLs = {
-    mediumURL: `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${mediumUserName}`,
-};

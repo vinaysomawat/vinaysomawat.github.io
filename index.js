@@ -1,16 +1,17 @@
 import {
     bio,
     skills,
-    URLs,
     projects,
     education,
     experience,
     footer,
   } from "./data.js";
+
+import { URLs } from './user-data/urls.js';
   
   const { webProjects, softwareProjects, androidProjects, freelanceProjects } =
     projects;
-  const { mediumURL } = URLs;
+  const { medium, gitConnected } = URLs;
   
   /**
    * Fetches blogs from Medium profile.
@@ -33,6 +34,49 @@ import {
         `Error in fetching the blogs from Medium profile: ${error}`
       );
     }
+  }
+
+
+  async function fetchGitConnectedData(url) {
+    try {
+      const response = await fetch(url);
+      console.log(response);
+      const { basics } = await response.json();
+      // populateBlogs(items, "blogs");
+      mapBasicResponse(basics);
+    } catch (error) {
+      throw new Error(
+        `Error in fetching the blogs from git connected: ${error}`
+      );
+    }
+  }
+
+  function mapBasicResponse(basics) {
+    const {
+      name,
+      label,
+      image,
+      email,
+      phone,
+      url,
+      summary,
+      profiles,
+      headline,
+      blog,
+      yearsOfExperience,
+      username,
+      locationAsString,
+      region,
+      karma,
+      id,
+      followers,
+      following,
+      picture,
+      website
+  } = basics;
+  
+  // added title of page
+    window.parent.document.title = name;
   }
   
   /**
@@ -402,7 +446,8 @@ import {
   
   populateSkills(skills, "skills");
   
-  fetchBlogsFromMedium(mediumURL);
+  fetchBlogsFromMedium(medium);
+  fetchGitConnectedData(gitConnected);
   
   populateProjects(webProjects, "web-projects");
   populateProjects(softwareProjects, "software-projects");
