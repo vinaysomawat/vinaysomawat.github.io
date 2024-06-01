@@ -4,7 +4,7 @@ export const bio = [
     "studying harpsichord with James Johnstone and Nicholas Parle."
 ];
 
-export const skills = [
+/*export const skills = [
     {
         title: "Harpsichord",
         skillName: "JavaScript, TypeScript",
@@ -47,7 +47,7 @@ export const skills = [
         color: "6",
         percentage: "70",
     },
-];
+];*/
 
 export const projects = {
     webProjects: [
