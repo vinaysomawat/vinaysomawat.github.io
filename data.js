@@ -1,26 +1,24 @@
 export const bio = [
-    "Hello there, This is Vinay Somawat.",
-    `Experienced Frontend Software Engineer with a strong track record of successfully upgrading applications, optimizing performance, and delivering innovative solutions.`,
-    `Eager to apply my technical expertise and in-depth
-    product understanding to drive impactful contributions and exceed expectations in challenging projects.`,
-    "Thanks for taking the time to learn a little about me!",
+    "Kiele (Ki) Sacco is an American harpsichordist based in London.",
+    "She is currently a masters student at the Guildhall School of Music and Drama,",
+    "studying harpsichord with James Johnstone and Nicholas Parle."
 ];
 
-export const skills = [
+/*export const skills = [
     {
-        title: "Languages",
+        title: "Harpsichord",
         skillName: "JavaScript, TypeScript",
         color: "1",
         percentage: "80",
     },
     {
-        title: "Frameworks/Libraries",
+        title: "Keyboard Continuo",
         skillName: "Angular, RxJS, NGXS",
         color: "6",
         percentage: "70",
     },
     {
-        title: "Design",
+        title: "Harpsichord Tuning",
         skillName: "HTML, Bootstrap, Tailwind",
         color: "4",
         percentage: "70",
@@ -49,17 +47,20 @@ export const skills = [
         color: "6",
         percentage: "70",
     },
-];
+];*/
 
 export const projects = {
     webProjects: [
         {
-            projectName: "Programming Diaries",
-            image: "images/programmingdiaries.png",
+            projectName: "Dartington Summer School - Baroque Orchestra 2023",
+            image: "images-ki/Dartington-23.jpeg",
             summary:
-                "Developed a full stack blog application to provide content on techical topics across the internet with admin interface.",
-            preview: "https://programmingdiaries.herokuapp.com/",
-            techStack: ["Django", "SQLite", "Bootstrap", "JavaScript", "Heroku"],
+                "I was selected as the keyboard continuo player for a week long program at the Dartington Summer School.",
+                "The Baroque Orchestra presenting a programme of orchestral music, and another programme of Bach's B minor Mass.",
+                "The orchestra was directed by Rachel Podger, and the B minor Mass was conducted by John Butt.",
+                "The Lever Hulme Foundation generously provided a bursary for me to attend this course."
+            //preview: "https://programmingdiaries.herokuapp.com/",
+            //techStack: ["Django", "SQLite", "Bootstrap", "JavaScript", "Heroku"],
         },
         {
             projectName: "Find Your Bank",
@@ -213,28 +214,122 @@ export const experience = [
 
 export const education = [
     {
-        title: "B.Tech. in Computer Science and Engineering",
-        duration: "2016 - 2020",
-        subtitle: "National Institute of Technology, Warangal",
-        details: [],
+        title: "Masters Candidate",
+        duration: "2021-2024",
+        subtitle: "Guildhall School of Music and Drama",
+        details: [
+            "Current masters student studying with James Johnstone and Nicholas Parle."
+        ],
         tags: [
-            "Data Structures & Algorithms",
-            "Operating Systems",
-            "Database Management System",
-            "Computer Networks",
-            "Compiler Designing",
-            "Cloud Computing",
+            "Historical Performance",
+            "Harpsichord",
+            "Continuo",
+            "HP Opera Scenes",
+            "Historical Gesture",
+            "Ornamentation",
         ],
         icon: "graduation-cap",
     },
     {
+        title: "Graduate Certificate",
+        duration: "2022-2023",
+        subtitle: "Guildhall School of Music and Drama",
+        details: [ ],
+        tags: [
+            "Historical Performance",
+            "Harpsichord",
+            "Continuo",
+            "HP Opera Scenes",
+            "Historical Gesture",
+            "Ornamentation",
+        ],
+        icon: "graduation-cap",
+    },
+    {
+        title: "Masters of Music Candidate",
+        duration: "2021-2022",
+        subtitle: "University of North Texas",
+        details: [
+            "Harpsichord major studying with Dr. Bradley Bennight, and Vox Aquilae fellow, with Dr. Alan Hightower."
+        ],
+        tags: [
+            "Historical Performance",
+            "Harpsichord",
+            "Continuo",
+            "Keyboard Improvisation",
+            "Jazz Piano",
+            "Organ",
+            "Baroque Orchestra",
+            "Vox Aquilae",
+            "Fellow",
+        ],
+        icon: "book",
+    },
+    {
+        title: "Bachelor of Music",
+        duration: "2019-2021",
+        subtitle: "Indiana University, Jacobs School of Music",
+        details: [
+            "Major: Historical Performance - Instrumental (harpsichord)"
+        ],
+        tags: [
+            "Historical Performance",
+            "Harpsichord",
+            "Continuo",
+            "Viola da gamba",
+            "Recorder",
+            "Organ",
+            "Carillon",
+            "Music Theory",
+            "Aural Skills",
+        ],
+        icon: "graduation-cap",
+    },
+    {
+        title: "Bachelor of Science in Music and an Outside Field",
+        duration: "2019-2021",
+        subtitle: "Indiana University, Jacobs School of Music",
+        details: [
+            "Major: Historical Performance - Instrumental (harpsichord) with an outside field: Computer Science, specialising in Programming languages."
+        ],
+        tags: [
+            "Historical Performance",
+            "Harpsichord",
+            "Continuo",
+            "Computer Science",
+            "Progarmming Languages",
+            "Compilers",
+            "Music Theory",
+            "Aural Skills",
+        ],
+        icon: "graduation-cap",
+    },
+    {
+        title: "Bachelor of Musical Arts Candidate",
+        duration: "2015-2019",
+        subtitle: "DePauw University",
+        details: [
+            "Piano and Computer Science double major, studying with Dr. May Phang."
+        ],
+        tags: [
+            "Piano",
+            "Voice",
+            "Choir",
+            "Computer Science",
+            "Data Structures",
+            "Music Theory",
+            "Aural Skills",
+        ],
+        icon: "book",
+    },
+    /*{
         title: "Class 12th in Science and Mathematics",
         duration: "",
         subtitle: "Board of Secondary Education, Rajasthan",
         details: [],
         tags: ["Physics", "Chemistry", "Mathematics"],
         icon: "book",
-    },
+    },*/
 ];
 
 export const footer = [
@@ -277,22 +372,22 @@ export const footer = [
         data: [
             {
                 text: "Linkedin",
-                link: "https://www.linkedin.com/in/vinaysomawat/",
+                link: "https://www.linkedin.com/in/kielesacco/",
             },
             {
-                text: "Twitter",
-                link: "https://twitter.com/thesigmakid",
+                text: "YouTube",
+                link: "www.youtube.com/@Saccoki",
             },
             {
-                text: "Buy me a coffee",
-                link: "https://www.buymeacoffee.com/r194dME8y",
+                text: "Instagram",
+                link: "https://www.instagram.com/kielesacco.hpd",
             },
         ],
     },
     {
         label: "copyright-text",
         data: [
-            "Made with &hearts; by Vinay Somawat.",
+            "Made with &hearts; by Vinay Somawat, edited by Ki.",
             "&copy; No Copyrights. Feel free to use this template.",
         ],
     },
