@@ -4,7 +4,7 @@ export const bio = [
     "studying harpsichord with James Johnstone and Nicholas Parle."
 ];
 
-export const skills = [
+/* export const skills = [
     {
         title: "Harpsichord",
         skillName: "JavaScript, TypeScript",
@@ -47,10 +47,10 @@ export const skills = [
         color: "6",
         percentage: "70",
     },
-];
+]; */
 
 export const projects = {
-    webProjects: [
+    musicfestivals: [
         {
             projectName: "Dartington Summer School - Baroque Orchestra 2023",
             image: "images-ki/Dartington-23.jpeg",
@@ -59,7 +59,7 @@ export const projects = {
             preview: " ",
             techStack: [""],
         },
-        {
+/*         {
             projectName: "Find Your Bank",
             image: "images/findyourbank.png",
             summary:
@@ -82,19 +82,19 @@ export const projects = {
                 "Browser based editor to build and download Resumes in a customizable templates.",
             preview: "https://vinaysomawat.github.io/Resume-Builder",
             techStack: ["HTML", "Bootstrap", "JavaScript"],
-        },
+        }, */
     ],
-    softwareProjects: [
+    musiccourses: [
         {
-            projectName: "Pizza Ordering ChatBot",
+            projectName: "Benslow Music - Baroque Opera",
             image: "images/pizzaorderchatbot.png",
             summary:
                 "ChatBot using Dialogflow, Firebase database which stores the chat data in the realtime database.",
             preview: "https://github.com/vinaysomawat/Pizza-Ordering-ChatBot",
             techStack: ["Dailogflow", "Firebase"],
         },
-        {
-            projectName: "WhatsApp-Bot",
+/*         {
+            projectName: "Benslow Music - Bach Arias",
             image: "images/whatsappbot.jpg",
             summary:
                 "Python script which helps to send messages to WhatsApp contacts automatically using selenium and web automation.",
@@ -108,9 +108,9 @@ export const projects = {
                 "GUI to transfer data to excel sheets and generate bills on the local shops.",
             preview: "https://github.com/vinaysomawat/Bill-Generator",
             techStack: ["Tkinter", "Openxlpy", "Python"],
-        },
+        }, */
     ],
-    androidProjects: [
+    /* androidProjects: [
         {
             projectName: "NITW-CSE",
             image: "images/nitwcse.jpg",
@@ -145,7 +145,7 @@ export const projects = {
                 "https://play.google.com/store/apps/details?id=com.americanmarket.americanmarketandroid",
             techStack: ["Android", "JAVA", "Play Store"],
         },
-    ],
+    ], */
 };
 
 export const experience = [
@@ -330,7 +330,7 @@ export const education = [
 ];
 
 export const footer = [
-    {
+/*     {
         label: "Dev Profiles",
         data: [
             {
@@ -346,7 +346,7 @@ export const footer = [
                 link: "https://leetcode.com/somawatvinay/",
             },
         ],
-    },
+    }, */
     {
         label: "Resources",
         data: [
