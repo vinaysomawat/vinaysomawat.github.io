@@ -55,12 +55,9 @@ export const projects = {
             projectName: "Dartington Summer School - Baroque Orchestra 2023",
             image: "images-ki/Dartington-23.jpeg",
             summary:
-                "I was selected as the keyboard continuo player for a week long program at the Dartington Summer School.",
-                "The Baroque Orchestra presenting a programme of orchestral music, and another programme of Bach's B minor Mass.",
-                "The orchestra was directed by Rachel Podger, and the B minor Mass was conducted by John Butt.",
-                "The Lever Hulme Foundation generously provided a bursary for me to attend this course."
-            //preview: "https://programmingdiaries.herokuapp.com/",
-            //techStack: ["Django", "SQLite", "Bootstrap", "JavaScript", "Heroku"],
+                "I was selected as the keyboard continuo player for a week long program at the Dartington Summer School. The Baroque Orchestra presenting a programme of orchestral music, and another programme of Bach's B minor Mass. The orchestra was directed by Rachel Podger, and the B minor Mass was conducted by John Butt. The Lever Hulme Foundation generously provided a bursary for me to attend this course.",
+            preview: " ",
+            techStack: [""],
         },
         {
             projectName: "Find Your Bank",
