@@ -707,10 +707,10 @@ body.offcanvas .colorlib-nav-toggle {
 .project-image {
 	float: left;
 }
-
+/* 
 .project-card {
 	height: 150px;
-}
+} */
 
 .project-info {
 	position: absolute;
@@ -2018,7 +2018,7 @@ ul {
 	display: block;
 	padding: 15px 15px 15px 15px;
 	font-weight: 700;
-	border-bottom: 1px solid gray;
+	border-bottom: 1px solid #000;
 	position: relative;
 	-webkit-transition: all 0.4s ease;
 	-o-transition: all 0.4s ease;
@@ -2044,14 +2044,6 @@ ul {
 	right: 12px;
 	left: auto;
 	font-size: 16px;
-}
-
-.accordion li.open .link {
-	color: #b63b4d;
-}
-
-.accordion li.open i {
-	color: #b63b4d;
 }
 
 .accordion li.open i.fa-chevron-down {
@@ -2082,8 +2074,7 @@ ul {
 }
 
 .submenu li:hover {
-	background: rgba(255, 255, 0, 0.705);
-	box-shadow: -1px 1px 51px -20px rgba(0,0,0,1);
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 	border-radius: 5px;
 	color: #fff;
 }
@@ -2108,16 +2099,24 @@ ul {
 }
 
 .project-heading {
-	font-weight: 500;
+	font-weight: 600;
 	margin-bottom: 10px;
 	color: #000;
+	margin-bottom: 2px;
 }
 
 .project-description {
-	font-size: 13px;
+	font-size: 12px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	color: #000;
+}
+
+.publish-date {
+	color: dimgray;
+	font-size: 12px;
+	margin-bottom: 0px;
+	font-weight: 600;
 }
 
 .img-fluid {

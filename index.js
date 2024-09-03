@@ -237,16 +237,11 @@ import { URLs } from './user-data/urls.js';
       a.href = items[i].link;
       a.target = "_blank";
       a.append(h4);
-  
-      const img = document.createElement("img");
-      img.src = items[i].thumbnail;
-      img.className = "img-fluid";
-      img.alt = items[i].title;
-  
-      const divResumeContentLeft = document.createElement("div");
-      divResumeContentLeft.className = "resume-content";
-      divResumeContentLeft.id = "left-div";
-      divResumeContentLeft.append(img);
+
+      const pubDateEle = document.createElement('p');
+      pubDateEle.className = 'publish-date';
+      pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
+      a.append(pubDateEle);
   
       const divResumeContentRight = document.createElement("div");
       divResumeContentRight.className = "resume-content";
@@ -273,7 +268,7 @@ import { URLs } from './user-data/urls.js';
   
       const divResumeItem = document.createElement("div");
       divResumeItem.className = "resume-item";
-      divResumeItem.append(divResumeContentLeft, divResumeContentRight);
+      divResumeItem.append(divResumeContentRight);
       a.append(divResumeItem);
   
       const divProjectCard = document.createElement("div");
@@ -440,6 +435,38 @@ import { URLs } from './user-data/urls.js';
     let item = document.createElement(tagName);
     item.className = className;
     return item;
+  }
+
+  function getBlogDate(publishDate) {
+    const elapsed = Date.now() - Date.parse(publishDate);
+  
+    // Time conversions in milliseconds
+    const msPerSecond = 1000;
+    const msPerMinute = msPerSecond * 60;
+    const msPerHour = msPerMinute * 60;
+    const msPerDay = msPerHour * 24;
+    const msPerMonth = msPerDay * 30;
+    const msPerYear = msPerDay * 365;
+  
+    if (elapsed < msPerMinute) {
+      const seconds = Math.floor(elapsed / msPerSecond);
+      return `${seconds} seconds ago`;
+    } else if (elapsed < msPerHour) {
+      const minutes = Math.floor(elapsed / msPerMinute);
+      return `${minutes} minutes ago`;
+    } else if (elapsed < msPerDay) {
+      const hours = Math.floor(elapsed / msPerHour);
+      return `${hours} hours ago`;
+    } else if (elapsed < msPerMonth) {
+      const days = Math.floor(elapsed / msPerDay);
+      return (days == 1) ? `${days} day ago` : `${days} days ago`;
+    } else if (elapsed < msPerYear) {
+      const months = Math.floor(elapsed / msPerMonth);
+      return (months == 1) ? `${months} month ago` : `${months} months ago`;
+    } else {
+      const years = Math.floor(elapsed / msPerYear);
+      return (years == 1) ? `${years} year ago` : `${years} years ago`;
+    }
   }
   
   populateBio(bio, "bio");
