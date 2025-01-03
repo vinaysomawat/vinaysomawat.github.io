@@ -5,7 +5,7 @@ import {
     education,
     experience,
     footer,
-  } from "./data.js";
+  } from "./user-data/data.js";
 
 import { URLs } from './user-data/urls.js';
   
@@ -200,7 +200,7 @@ import { URLs } from './user-data/urls.js';
       divSpan.innerHTML = "";
       for (let k = 0; k < items[i].techStack.length; k++) {
         let span = document.createElement("span");
-        span.className = "badge badge-secondary";
+        span.className = "badge";
         span.innerHTML = items[i].techStack[k];
         divSpan.append(span);
       }
@@ -256,7 +256,7 @@ import { URLs } from './user-data/urls.js';
       const divSpan = document.createElement("div");
       for (const category of items[i].categories) {
         const span = document.createElement("span");
-        span.className = "badge badge-secondary";
+        span.className = "badge";
         span.innerHTML = category;
         divSpan.append(span);
       }
@@ -326,7 +326,7 @@ import { URLs } from './user-data/urls.js';
       let divTags = document.createElement("div");
       for (let j = 0; j < items[i].tags.length; j++) {
         let spanTags = document.createElement("span");
-        spanTags.className = "badge badge-secondary";
+        spanTags.className = "badge";
         spanTags.innerHTML = items[i].tags[j];
         divTags.append(spanTags);
       }

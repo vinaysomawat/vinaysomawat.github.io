@@ -2,29 +2,8 @@
   "use strict";
 
   var isMobile = {
-    Android: function () {
-      return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function () {
-      return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function () {
-      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function () {
-      return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function () {
-      return navigator.userAgent.match(/IEMobile/i);
-    },
     any: function () {
-      return (
-        isMobile.Android() ||
-        isMobile.BlackBerry() ||
-        isMobile.iOS() ||
-        isMobile.Opera() ||
-        isMobile.Windows()
-      );
+      return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
     },
   };
 
@@ -35,14 +14,6 @@
         $(".js-fullheight").css("height", $(window).height());
       });
     }
-  };
-
-  var counter = function () {
-    $(".js-counter").countTo({
-      formatter: function (value, options) {
-        return value.toFixed(options.decimals);
-      },
-    });
   };
 
   var counterWayPoint = function () {
@@ -59,14 +30,12 @@
     }
   };
 
-  // Animations
   var contentWayPoint = function () {
     var i = 0;
     $(".animate-box").waypoint(
       function (direction) {
         if (direction === "down" && !$(this.element).hasClass("animated")) {
           i++;
-
           $(this.element).addClass("item-animate");
           setTimeout(function () {
             $("body .animate-box.item-animate").each(function (k) {
@@ -74,16 +43,7 @@
               setTimeout(
                 function () {
                   var effect = el.data("animate-effect");
-                  if (effect === "fadeIn") {
-                    el.addClass("fadeIn animated");
-                  } else if (effect === "fadeInLeft") {
-                    el.addClass("fadeInLeft animated");
-                  } else if (effect === "fadeInRight") {
-                    el.addClass("fadeInRight animated");
-                  } else {
-                    el.addClass("fadeInUp animated");
-                  }
-
+                  el.addClass(effect ? `${effect} animated` : "fadeInUp animated");
                   el.removeClass("item-animate");
                 },
                 k * 200,
@@ -101,26 +61,17 @@
     $(".js-colorlib-nav-toggle").on("click", function (event) {
       event.preventDefault();
       var $this = $(this);
-
-      if ($("body").hasClass("offcanvas")) {
-        $this.removeClass("active");
-        $("body").removeClass("offcanvas");
-      } else {
-        $this.addClass("active");
-        $("body").addClass("offcanvas");
-      }
+      $("body").toggleClass("offcanvas");
+      $this.toggleClass("active");
     });
   };
 
-  // Click outside of offcanvass
   var mobileMenuOutsideClick = function () {
     $(document).click(function (e) {
       var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($("body").hasClass("offcanvas")) {
-          $("body").removeClass("offcanvas");
-          $(".js-colorlib-nav-toggle").removeClass("active");
-        }
+        $("body").removeClass("offcanvas");
+        $(".js-colorlib-nav-toggle").removeClass("active");
       }
     });
 
@@ -157,7 +108,6 @@
     });
   };
 
-  // Reflect scrolling in navigation
   var navActive = function (section) {
     var $el = $("#navbar > ul");
     $el.find("li").removeClass("active");
@@ -197,73 +147,14 @@
     );
   };
 
-  var sliderMain = function () {
-    $("#colorlib-hero .flexslider").flexslider({
-      animation: "fade",
-      slideshowSpeed: 5000,
-      directionNav: true,
-      start: function () {
-        setTimeout(function () {
-          $(".slider-text").removeClass("animated fadeInUp");
-          $(".flex-active-slide")
-            .find(".slider-text")
-            .addClass("animated fadeInUp");
-        }, 500);
-      },
-      before: function () {
-        setTimeout(function () {
-          $(".slider-text").removeClass("animated fadeInUp");
-          $(".flex-active-slide")
-            .find(".slider-text")
-            .addClass("animated fadeInUp");
-        }, 500);
-      },
-    });
-  };
-
-  var stickyFunction = function () {
-    var h = $(".image-content").outerHeight();
-
-    if ($(window).width() <= 992) {
-      $("#sticky_item").trigger("sticky_kit:detach");
-    } else {
-      $(".sticky-parent").removeClass("stick-detach");
-      $("#sticky_item").trigger("sticky_kit:detach");
-      $("#sticky_item").trigger("sticky_kit:unstick");
-    }
-
-    $(window).resize(function () {
-      var h = $(".image-content").outerHeight();
-      $(".sticky-parent").css("height", h);
-
-      if ($(window).width() <= 992) {
-        $("#sticky_item").trigger("sticky_kit:detach");
-      } else {
-        $(".sticky-parent").removeClass("stick-detach");
-        $("#sticky_item").trigger("sticky_kit:detach");
-        $("#sticky_item").trigger("sticky_kit:unstick");
-
-        $("#sticky_item").stick_in_parent();
-      }
-    });
-
-    $(".sticky-parent").css("height", h);
-  };
-
-  // Document on load.
   $(function () {
     fullHeight();
-    counter();
     counterWayPoint();
     contentWayPoint();
     burgerMenu();
-
     clickMenu();
     navigationSection();
-
     mobileMenuOutsideClick();
-    sliderMain();
-    stickyFunction();
     detectDayNightMode();
   });
 })();
@@ -271,15 +162,13 @@
 var Accordion = function (el, multiple) {
   this.el = el || {};
   this.multiple = multiple || false;
-  // Variables privadas
   var links = this.el.find(".link");
-  // Evento
   links.on("click", { el: this.el, multiple: this.multiple }, this.dropdown);
 };
 
 Accordion.prototype.dropdown = function (e) {
   var $el = e.data.el;
-  ($this = $(this)), ($next = $this.next());
+  var $this = $(this), $next = $this.next();
 
   $next.slideToggle();
   $this.parent().toggleClass("open");
@@ -297,10 +186,7 @@ function enableDarkMode() {
 
 function detectDayNightMode() {
   const hours = new Date().getHours();
-  const isDayTime = hours > 6 && hours < 20;
-  if (isDayTime === true) {
-    // do nothing
-  } else {
+  if (hours <= 6 || hours >= 20) {
     enableDarkMode();
   }
 }

@@ -150,11 +150,11 @@ export const projects = {
 
 export const experience = [
   {
-    title: "Shiprocket (Bigfoot Solution Private Limited)",
-    duration: "September 2022 - Present",
+    title: "Shiprocket Private Limited",
+    duration: "September 2023 - Present",
     subtitle: "Software Engineer",
     details: ["Working in support and escalation team."],
-    tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
+    tags: ["JavaScript", "Angular", "Bootstrap", "AngularJs"],
     icon: "truck ",
   },
   {
