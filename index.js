@@ -1,7 +1,6 @@
 import {
   bio,
   skills,
-  projects,
   education,
   experience,
   footer,
@@ -9,8 +8,6 @@ import {
 
 import { URLs } from "./user-data/urls.js";
 
-const { webProjects, softwareProjects, androidProjects, freelanceProjects } =
-  projects;
 const { medium, gitConnected, gitRepo } = URLs;
 
 async function fetchBlogsFromMedium(url) {
@@ -100,135 +97,80 @@ function populateSkills(items, id) {
   });
 }
 
-// function populateProjects(items, id) {
-//   let projectdesign = document.getElementById(id);
-
-//   let h4 = document.createElement("h4");
-//   h4.className = "project-heading";
-
-//   let a = document.createElement("a");
-//   a.target = "_blank";
-
-//   let img = document.createElement("img");
-//   img.className = "img-fluid";
-
-//   let divResumeContentLeft = document.createElement("div");
-//   divResumeContentLeft.className = "resume-content";
-//   divResumeContentLeft.id = "left-div";
-//   divResumeContentLeft.append(img);
-
-//   let divResumeContentRight = document.createElement("div");
-//   divResumeContentRight.className = "resume-content";
-//   divResumeContentRight.id = "right-div";
-
-//   let p = document.createElement("p");
-//   p.className = "project-description";
-
-//   let divSpan = document.createElement("div");
-
-//   let divSubHeading = document.createElement("div");
-//   divSubHeading.className = "sub-heading";
-//   divSubHeading.append(p);
-//   divSubHeading.append(divSpan);
-//   divResumeContentRight.append(divSubHeading);
-
-//   let divResumeItem = document.createElement("div");
-//   divResumeItem.className = "resume-item";
-//   divResumeItem.append(divResumeContentLeft);
-//   divResumeItem.append(divResumeContentRight);
-//   a.append(divResumeItem);
-
-//   let divProjectCard = document.createElement("div");
-//   divProjectCard.className = "project-card";
-//   divProjectCard.append(a);
-
-//   let li = document.createElement("li");
-//   li.append(divProjectCard);
-
-//   let hr = document.createElement("hr");
-
-//   for (let i = 0; i < items.length; i++) {
-//     h4.innerHTML = items[i].projectName;
-//     a.href = items[i].preview;
-
-//     img.src = items[i].image;
-
-//     p.innerHTML = items[i].summary;
-
-//     divSpan.innerHTML = "";
-//     for (let k = 0; k < items[i].techStack.length; k++) {
-//       let span = document.createElement("span");
-//       span.className = "badge";
-//       span.innerHTML = items[i].techStack[k];
-//       divSpan.append(span);
-//     }
-
-//     projectdesign.append(li.cloneNode(true));
-
-//     if (i != items.length - 1) {
-//       projectdesign.append(hr.cloneNode(true));
-//     }
-//   }
-// }
-
 function populateBlogs(items, id) {
   const projectdesign = document.getElementById(id);
-  const count = 3;
+  const count = 3; // Number of blogs to display
 
   for (let i = 0; i < count; i++) {
-    const h4 = document.createElement("h4");
-    h4.className = "project-heading";
-    h4.innerHTML = items[i].title;
+      // Create a wrapper for the blog card
+      const blogCard = document.createElement("div");
+      blogCard.className = "blog-card";
+      blogCard.style = `
+          display: flex;
+          flex-direction: column;
+          border-radius: 12px;
+          padding: 16px;
+          font-size: 14px;
+          background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+          min-height: 150px;
+          cursor: pointer;
+      `;
 
-    const a = document.createElement("a");
-    a.href = items[i].link;
-    a.target = "_blank";
-    a.append(h4);
+      // Wrap the card content in an anchor tag
+      const blogLink = document.createElement("a");
+      blogLink.href = items[i].link;
+      blogLink.target = "_blank";
+      blogLink.style = "text-decoration: none; color: black; display: block;";
 
-    const pubDateEle = document.createElement("p");
-    pubDateEle.className = "publish-date";
-    pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
-    a.append(pubDateEle);
+      blogCard.appendChild(blogLink);
 
-    const divResumeContentRight = document.createElement("div");
-    divResumeContentRight.className = "resume-content";
-    divResumeContentRight.id = "right-div";
+      // Blog Title
+      const blogTitle = document.createElement("h4");
+      blogTitle.className = "blog-heading";
+      blogTitle.innerHTML = items[i].title;
+      blogTitle.style = "margin: 0 0 8px; font-size: 18px; font-weight: bold;";
+      blogLink.appendChild(blogTitle);
 
-    const p = document.createElement("p");
-    p.className = "project-description";
-    const html = items[i].content;
-    const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
-    p.innerHTML = doc;
+      // Publish Date
+      const pubDateEle = document.createElement("p");
+      pubDateEle.className = "publish-date";
+      pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
+      pubDateEle.style = "margin: 0 0 12px; font-size: 12px; color: #555;";
+      blogLink.appendChild(pubDateEle);
 
-    const divSpan = document.createElement("div");
-    for (const category of items[i].categories) {
-      const span = document.createElement("span");
-      span.className = "badge";
-      span.innerHTML = category;
-      divSpan.append(span);
-    }
+      // Blog Description
+      const blogDescription = document.createElement("p");
+      blogDescription.className = "blog-description";
+      const html = items[i].content;
+      const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
+      blogDescription.innerHTML = doc;
+      blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #666;";
+      blogLink.appendChild(blogDescription);
 
-    const divSubHeading = document.createElement("div");
-    divSubHeading.className = "sub-heading";
-    divSubHeading.append(p, divSpan);
-    divResumeContentRight.append(divSubHeading);
+      // Categories (Tags)
+      const categoriesDiv = document.createElement("div");
+      categoriesDiv.style = "display: flex; gap: 8px; margin-top: 12px;";
 
-    const divResumeItem = document.createElement("div");
-    divResumeItem.className = "resume-item";
-    divResumeItem.append(divResumeContentRight);
-    a.append(divResumeItem);
+      for (const category of items[i].categories) {
+          const badge = document.createElement("span");
+          badge.className = "badge";
+          badge.innerHTML = category;
+          badge.style = `
+              font-size: 12px;
+              padding: 4px 8px;
+              background-color: #007acc;
+              color: white;
+              border-radius: 4px;
+          `;
+          categoriesDiv.appendChild(badge);
+      }
 
-    const divProjectCard = document.createElement("div");
-    divProjectCard.className = "project-card";
-    divProjectCard.append(a);
+      blogLink.appendChild(categoriesDiv);
 
-    const li = document.createElement("li");
-    li.append(divProjectCard);
-    projectdesign.append(li);
-
-    if (i !== count - 1) {
-      projectdesign.append(document.createElement("hr"));
-    }
+      // Append the blog card to the container
+      projectdesign.appendChild(blogCard);
   }
 }
 
@@ -494,11 +436,6 @@ populateSkills(skills, "skills");
 fetchBlogsFromMedium(medium);
 fetchReposFromGit(gitRepo);
 fetchGitConnectedData(gitConnected);
-
-// populateProjects(webProjects, "web-projects");
-// populateProjects(softwareProjects, "software-projects");
-// populateProjects(androidProjects, "android-projects");
-// populateProjects(freelanceProjects, "freelance-projects");
 
 populateExp_Edu(experience, "experience");
 populateExp_Edu(education, "education");
