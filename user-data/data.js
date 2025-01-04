@@ -5,48 +5,9 @@ export const bio = [
 ];
 
 export const skills = [
-  {
-    title: "Languages",
-    skillName: "JavaScript, TypeScript",
-    color: "1",
-    percentage: "80",
-  },
-  {
-    title: "Frameworks/Libraries",
-    skillName: "Angular, RxJS, NGRX/NGXS",
-    color: "6",
-    percentage: "70",
-  },
-  {
-    title: "Design",
-    skillName: "HTML, Bootstrap, Tailwind",
-    color: "4",
-    percentage: "70",
-  },
-  {
-    title: "Version Control",
-    skillName: "GitHub, JIRA, Bitbucket",
-    color: "7",
-    percentage: "70",
-  },
-  {
-    title: "Tools",
-    skillName: "Debugging, Chrome DevTools",
-    color: "3",
-    percentage: "80",
-  },
-//   {
-//     title: "Analytics",
-//     skillName: "CleverTap, Countly",
-//     color: "5",
-//     percentage: "50",
-//   },
-//   {
-//     title: "IDE",
-//     skillName: "VS Code",
-//     color: "6",
-//     percentage: "70",
-//   },
+  "JavaScript, TypeScript, Angular, RxJS, NGRX/NGXS",
+  "HTML, Bootstrap, Tailwind",
+  "GitHub, Debugging, Chrome DevTools",
 ];
 
 export const projects = {
@@ -243,51 +204,51 @@ export const education = [
 ];
 
 export const footer = [
-//   {
-//     label: "Dev Profiles",
-//     data: [
-//       {
-//         text: "Stackoverflow",
-//         link: "https://stackoverflow.com/users/8461233/vinay-somawat",
-//       },
-//       {
-//         text: "GitHub",
-//         link: "https://github.com/vinaysomawat",
-//       },
-//       {
-//         text: "LeetCode",
-//         link: "https://leetcode.com/somawatvinay/",
-//       },
-//     ],
-//   },
-//   {
-//     label: "Resources",
-//     data: [
-//       {
-//         text: "Enable Dark/Light Mode",
-//         func: "enableDarkMode()",
-//       },
-//       {
-//         text: "Print this page",
-//         func: "window.print()",
-//       },
-//       {
-//         text: "Clone this page",
-//         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
-//       },
-//     ],
-//   },
+  //   {
+  //     label: "Dev Profiles",
+  //     data: [
+  //       {
+  //         text: "Stackoverflow",
+  //         link: "https://stackoverflow.com/users/8461233/vinay-somawat",
+  //       },
+  //       {
+  //         text: "GitHub",
+  //         link: "https://github.com/vinaysomawat",
+  //       },
+  //       {
+  //         text: "LeetCode",
+  //         link: "https://leetcode.com/somawatvinay/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     label: "Resources",
+  //     data: [
+  //       {
+  //         text: "Enable Dark/Light Mode",
+  //         func: "enableDarkMode()",
+  //       },
+  //       {
+  //         text: "Print this page",
+  //         func: "window.print()",
+  //       },
+  //       {
+  //         text: "Clone this page",
+  //         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+  //       },
+  //     ],
+  //   },
   {
     label: "Links",
     data: [
-    //   {
-    //     text: "Linkedin",
-    //     link: "https://www.linkedin.com/in/vinaysomawat/",
-    //   },
-    //   {
-    //     text: "Twitter",
-    //     link: "https://twitter.com/thesigmakid",
-    //   },
+      //   {
+      //     text: "Linkedin",
+      //     link: "https://www.linkedin.com/in/vinaysomawat/",
+      //   },
+      //   {
+      //     text: "Twitter",
+      //     link: "https://twitter.com/thesigmakid",
+      //   },
       {
         text: "Buy me a coffee",
         link: "https://www.buymeacoffee.com/r194dME8y",
@@ -300,9 +261,6 @@ export const footer = [
   },
   {
     label: "copyright-text",
-    data: [
-      "Made with &hearts; by Vinay Somawat.",
-      "&copy; No Copyrights. Feel free to use this template.",
-    ],
+    data: ["Made with &hearts; by Vinay Somawat."],
   },
 ];
