@@ -200,7 +200,7 @@ function populateRepo(items, id) {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           transition: transform 0.2s ease-in-out;
           cursor: pointer;
-          margin-bottom: 20px;
+          margin-top: 10px;
           min-height: 200px; /* Ensure consistent height */
       `;
 
