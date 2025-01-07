@@ -130,7 +130,6 @@ function populateBlogs(items, id) {
           font-size: 14px;
           background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-          margin-bottom: 20px;
           min-height: 150px;
           cursor: pointer;
       `;
@@ -217,7 +216,6 @@ function populateRepo(items, id) {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
           transition: transform 0.2s ease-in-out;
           cursor: pointer;
-          margin-top: 10px;
       `;
 
     // Make the card clickable by wrapping the content inside an anchor tag
