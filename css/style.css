@@ -123,10 +123,11 @@ figure figcaption {
 	width: 300px;
 	position: fixed;
 	z-index: 1001;
-	background-color: #f9bf3f;
+	background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
 	transition: 0.5s;
+	left: 60px;
 }
 @media screen and (max-width: 768px) {
 	#colorlib-aside {
@@ -138,7 +139,8 @@ figure figcaption {
 		transform: translateX(-300px);
 		padding-top: 4em;
 		background-color: #f9bf3f;
-		height: auto;
+		height: -webkit-fill-available;
+		left: 0px;
 	}
 	.resume-content img {
 		display: none;
@@ -327,12 +329,12 @@ figure figcaption {
 }
 
 .container-wrap {
-	max-width: 1170px;
+	max-width: 1370px;
 	margin: 0 auto;
 }
 
 #colorlib-main {
-	width: calc(100% - 300px);
+	width: calc(100% - 340px);
 	float: right;
 	-webkit-transition: 0.5s;
 	-o-transition: 0.5s;
@@ -888,7 +890,7 @@ body.offcanvas .colorlib-nav-toggle {
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
 	position: relative;
-	background: #f9bf3f;
+	background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
 	color: #000;
 	padding: 1.5em;
 	margin-left: 60px;
@@ -930,6 +932,7 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-text {
 	margin-bottom: 0px;
 	font-size: 13px;
+	color: rgb(102, 102, 102);
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label div {
@@ -1924,7 +1927,6 @@ ul {
 	font-size: 14px;
 	padding-left: 0px;
 	padding-top: 10px;
-	padding-bottom: 10px;
 }
 
 .submenu li {
@@ -2030,7 +2032,7 @@ span {
 }
 
 :root {
-	--footer-bg: #f9bf3f;
+	--footer-bg: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
 	--color: #000;
 	--color-smooth: #000;
 	--input-border: #3a456a;
@@ -2184,4 +2186,8 @@ hr {
     border: 0;
     border-top: 1px solid #e0e0e0;
     margin: 20px 0;
+  }
+
+  strong {
+	color: #f9bf3f;
   }

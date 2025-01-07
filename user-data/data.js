@@ -1,7 +1,7 @@
 export const bio = [
-  "Hello! I'm Vinay Somawat, an experienced Frontend Software Engineer with a proven ability to upgrade applications, optimize performance, and deliver innovative solutions.",
-  "I am passionate about using my technical skills to drive impactful contributions in challenging projects.",
-  "Thanks for visiting!",
+  "Hello, I'm Vinay Somawat!",
+  "I’m a passionate and experienced <strong>Frontend Engineer</strong> specializing in developing dynamic web applications using Angular and React. I thrive on optimizing performance and delivering innovative, user-focused solutions.",
+  "Beyond coding, I enjoy traveling through the serene <strong>Himalayan mountains</strong> and experimenting with new recipes in the <strong>kitchen</strong>.",
 ];
 
 export const skills = [
@@ -76,6 +76,14 @@ export const experience = [
     tags: ["JavaScript", "Angular", "Bootstrap", "Java", "Spring Boot"],
     icon: "group",
   },
+];
+
+export const trekking = [
+  '<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)',
+  '<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)',
+  '<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)',
+  '<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)',
+  '<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)',
 ];
 
 export const education = [
@@ -155,13 +163,13 @@ export const footer = [
         link: "https://www.buymeacoffee.com/r194dME8y",
       },
       {
-        text: "Github/vinaysomawat.github.io",
+        text: "Github",
         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
       },
     ],
   },
   {
     label: "copyright-text",
-    data: ["Made with &hearts; by Vinay Somawat."],
+    data: ["Made with &hearts; by Vinay Somawat"],
   },
 ];
