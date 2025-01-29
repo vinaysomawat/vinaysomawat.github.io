@@ -1,13 +1,14 @@
 export const bio = [
   "Hello, I'm Vinay Somawat!",
-  "I’m a passionate and experienced <strong>Frontend Engineer</strong> specializing in developing dynamic web applications using Angular and React. I thrive on optimizing performance and delivering innovative, user-focused solutions.",
-  "Beyond coding, I enjoy traveling through the serene <strong>Himalayan mountains</strong> and experimenting with new recipes in the <strong>kitchen</strong>.",
+  "<strong>Frontend Software Engineer</strong> with 4+ years of experience building scalable, user-focused web applications.",
+  "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
+  "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
 ];
 
 export const skills = [
-  "JavaScript, TypeScript, Angular, RxJS, NGRX/NGXS",
-  "HTML, Bootstrap, Tailwind",
-  "GitHub, Debugging, Chrome DevTools",
+  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap",
+  "RxJS, NGXS, NGRX",
+  "Jenkins, JIRA, Webpack, Git",
 ];
 
 export const experience = [
@@ -15,7 +16,13 @@ export const experience = [
     title: "Shiprocket Private Limited",
     duration: "September 2023 - Present",
     subtitle: "Software Engineer",
-    details: ["Working in support and escalation team."],
+    details: [
+      "Developed a design system using Stencil and Storybook that provides consistent UI components across platforms, ensuring a cohesive design.",
+      "Developed a dynamic support ticket panel that renders subcategories based on component IDs, handling up to 100 AWBs simultaneously.",
+      "Migrated 30+ modules from AngularJS to Angular 15 using Generative AI tools, reporting directly to the VP of Engineering.",
+      "Designed and implemented advanced features such as keyboard shortcuts, improving operational efficiency by 15 percent.",
+      "Took ownership of OKRs, collaborated with the product team, and mentored two junior developers, cutting their code review iterations and ensuring on-time feature delivery.",
+    ],
     tags: ["JavaScript", "Angular", "Bootstrap", "AngularJs"],
     icon: "truck ",
   },
@@ -24,20 +31,9 @@ export const experience = [
     duration: "April 2022 - Jul 2023",
     subtitle: "Software Engineer",
     details: [
-      `Implemented microfrontends using the Module Federation Plugin in Angular.
-            Rendered components from remote modules/repositories, enabling a modular and scalable architecture`,
-      `Upgraded application with a dynamic base URL for flexible operation across multiple regions and verticals, leading to
-            recognition with the Biofourmis Bravo award in Q1, 2023.`,
-      `Implemented RxState for managing local state in components, resulting in elegant and reactive facades.`,
-      `Utilized Twilio-Video for group video call rooms and Countly for Web Analytics.`,
-      `Integrated NGXS WebSocket, enhancing state management and replacing legacy service injections.`,
-      `Implemented extensive RxJS usage for reactive programming, resulting in efficient data handling, improved state
-            management, and enhanced application performance.`,
-      `Dramatically optimized load time and performance through code splitting, lazy loading, caching, and preload`,
-      `Enhanced video call experience by implementing real-time switching of I/O devices and audio level indicators,
-            resulting in reduced audio issues and increased user satisfaction.`,
-      `Owned and led successful Angular application upgrades from version 12 to 13 and 14, improving performance
-            and enhancing features.`,
+      "Spearheaded the implementation of micro-frontends using Module Federation, enabling modular and scalable architecture.",
+      "Earned the Biofourmis Bravo Award for upgrading the application to support flexible operations across multiple geographies.",
+      "Enhanced performance and user experience by integrating Twilio-Video, Countly, and NGXS WebSocket for real-time data management.",
     ],
     tags: [
       "JavaScript",
@@ -56,12 +52,9 @@ export const experience = [
     duration: "June 2020 - April 2022",
     subtitle: "Software Engineer",
     details: [
-      `Implemented AePS Services, including Bio-metric eKYC, Cash Withdrawal, Balance Enquiry, Mini-Statements,
-            and Money transfer.`,
-      `Implemented QR Code integration for retailer wallet money loading, Clevertap events for user action tracking,
-            Freshdesk ticketing, Chatbot services, and Retailer onboarding/admin interfaces.`,
-      `Developed retailer QR code system for seamless money loading into wallets, resulting in improved user transactions.`,
-      `Achieved 70 percent code coverage of the entire application by writing unit tests for legacy code.`,
+      "Built critical banking features including AePS services (eKYC, cash withdrawal, balance inquiry) used by over 1,00,000 retailers.",
+      "Developed QR code integration for wallet money loading, streamlining retailer workflows and reducing errors by 25 percent.",
+      "Integrated Clevertap analytics, Freshdesk ticketing, and chatbot services, enhancing user support and engagement.",
     ],
     tags: ["JavaScript", "Angular", "Bootstrap", "Nodejs", "Jenkins"],
     icon: "qrcode",
@@ -71,7 +64,7 @@ export const experience = [
     duration: "May 2019 - June 2019",
     subtitle: "SDE Intern",
     details: [
-      `Developed a customer web application for social media management, supporting the advertisement domain.`,
+      `Designed and developed a social media post management panel, improving collaboration efficiency by 50 percent.`,
     ],
     tags: ["JavaScript", "Angular", "Bootstrap", "Java", "Spring Boot"],
     icon: "group",
@@ -79,11 +72,11 @@ export const experience = [
 ];
 
 export const trekking = [
-  '<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)',
-  '<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)',
-  '<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)',
-  '<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)',
-  '<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)',
+  "<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)",
+  "<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)",
+  "<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)",
+  "<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)",
+  "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)",
 ];
 
 export const education = [

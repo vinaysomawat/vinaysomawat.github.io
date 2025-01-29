@@ -162,7 +162,7 @@ function populateBlogs(items, id) {
       const html = items[i].content;
       const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
       blogDescription.innerHTML = doc;
-      blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #666;";
+      blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #000;";
       blogLink.appendChild(blogDescription);
 
       // Categories (Tags)

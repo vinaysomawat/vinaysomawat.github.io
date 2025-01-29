@@ -932,7 +932,7 @@ body.offcanvas .colorlib-nav-toggle {
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label .timeline-text {
 	margin-bottom: 0px;
 	font-size: 13px;
-	color: rgb(102, 102, 102);
+	color: #000
 }
 
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label div {
