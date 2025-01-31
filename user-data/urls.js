@@ -1,4 +1,4 @@
-const githubUsername = "vinaysomawat";
+const githubUsername = "siddharthkrishna1403";
 const mediumUsername = "vinaysomawat";
 
 const createMediumURL = (username) => `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@${username}`;
