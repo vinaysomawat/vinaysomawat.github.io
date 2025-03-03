@@ -6,9 +6,10 @@ export const bio = [
 ];
 
 export const skills = [
-  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap",
-  "RxJS, NGXS, NGRX",
-  "Jenkins, JIRA, Webpack, Git",
+  "JavaScript, TypeScript, Angular, AngularJS, React, HTML5, CSS, Bootstrap, Tailwind CSS",
+  "RxJS, NGXS, NGRX, WebSockets, Stencil, Storybook, Module Federation, Webpack",
+  "Jenkins, JIRA, Git",
+  "Performance Optimization, Responsive Design, Cross-Browser Compatibility",
 ];
 
 export const experience = [
