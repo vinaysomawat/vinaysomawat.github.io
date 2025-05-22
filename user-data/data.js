@@ -72,12 +72,90 @@ export const experience = [
   },
 ];
 
+// export const trekking = [
+//   "<strong>Kheerganga Trek</strong>, Himachal Pradesh - 9,711 ft",
+//   "<strong>Triund Trek</strong>, Himachal Pradesh - 9,350 ft",
+//   "<strong>Kedarkantha Trek</strong>, Uttarakhand - 12,500 ft",
+//   "<strong>Jalori Pass Trek</strong>, Himachal Pradesh - 10,800 ft",
+//   "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir - 5,200 ft",
+// ];
+
 export const trekking = [
-  "<strong>Kheerganga Trek</strong>, Himachal Pradesh (9,711 feet)",
-  "<strong>Triund Trek</strong>, Himachal Pradesh (9,350 feet)",
-  "<strong>Kedarkantha Trek</strong>, Uttarakhand (12,500 feet)",
-  "<strong>Jalori Pass Trek</strong>, Himachal Pradesh (10,800 feet)",
-  "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir (5,200 feet)",
+  {
+    name: "Kheerganga Trek",
+    state: "Himachal Pradesh",
+    height: "9,711 ft",
+    details: [
+      "A beautiful trek in the Parvati Valley, known for its hot springs and scenic views.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Triund Trek",
+    state: "Himachal Pradesh",
+    height: "9,350 ft",
+    details: [
+      "A popular trek near Dharamshala, offering stunning views of the Dhauladhar range.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Kedarkantha Trek",
+    state: "Uttarakhand",
+    height: "12,500 ft",
+    details: [
+      "A winter trek known for its snow-covered trails and breathtaking views.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Jalori Pass Trek",
+    state: "Himachal Pradesh",
+    height: "10,800 ft",
+    details: [
+      "A scenic trek that offers panoramic views of the Himalayas and lush green valleys.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Vaishno Devi Trek",
+    state: "Jammu & Kashmir",
+    height: "5,200 ft",
+    details: [
+      "A pilgrimage trek to the famous Vaishno Devi temple, known for its spiritual significance.",
+    ],
+    icon: "hiking",
+  },
+];
+
+export const passes = [
+  {
+    name: "Rohtang Pass",
+    state: "Himachal Pradesh",
+    height: "13,050 ft",
+    details: [
+      "A high mountain pass on the Pir Panjal range, known for its stunning views and challenging terrain.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Baralacha La Pass",
+    state: "Himachal Pradesh",
+    height: "16,040 ft",
+    details: [
+      "A high mountain pass that connects Lahaul and Spiti valleys, known for its breathtaking landscapes.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Nakeela Pass",
+    state: "Himachal Pradesh",
+    height: "15,547 ft",
+    details: [
+      "A high mountain pass on the Leh-Manali highway, known for its challenging terrain and stunning views.",
+    ],
+    icon: "hiking",
+  },
 ];
 
 export const education = [

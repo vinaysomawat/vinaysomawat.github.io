@@ -4,6 +4,7 @@ import {
   education,
   experience,
   trekking,
+  passes,
   footer,
 } from "./user-data/data.js";
 
@@ -14,7 +15,8 @@ const { medium, gitConnected, gitRepo } = URLs;
 async function fetchBlogsFromMedium(url) {
   try {
     const response = await fetch(url);
-    const { items } = await response.json();
+    const { items, feed } = await response.json();
+    document.getElementById("profile-img").src = feed.image;
     populateBlogs(items, "blogs");
   } catch (error) {
     throw new Error(
@@ -99,18 +101,24 @@ function populateSkills(items, id) {
 }
 
 function populateTrekking(items) {
-  const skillsTag = document.getElementById('trekking');
+  const trektag = document.getElementById("trekking");
   items.forEach((item) => {
-    const h3 = getElement("li", null);
-    h3.innerHTML = item;
+    const trekCard = getElement("div", "");
+    trekCard.innerHTML = `
+            <li class="trek-title"><strong>${item.name},</strong> ${item.state} - ${item.height}</li>
+    `;
+    trektag.appendChild(trekCard);
+  });
+}
 
-    const divProgressWrap = getElement("div", "progress-wrap");
-    divProgressWrap.append(h3);
-
-    const divAnimateBox = getElement("div", "col-md-12 animate-box");
-    divAnimateBox.append(divProgressWrap);
-
-    skillsTag.append(divAnimateBox);
+function populatePasses(items) {
+  const trekTag = document.getElementById("passes");
+  items.forEach((item) => {
+    const trekCard = getElement("div", "");
+    trekCard.innerHTML = `
+            <li class="trek-title"><strong>${item.name},</strong> ${item.state} - ${item.height}</li>
+    `;
+    trekTag.appendChild(trekCard);
   });
 }
 
@@ -119,10 +127,10 @@ function populateBlogs(items, id) {
   const count = 3; // Number of blogs to display
 
   for (let i = 0; i < count; i++) {
-      // Create a wrapper for the blog card
-      const blogCard = document.createElement("div");
-      blogCard.className = "blog-card";
-      blogCard.style = `
+    // Create a wrapper for the blog card
+    const blogCard = document.createElement("div");
+    blogCard.className = "blog-card";
+    blogCard.style = `
           display: flex;
           flex-direction: column;
           border-radius: 12px;
@@ -134,59 +142,59 @@ function populateBlogs(items, id) {
           cursor: pointer;
       `;
 
-      // Wrap the card content in an anchor tag
-      const blogLink = document.createElement("a");
-      blogLink.href = items[i].link;
-      blogLink.target = "_blank";
-      blogLink.style = "text-decoration: none; color: black; display: block;";
+    // Wrap the card content in an anchor tag
+    const blogLink = document.createElement("a");
+    blogLink.href = items[i].link;
+    blogLink.target = "_blank";
+    blogLink.style = "text-decoration: none; color: black; display: block;";
 
-      blogCard.appendChild(blogLink);
+    blogCard.appendChild(blogLink);
 
-      // Blog Title
-      const blogTitle = document.createElement("h4");
-      blogTitle.className = "blog-heading";
-      blogTitle.innerHTML = items[i].title;
-      blogTitle.style = "margin: 0 0 8px; font-size: 18px; font-weight: bold;";
-      blogLink.appendChild(blogTitle);
+    // Blog Title
+    const blogTitle = document.createElement("h4");
+    blogTitle.className = "blog-heading";
+    blogTitle.innerHTML = items[i].title;
+    blogTitle.style = "margin: 0px; font-size: 18px; font-weight: bold;";
+    blogLink.appendChild(blogTitle);
 
-      // Publish Date
-      const pubDateEle = document.createElement("p");
-      pubDateEle.className = "publish-date";
-      pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
-      pubDateEle.style = "margin: 0 0 12px; font-size: 12px; color: #555;";
-      blogLink.appendChild(pubDateEle);
+    // Publish Date
+    const pubDateEle = document.createElement("p");
+    pubDateEle.className = "publish-date";
+    pubDateEle.innerHTML = getBlogDate(items[i].pubDate);
+    pubDateEle.style = "margin: 0 0 5px; font-size: 12px; color: #555;";
+    blogLink.appendChild(pubDateEle);
 
-      // Blog Description
-      const blogDescription = document.createElement("p");
-      blogDescription.className = "blog-description";
-      const html = items[i].content;
-      const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
-      blogDescription.innerHTML = doc;
-      blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #000;";
-      blogLink.appendChild(blogDescription);
+    // Blog Description
+    const blogDescription = document.createElement("p");
+    blogDescription.className = "blog-description";
+    const html = items[i].content;
+    const [, doc] = /<p>(.*?)<\/p>/g.exec(html) || [];
+    blogDescription.innerHTML = doc;
+    blogDescription.style = "margin: 0 0 12px; font-size: 12px; color: #000;";
+    blogLink.appendChild(blogDescription);
 
-      // Categories (Tags)
-      const categoriesDiv = document.createElement("div");
-      categoriesDiv.style = "display: flex; gap: 8px; margin-top: 12px;";
+    // Categories (Tags)
+    const categoriesDiv = document.createElement("div");
+    categoriesDiv.style = "display: flex; gap: 8px; margin-top: 12px;";
 
-      for (const category of items[i].categories) {
-          const badge = document.createElement("span");
-          badge.className = "badge";
-          badge.innerHTML = category;
-          badge.style = `
+    for (const category of items[i].categories) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.innerHTML = category;
+      badge.style = `
               font-size: 12px;
               padding: 4px 8px;
               background-color: #007acc;
               color: white;
               border-radius: 4px;
           `;
-          categoriesDiv.appendChild(badge);
-      }
+      categoriesDiv.appendChild(badge);
+    }
 
-      blogLink.appendChild(categoriesDiv);
+    blogLink.appendChild(categoriesDiv);
 
-      // Append the blog card to the container
-      projectdesign.appendChild(blogCard);
+    // Append the blog card to the container
+    projectdesign.appendChild(blogCard);
   }
 }
 
@@ -453,6 +461,7 @@ fetchGitConnectedData(gitConnected);
 
 populateExp_Edu(experience, "experience");
 populateTrekking(trekking);
+populatePasses(passes);
 populateExp_Edu(education, "education");
 
 populateLinks(footer, "footer");

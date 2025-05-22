@@ -167,9 +167,10 @@ figure figcaption {
 }
 
 #colorlib-aside .author-img img{
-	height: 100%; 
+    height: 100%;
     object-fit: contain;
-	padding: 30px;
+    border: 1px solid black;
+    border-radius: 75px;
 }
 #colorlib-aside h1 {
 	font-family: "Raleway", sans-serif;
@@ -1871,7 +1872,7 @@ ul {
 	padding-left: 0px;
 	padding-right: 0px;
 	/* background: #f9bf3f; */
-	border: 1px solid #f9bf3f;
+	/* border: 1px solid #f9bf3f; */
 	color: #000;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
@@ -2197,3 +2198,4 @@ hr {
 		color: #f9bf3f;
 	}
   }
+  

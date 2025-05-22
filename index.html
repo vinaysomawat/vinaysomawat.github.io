@@ -30,8 +30,6 @@
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="index.js"></script>
     <script src="js/profile-card.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3624872272584888"
-     crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="colorlib-page">
@@ -52,7 +50,7 @@
         >
           <div class="text-center">
             <div class="author-img">
-              <img alt="profile-img" src="./logo.png" />
+              <img alt="profile-img" id="profile-img" src="./logo.png" />
             </div>
             <h1 id="colorlib-logo"><a href="./index.html">Vinay Somawat</a></h1>
           </div>
@@ -74,7 +72,9 @@
                   <a href="#" data-nav-section="experience">Work Experience</a>
                 </li>
                 <li>
-                  <a href="#" data-nav-section="trekking">Trekking Adventures</a>
+                  <a href="#" data-nav-section="trekking"
+                    >Trekking Adventures</a
+                  >
                 </li>
                 <li><a href="#" data-nav-section="education">Education</a></li>
                 <li><a href="#" data-nav-section="contact">Contact</a></li>
@@ -155,7 +155,7 @@
                   <ul
                     id="repos"
                     class=""
-                    style="display: block; padding: 10px"
+                    style="display: block; padding: 0px"
                   ></ul>
                 </li>
               </ul>
@@ -197,7 +197,7 @@
                       display: flex;
                       padding: 10px;
                       flex-direction: column;
-                      gap: 10px;
+                      gap: 20px;
                     "
                   ></ul>
                 </li>
@@ -225,10 +225,16 @@
               >
                 <div class="about-desc">
                   <h1>
-                    Trekking <span style="color: #f9bf3f">Adventures</span>
+                    Trekking & Himalayan Pass <span style="color: #f9bf3f">Adventures</span>
                   </h1>
-                  <p>Here are the treks I’ve explored so far:</p>
-                  <div id="trekking" class="row"></div>
+                  <p>
+                    I’m passionate about exploring the great outdoors and have
+                    completed several memorable treks across the Himalayas. Here
+                    are some of the treks I've conquered so far:
+                  </p>
+                  <div id="trekking"></div>
+                  <p style="margin-top: 10px;">In addition to trekking, I’ve explored some iconic Himalayan mountain passes on my bike, each presenting its own thrilling challenges:</p>
+                  <div id="passes"></div>
                 </div>
               </div>
             </div>
