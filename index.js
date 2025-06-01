@@ -130,7 +130,7 @@ function populateBlogs(items, id) {
   const createCategoryBadges = (categories) => html`
     <div class="categories-div">
       ${categories.map(
-        (category) => html` <span class="badge">${category}</span> `
+        (category) => html` <div class="profile-badge brown-badge">${category}</div> `
       )}
     </div>
   `;
@@ -141,7 +141,7 @@ function populateBlogs(items, id) {
         <div class="blog-card">
           <div class="blog-content">
             <a href="${item.link}" target="_blank" class="blog-link">
-              <h4 class="blog-heading">${item.title}</h4>
+              <p class="blog-heading">${item.title}</p>
               <p class="publish-date">${getBlogDate(item.pubDate)}</p>
               <p class="blog-description">
                 ${(/<p>(.*?)<\/p>/g.exec(item.content) || [])[1] || ""}
@@ -202,7 +202,7 @@ function populateRepo(items, id) {
               target="_blank"
               class="repo-link"
             >
-              <h4 class="repo-heading">${item.name}</h4>
+              <p class="repo-heading">${item.name}</p>
               <p class="repo-description">${item.description}</p>
               ${statsTemplate(item)}
             </a>
@@ -227,7 +227,7 @@ function populateExp_Edu(items, id) {
 
   const tagsTemplate = (tags) => html`
     <div class="tags-container">
-      ${tags.map((tag) => html`<span class="badge">${tag}</span>`)}
+      ${tags.map((tag) => html`<div class="profile-badge brown-badge">${tag}</div>`)}
     </div>
   `;
 
@@ -240,7 +240,10 @@ function populateExp_Edu(items, id) {
               <i class="fa fa-${item.icon}"></i>
             </div>
             <div class="timeline-label">
-              <h2>${item.title}<span>${item.duration}</span></h2>
+              <div class="exp-heading">
+                <p class="blog-heading">${item.title}</p>
+                <span class="publish-date">${item.duration}</span>
+              </div>
               <span class="timeline-sublabel">${item.subtitle}</span>
               ${detailsTemplate(item.details)} ${tagsTemplate(item.tags)}
             </div>

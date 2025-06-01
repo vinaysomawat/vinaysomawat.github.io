@@ -126,6 +126,32 @@
               </div>
             </div>
           </section>
+          <section class="colorlib-experience" data-section="experience">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
+                </div>
+              </div>
+              <div class="timeline-centered" id="experience"></div>
+            </div>
+          </section>
+          <section class="colorlib-education" data-section="education">
+            <div class="colorlib-narrow-content">
+              <div
+                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
+                data-animate-effect="fadeInLeft"
+              >
+                <div class="about-desc">
+                  <h1>Education</h1>
+                </div>
+              </div>
+              <div class="timeline-centered" id="education"></div>
+            </div>
+          </section>
           <section class="colorlib-experience no-print" data-section="repos">
             <div class="colorlib-narrow-content">
               <div
@@ -207,19 +233,6 @@
               </ul>
             </div>
           </section>
-          <section class="colorlib-experience" data-section="experience">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
-                </div>
-              </div>
-              <div class="timeline-centered" id="experience"></div>
-            </div>
-          </section>
           <section class="colorlib-skills" data-section="trekking">
             <div class="colorlib-narrow-content">
               <div
@@ -228,7 +241,8 @@
               >
                 <div class="about-desc">
                   <h1>
-                    Trekking & Himalayan Pass <span style="color: #f9bf3f">Adventures</span>
+                    Trekking & Himalayan Pass
+                    <span style="color: #f9bf3f">Adventures</span>
                   </h1>
                   <p>
                     I’m passionate about exploring the great outdoors and have
@@ -236,23 +250,14 @@
                     are some of the treks I've conquered so far:
                   </p>
                   <div id="trekking"></div>
-                  <p style="margin-top: 10px;">In addition to trekking, I’ve explored some iconic Himalayan mountain passes on my bike, each presenting its own thrilling challenges:</p>
+                  <p style="margin-top: 10px">
+                    In addition to trekking, I’ve explored some iconic Himalayan
+                    mountain passes on my bike, each presenting its own
+                    thrilling challenges:
+                  </p>
                   <div id="passes"></div>
                 </div>
               </div>
-            </div>
-          </section>
-          <section class="colorlib-education" data-section="education">
-            <div class="colorlib-narrow-content">
-              <div
-                class="row row-bottom-padded-sm animate-box fadeInLeft animated"
-                data-animate-effect="fadeInLeft"
-              >
-                <div class="about-desc">
-                  <h1>Education</h1>
-                </div>
-              </div>
-              <div class="timeline-centered" id="education"></div>
             </div>
           </section>
           <section class="colorlib-contact" data-section="contact">
@@ -336,9 +341,7 @@
           if (docSnap.exists()) {
             let newCount = docSnap.data().count + 1;
             await updateDoc(counterRef, { count: newCount });
-            document.getElementById(
-              "visitorCount"
-            ).innerText = newCount;
+            document.getElementById("visitorCount").innerText = newCount;
           } else {
             await setDoc(counterRef, { count: 1 });
             document.getElementById("visitorCount").innerText =

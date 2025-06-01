@@ -24,7 +24,7 @@ export const experience = [
       "Designed and implemented advanced features such as keyboard shortcuts, improving operational efficiency by 15 percent.",
       "Took ownership of OKRs, collaborated with the product team, and mentored two junior developers, cutting their code review iterations and ensuring on-time feature delivery.",
     ],
-    tags: ["JavaScript", "Angular", "Bootstrap", "AngularJs"],
+    tags: ["Angular 19", "Storybook", "Stencil", "Bootstrap", "AngularJs"],
     icon: "truck ",
   },
   {
@@ -37,12 +37,12 @@ export const experience = [
       "Enhanced performance and user experience by integrating Twilio-Video, Countly, and NGXS WebSocket for real-time data management.",
     ],
     tags: [
-      "JavaScript",
-      "Angular",
+      "Angular 13",
       "RxJS",
       "NGXS",
       "TypeScript",
       "RxState",
+      "Tailwind",
       "Webpack",
       "Optimization",
     ],
@@ -157,11 +157,10 @@ export const education = [
     subtitle: "National Institute of Technology, Warangal",
     details: [],
     tags: [
-      "Data Structures & Algorithms",
-      "Operating Systems",
-      "Database Management System",
+      "Data Structures",
+      "Algorithms",
+      "Database",
       "Computer Networks",
-      "Compiler Designing",
       "Cloud Computing",
     ],
     icon: "graduation-cap",
@@ -192,6 +191,6 @@ export const footer = [
   },
   {
     label: "copyright-text",
-    data: ["Made with &hearts; by Vinay Somawat"],
+    data: ["Made with love by Vinay Somawat"],
   },
 ];
