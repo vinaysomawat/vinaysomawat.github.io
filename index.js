@@ -129,25 +129,37 @@ function populateBlogs(items, id) {
   const projectdesign = document.getElementById(id);
   const createCategoryBadges = (categories) => html`
     <div class="categories-div">
-      ${categories.map(category => html`
-        <span class="badge">${category}</span>
-      `)}
+      ${categories.map(
+        (category) => html` <span class="badge">${category}</span> `
+      )}
     </div>
   `;
 
   const blogTemplate = html`
-    ${items.slice(0, 3).map(item => html`
-      <div class="blog-card">
-        <a href="${item.link}" target="_blank" class="blog-link">
-          <h4 class="blog-heading">${item.title}</h4>
-          <p class="publish-date">${getBlogDate(item.pubDate)}</p>
-          <p class="blog-description">
-            ${(/<p>(.*?)<\/p>/g.exec(item.content) || [])[1] || ''}
-          </p>
-          ${createCategoryBadges(item.categories)}
-        </a>
-      </div>
-    `)}
+    ${items.slice(0, 3).map(
+      (item) => html`
+        <div class="blog-card">
+          <div class="blog-content">
+            <a href="${item.link}" target="_blank" class="blog-link">
+              <h4 class="blog-heading">${item.title}</h4>
+              <p class="publish-date">${getBlogDate(item.pubDate)}</p>
+              <p class="blog-description">
+                ${(/<p>(.*?)<\/p>/g.exec(item.content) || [])[1] || ""}
+              </p>
+              ${createCategoryBadges(item.categories)}
+            </a>
+          </div>
+          <div class="blog-image">
+            <img
+              src="${(/<img[^>]+src="([^"]+)"/i.exec(item.content) || [])[1] ||
+              "/assets/placeholder.jpg"}"
+              alt="${item.title}"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      `
+    )}
   `;
 
   render(blogTemplate, projectdesign);
@@ -164,11 +176,17 @@ function populateRepo(items, id) {
         ${item.language}
       </div>
       <div class="stats-div">
-        <img src="https://img.icons8.com/ios-filled/16/666666/star--v1.png" alt="Stars">
+        <img
+          src="https://img.icons8.com/ios-filled/16/666666/star--v1.png"
+          alt="Stars"
+        />
         ${item.stars}
       </div>
       <div class="stats-div">
-        <img src="https://img.icons8.com/ios-filled/16/666666/code-fork.png" alt="Forks">
+        <img
+          src="https://img.icons8.com/ios-filled/16/666666/code-fork.png"
+          alt="Forks"
+        />
         ${item.forks}
       </div>
     </div>
@@ -176,17 +194,21 @@ function populateRepo(items, id) {
 
   const repoTemplate = html`
     <div class="repo-wrapper">
-      ${items.slice(0, 4).map(item => html`
-        <div class="repo-card">
-          <a href="https://github.com/${item.author}/${item.name}" 
-             target="_blank" 
-             class="repo-link">
-            <h4 class="repo-heading">${item.name}</h4>
-            <p class="repo-description">${item.description}</p>
-            ${statsTemplate(item)}
-          </a>
-        </div>
-      `)}
+      ${items.slice(0, 4).map(
+        (item) => html`
+          <div class="repo-card">
+            <a
+              href="https://github.com/${item.author}/${item.name}"
+              target="_blank"
+              class="repo-link"
+            >
+              <h4 class="repo-heading">${item.name}</h4>
+              <p class="repo-description">${item.description}</p>
+              ${statsTemplate(item)}
+            </a>
+          </div>
+        `
+      )}
     </div>
   `;
 
@@ -198,33 +220,34 @@ function populateExp_Edu(items, id) {
   if (!mainContainer || !items?.length) return;
 
   const detailsTemplate = (details) => html`
-    ${details.map(detail => html`
-      <p class="timeline-text">&blacksquare; ${detail}</p>
-    `)}
+    ${details.map(
+      (detail) => html` <p class="timeline-text">&blacksquare; ${detail}</p> `
+    )}
   `;
 
   const tagsTemplate = (tags) => html`
     <div class="tags-container">
-      ${tags.map(tag => html`<span class="badge">${tag}</span>`)}
+      ${tags.map((tag) => html`<span class="badge">${tag}</span>`)}
     </div>
   `;
 
   const timelineTemplate = html`
-    ${items.map(item => html`
-      <article class="timeline-entry animate-box">
-        <div class="timeline-entry-inner">
-          <div class="timeline-icon color-2">
-            <i class="fa fa-${item.icon}"></i>
+    ${items.map(
+      (item) => html`
+        <article class="timeline-entry animate-box">
+          <div class="timeline-entry-inner">
+            <div class="timeline-icon color-2">
+              <i class="fa fa-${item.icon}"></i>
+            </div>
+            <div class="timeline-label">
+              <h2>${item.title}<span>${item.duration}</span></h2>
+              <span class="timeline-sublabel">${item.subtitle}</span>
+              ${detailsTemplate(item.details)} ${tagsTemplate(item.tags)}
+            </div>
           </div>
-          <div class="timeline-label">
-            <h2>${item.title}<span>${item.duration}</span></h2>
-            <span class="timeline-sublabel">${item.subtitle}</span>
-            ${detailsTemplate(item.details)}
-            ${tagsTemplate(item.tags)}
-          </div>
-        </div>
-      </article>
-    `)}
+        </article>
+      `
+    )}
     <article class="timeline-entry begin animate-box">
       <div class="timeline-entry-inner">
         <div class="timeline-icon color-2"></div>
@@ -241,9 +264,11 @@ function populateLinks(items, id) {
 
   const linkTemplate = (data) => html`
     <li>
-      <a href="${data.link || '#'}" 
-         target="${data.link ? '_blank' : ''}"
-         @click="${data.func || null}">
+      <a
+        href="${data.link || "#"}"
+        target="${data.link ? "_blank" : ""}"
+        @click="${data.func || null}"
+      >
         ${data.text}
       </a>
     </li>
@@ -254,7 +279,7 @@ function populateLinks(items, id) {
       <p class="col-title">${item.label}</p>
       <nav class="col-list">
         <ul>
-          ${item.data.map(data => linkTemplate(data))}
+          ${item.data.map((data) => linkTemplate(data))}
         </ul>
       </nav>
     </span>
@@ -262,16 +287,18 @@ function populateLinks(items, id) {
 
   const copyrightTemplate = (item) => html`
     <div class="copyright-text no-print">
-      ${item.data.map(copyright => html`<p>${copyright}</p>`)}
+      ${item.data.map((copyright) => html`<p>${copyright}</p>`)}
     </div>
   `;
 
   const footerTemplate = html`
-    ${items.map(item => html`
-      ${item.label === 'copyright-text' 
-        ? copyrightTemplate(item) 
-        : columnTemplate(item)}
-    `)}
+    ${items.map(
+      (item) => html`
+        ${item.label === "copyright-text"
+          ? copyrightTemplate(item)
+          : columnTemplate(item)}
+      `
+    )}
   `;
 
   render(footerTemplate, footer);

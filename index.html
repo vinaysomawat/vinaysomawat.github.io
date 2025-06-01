@@ -119,6 +119,9 @@
                   <div class="col">
                     <div class="github-card" username="vinaysomawat"></div>
                   </div>
+                  <div class="col">
+                    <div class="leetcode-card" username="somawatvinay"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -272,7 +275,8 @@
           </section>
           <section class="colorlib-footer no-print">
             <div class="colorlib-narrow-content">
-              <p id="visitorCount">Visitor Count: Loading...</p>
+              <span class="visitor-label">Total Visitors</span>
+              <span id="visitorCount" class="visitor-number">Loading...</span>
             </div>
           </section>
           <section class="colorlib-footer no-print" data-section="footer">
@@ -334,7 +338,7 @@
             await updateDoc(counterRef, { count: newCount });
             document.getElementById(
               "visitorCount"
-            ).innerText = `Visitor Count: ${newCount}`;
+            ).innerText = newCount;
           } else {
             await setDoc(counterRef, { count: 1 });
             document.getElementById("visitorCount").innerText =
