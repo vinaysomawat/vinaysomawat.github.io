@@ -2,8 +2,6 @@
 
 A modern, responsive portfolio website built with JavaScript and lit-html templating.
 
-![Portfolio Preview](assets/preview.png)
-
 ## Features
 
 - 📱 Responsive Design

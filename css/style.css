@@ -620,11 +620,6 @@ body.offcanvas .colorlib-nav-toggle {
   }
 }
 
-.colorlib-bg-color {
-  background: #fafafa;
-  position: relative;
-}
-
 #message {
   height: 130px;
 }
@@ -753,33 +748,6 @@ body.offcanvas .colorlib-nav-toggle {
   }
 }
 
-.row-bottom-padded-lg {
-  padding-bottom: 7em;
-}
-@media screen and (max-width: 768px) {
-  .row-bottom-padded-lg {
-    padding-bottom: 1em;
-  }
-}
-
-.row-bottom-padded-md {
-  padding-bottom: 3em;
-}
-@media screen and (max-width: 768px) {
-  .row-bottom-padded-md {
-    padding-bottom: 1em;
-  }
-}
-
-.row-bottom-padded-sm {
-  padding-bottom: 1em;
-}
-@media screen and (max-width: 768px) {
-  .row-bottom-padded-sm {
-    padding-bottom: 1em;
-  }
-}
-
 .row-pt-md {
   padding-top: 3em;
 }
@@ -790,11 +758,6 @@ body.offcanvas .colorlib-nav-toggle {
 
 .js .animate-box {
   opacity: 0;
-}
-
-.bmc-div {
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
 ul {
@@ -853,10 +816,6 @@ ul {
   transform: rotate(180deg);
 }
 
-/**
- * Submenu
- -----------------------------*/
-
 .submenu {
   display: none;
   font-size: 14px;
@@ -900,41 +859,11 @@ ul {
   font-weight: 600;
 }
 
-.img-fluid {
-  float: left;
-  width: 300px;
-}
-
 span {
   font-family: "Montserrat", sans-serif;
   /* color: black; */
   display: inline-block; /* change the display type           */
   margin: 0 5px;
-}
-
-.col-image {
-  float: left;
-  width: 25%;
-  padding: 5px;
-}
-
-/* Clearfix (clear floats) */
-.row-image::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-@media screen and (max-width: 992px) {
-  .col-image {
-    width: 100%;
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    display: table-cell;
-    vertical-align: middle;
-  }
 }
 
 @media print {
@@ -1022,16 +951,6 @@ footer ul {
   margin-top: 0px;
   margin-bottom: 0px;
   color: black;
-}
-
-.readmore {
-  color: #000;
-}
-.readmore p {
-  padding-bottom: 10px;
-  text-align: right;
-  font-weight: 600;
-  background-color: #f0ad4e;
 }
 
 .badge {
@@ -1246,13 +1165,6 @@ strong {
   background: #fff;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.tags-container {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 12px;
 }
 
 .copyright-text {
