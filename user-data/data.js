@@ -1,6 +1,6 @@
 export const bio = [
   "Hello, I'm Vinay Somawat!",
-  "<strong>Frontend Software Engineer</strong> with 4+ years of experience building scalable, user-focused web applications.",
+  "Frontend Software Engineer with 4+ years of experience building scalable, user-focused web applications.",
   "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
   "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
 ];
@@ -71,14 +71,6 @@ export const experience = [
     icon: "group",
   },
 ];
-
-// export const trekking = [
-//   "<strong>Kheerganga Trek</strong>, Himachal Pradesh - 9,711 ft",
-//   "<strong>Triund Trek</strong>, Himachal Pradesh - 9,350 ft",
-//   "<strong>Kedarkantha Trek</strong>, Uttarakhand - 12,500 ft",
-//   "<strong>Jalori Pass Trek</strong>, Himachal Pradesh - 10,800 ft",
-//   "<strong>Vaishno Devi Trek</strong>, Jammu & Kashmir - 5,200 ft",
-// ];
 
 export const trekking = [
   {
@@ -185,51 +177,9 @@ export const education = [
 ];
 
 export const footer = [
-  //   {
-  //     label: "Dev Profiles",
-  //     data: [
-  //       {
-  //         text: "Stackoverflow",
-  //         link: "https://stackoverflow.com/users/8461233/vinay-somawat",
-  //       },
-  //       {
-  //         text: "GitHub",
-  //         link: "https://github.com/vinaysomawat",
-  //       },
-  //       {
-  //         text: "LeetCode",
-  //         link: "https://leetcode.com/somawatvinay/",
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     label: "Resources",
-  //     data: [
-  //       {
-  //         text: "Enable Dark/Light Mode",
-  //         func: "enableDarkMode()",
-  //       },
-  //       {
-  //         text: "Print this page",
-  //         func: "window.print()",
-  //       },
-  //       {
-  //         text: "Clone this page",
-  //         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
-  //       },
-  //     ],
-  //   },
   {
     label: "Links",
     data: [
-      //   {
-      //     text: "Linkedin",
-      //     link: "https://www.linkedin.com/in/vinaysomawat/",
-      //   },
-      //   {
-      //     text: "Twitter",
-      //     link: "https://twitter.com/thesigmakid",
-      //   },
       {
         text: "Buy me a coffee",
         link: "https://www.buymeacoffee.com/r194dME8y",

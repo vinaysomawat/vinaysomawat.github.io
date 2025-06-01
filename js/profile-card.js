@@ -1,96 +1,93 @@
-window.addEventListener("DOMContentLoaded", async function () {
-  async function get(url) {
-    const resp = await fetch(url);
-    return resp.json();
-  }
+import { html, render } from 'https://unpkg.com/lit@latest?module';
 
-  document.querySelectorAll(".stack-card").forEach(async function (el) {
+async function get(url) {
+  const resp = await fetch(url);
+  return resp.json();
+}
+
+function stackCardTemplate(user) {
+  const {
+    profile_image,
+    website_url,
+    link,
+    display_name,
+    reputation,
+    user_id,
+    badge_counts: { gold, silver, bronze },
+  } = user;
+
+  const profileLink = website_url || link;
+  const username = link.replace("https://", "").replace(`/users/${user_id}`, "");
+
+  return html`
+    <a href="${profileLink}" target="_blank" class="profile-card">
+      <div class="profile-header">
+        <img class="profile-avatar" src="${profile_image}" alt="Profile image" />
+        <div class="profile-info">
+          <h3 class="profile-name">${display_name}</h3>
+          <p class="profile-username">@${username}</p>
+        </div>
+      </div>
+      <div class="profile-stats">
+        ${[
+          { label: "REPUTATION", value: reputation },
+          { label: "GOLD", value: gold },
+          { label: "SILVER", value: silver },
+          { label: "BRONZE", value: bronze },
+        ].map(
+          (stat) => html`
+            <div>
+              <p class="stat-label">${stat.label}</p>
+              <p class="stat-value">${stat.value}</p>
+            </div>
+          `
+        )}
+      </div>
+    </a>
+  `;
+}
+
+function githubCardTemplate(user) {
+  const { name, avatar_url, public_repos, followers, html_url, following } = user;
+  const username = html_url.replace("https://", "");
+
+  return html`
+    <a href="${html_url}" target="_blank" class="profile-card">
+      <div class="profile-header">
+        <img class="profile-avatar" src="${avatar_url}" alt="Profile image" />
+        <div class="profile-info">
+          <h3 class="profile-name">${name}</h3>
+          <p class="profile-username">@${username}</p>
+        </div>
+      </div>
+      <div class="profile-stats">
+        ${[
+          { label: "REPOSITORIES", value: public_repos },
+          { label: "FOLLOWERS", value: followers },
+          { label: "FOLLOWING", value: following },
+        ].map(
+          (stat) => html`
+            <div>
+              <p class="stat-label">${stat.label}</p>
+              <p class="stat-value">${stat.value}</p>
+            </div>
+          `
+        )}
+      </div>
+    </a>
+  `;
+}
+
+window.addEventListener("DOMContentLoaded", async () => {
+  document.querySelectorAll(".stack-card").forEach(async (el) => {
     const userId = el.getAttribute("user-id");
-
-    const response = await get(
-      `https://api.stackexchange.com/2.2/users/${userId}?site=stackoverflow`
-    );
-    const user = response.items[0];
-    const {
-      profile_image,
-      website_url,
-      link,
-      display_name,
-      reputation,
-      user_id,
-    } = user;
-    const { gold, silver, bronze } = user.badge_counts;
-
-    const profileLink = website_url || link;
-
-    el.innerHTML = `
-        <a href="${profileLink}" target="_blank" style="text-decoration: none; color: black; display: block; border-radius: 12px; padding: 16px; font-size: 14px; background: linear-gradient(135deg, #ffdd99, #f9bf3f); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <img style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff;" src="${profile_image}" alt="Profile image"></img>
-                <div style="flex-grow: 1;">
-                    <h3 style="margin: 0; font-size: 18px; font-weight: bold;">${display_name}</h3>
-                    <p style="margin: 4px 0 0; font-size: 12px; color: #555;">
-                        @${link
-                          .replace("https://", "")
-                          .replace(`/users/${user_id}`, "")}
-                    </p>
-                </div>
-            </div>
-            <div style="margin-top: 16px; display: flex; justify-content: space-between; text-align: center;">
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">REPUTATION</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${reputation}</p>
-                </div>
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">GOLD</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${gold}</p>
-                </div>
-                                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">SILVER</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${silver}</p>
-                </div>
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">BRONZE</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${bronze}</p>
-                </div>
-            </div>
-        </a>
-        `;
+    const { items } = await get(`https://api.stackexchange.com/2.2/users/${userId}?site=stackoverflow`);
+    render(stackCardTemplate(items[0]), el);
   });
 
-  document.querySelectorAll(".github-card").forEach(async function (el) {
+  document.querySelectorAll(".github-card").forEach(async (el) => {
     const username = el.getAttribute("username");
-
-    const response = await get(`https://api.github.com/users/${username}`);
-    const { name, avatar_url, public_repos, followers, html_url, following } =
-      response;
-
-    el.innerHTML = `
-        <a href="${html_url}" target="_blank" style="text-decoration: none; color: black; display: block; border-radius: 12px; padding: 16px; font-size: 14px; background: linear-gradient(135deg, #ffdd99, #f9bf3f); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); transition: transform 0.2s ease-in-out;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-                <img style="width: 60px; height: 60px; border-radius: 50%; border: 2px solid #fff;" src="${avatar_url}" alt="Profile image"></img>
-                <div style="flex-grow: 1;">
-                    <h3 style="margin: 0; font-size: 18px; font-weight: bold;">${name}</h3>
-                    <p style="margin: 4px 0 0; font-size: 12px; color: #555;">
-                        @${html_url.replace("https://", "")}
-                    </p>
-                </div>
-            </div>
-            <div style="margin-top: 16px; display: flex; justify-content: space-between; text-align: center;">
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">REPOSITORIES</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${public_repos}</p>
-                </div>
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">FOLLOWERS</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${followers}</p>
-                </div>
-                <div>
-                    <p style="font-size: 12px; color: #666; margin: 0;">FOLLOWING</p>
-                    <p style="font-size: 20px; font-weight: bold; color: #222;">${following}</p>
-                </div>
-            </div>
-        </a>
-        `;
+    const data = await get(`https://api.github.com/users/${username}`);
+    render(githubCardTemplate(data), el);
   });
 });
