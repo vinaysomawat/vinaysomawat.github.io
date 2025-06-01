@@ -1154,7 +1154,7 @@ strong {
 }
 
 .profile-stats {
-  margin-top: 16px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
   text-align: center;
@@ -1212,7 +1212,7 @@ strong {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #666;
-  margin-bottom: 2px;
+  margin: 0px
 }
 
 .exp-heading {
@@ -1224,4 +1224,5 @@ strong {
   margin-top: 5px;
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
 }
