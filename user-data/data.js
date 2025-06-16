@@ -14,7 +14,7 @@ export const skills = [
 
 export const experience = [
   {
-    title: "Shiprocket Private Limited",
+    title: "Shiprocket Limited",
     duration: "September 2023 - Present",
     subtitle: "Software Engineer",
     details: [
@@ -110,7 +110,7 @@ export const trekking = [
     icon: "hiking",
   },
   {
-    name: "Vaishno Devi Trek",
+    name: "Shri Mata Vaishno Devi Trek",
     state: "Jammu & Kashmir",
     height: "5,200 ft",
     details: [
@@ -121,15 +121,6 @@ export const trekking = [
 ];
 
 export const passes = [
-  {
-    name: "Rohtang Pass",
-    state: "Himachal Pradesh",
-    height: "13,050 ft",
-    details: [
-      "A high mountain pass on the Pir Panjal range, known for its stunning views and challenging terrain.",
-    ],
-    icon: "hiking",
-  },
   {
     name: "Baralacha La Pass",
     state: "Himachal Pradesh",
@@ -148,6 +139,51 @@ export const passes = [
     ],
     icon: "hiking",
   },
+  {
+    name: "Lachung La Pass",
+    state: "Ladakh",
+    height: "16,616 ft",
+    details: [
+      "A high mountain pass that connects Leh and Nubra Valley, known for its stunning landscapes.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Tanglang La Pass",
+    state: "Ladakh",
+    height: "17,480 ft",
+    details: [
+      "One of the highest passes in the world, offering breathtaking views of the Himalayas.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Khardung La Pass",
+    state: "Ladakh",
+    height: "18,379 ft",
+    details: [
+      "One of the highest motorable roads in the world, offering stunning views of the surrounding mountains.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "Chang La Pass",
+    state: "Ladakh",
+    height: "17,590 ft",
+    details: [
+      "A high mountain pass on the road to Pangong Lake, known for its stunning views and challenging terrain.",
+    ],
+    icon: "hiking",
+  },
+  {
+    name: "ZojiLa Pass",
+    state: "Jammu & Kashmir",
+    height: "11,575 ft",
+    details: [
+      "A high mountain pass that connects Srinagar and Leh, known for its challenging roads and breathtaking views.",
+    ],
+    icon: "hiking",
+  }
 ];
 
 export const education = [

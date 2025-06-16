@@ -1212,7 +1212,7 @@ strong {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #666;
-  margin: 0px
+  margin: 0px;
 }
 
 .exp-heading {
@@ -1225,4 +1225,55 @@ strong {
   display: flex;
   gap: 5px;
   flex-wrap: wrap;
+}
+
+.adventure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.trek-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 5px 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trek-card-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.trek-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.trek-info {
+  flex: 1;
+}
+
+.trek-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+}
+
+.trek-meta {
+  font-size: 10px;
+  color: #666;
+}
+
+.trek-height .badge {
+  background-color: #e0f2f1;
+  color: #00796b;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: 600;
 }
