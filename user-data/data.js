@@ -77,46 +77,56 @@ export const trekking = [
     name: "Kheerganga Trek",
     state: "Himachal Pradesh",
     height: "9,711 ft",
-    details: [
+    details:
       "A beautiful trek in the Parvati Valley, known for its hot springs and scenic views.",
-    ],
+
     icon: "hiking",
+    duration: "2 Days",
+    level: "Moderate",
   },
   {
     name: "Triund Trek",
     state: "Himachal Pradesh",
     height: "9,350 ft",
-    details: [
+    details:
       "A popular trek near Dharamshala, offering stunning views of the Dhauladhar range.",
-    ],
+
     icon: "hiking",
+    duration: "2 Days",
+    level: "Easy",
   },
   {
     name: "Kedarkantha Trek",
     state: "Uttarakhand",
     height: "12,500 ft",
-    details: [
+    details:
       "A winter trek known for its snow-covered trails and breathtaking views.",
-    ],
+
     icon: "hiking",
+    duration: "6 Days",
+    level: "Moderate",
   },
   {
     name: "Jalori Pass Trek",
     state: "Himachal Pradesh",
     height: "10,800 ft",
-    details: [
+    details:
       "A scenic trek that offers panoramic views of the Himalayas and lush green valleys.",
-    ],
+
     icon: "hiking",
+    duration: "1 Day",
+    level: "Easy",
   },
   {
     name: "Shri Mata Vaishno Devi Trek",
     state: "Jammu & Kashmir",
     height: "5,200 ft",
-    details: [
+    details:
       "A pilgrimage trek to the famous Vaishno Devi temple, known for its spiritual significance.",
-    ],
+
     icon: "hiking",
+    duration: "2 Days",
+    level: "Easy",
   },
 ];
 
@@ -183,7 +193,7 @@ export const passes = [
       "A high mountain pass that connects Srinagar and Leh, known for its challenging roads and breathtaking views.",
     ],
     icon: "hiking",
-  }
+  },
 ];
 
 export const education = [
@@ -222,6 +232,15 @@ export const footer = [
       {
         text: "Github",
         link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+      },
+    ],
+  },
+  {
+    label: "Pages",
+    data: [
+      {
+        text: "Trekking & Himalayan Pass Adventures",
+        link: "./pages/adventure.html",
       },
     ],
   },

@@ -1270,10 +1270,50 @@ strong {
 }
 
 .trek-height .badge {
-  background-color: #e0f2f1;
-  color: #00796b;
+  background-color: #f9bf3f;
+  color: #000;
   border-radius: 20px;
   padding: 5px 12px;
   font-size: 13px;
   font-weight: 600;
 }
+
+.trek-details {
+  font-size: 10px;
+  color: #000;
+  line-height: 1.4;
+  margin-left: 0px;
+}
+
+.home-link-wrapper {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	z-index: 1000;
+  }
+  
+  .home-link {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 20px;
+	background: rgba(0, 0, 0, 0.7);
+	color: #fff;
+	border-radius: 30px;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.3s ease;
+  }
+  
+  .home-link:hover {
+	background: #f9bf3f;
+	color: #000;
+	transform: translateX(-5px);
+  }
+  
+  @media (max-width: 768px) {
+	.home-link {
+	  padding: 8px 16px;
+	  font-size: 14px;
+	}
+  }

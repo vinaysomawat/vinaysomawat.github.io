@@ -92,37 +92,6 @@ function populateSkills(items, id) {
   render(skillsTemplate, skillsTag);
 }
 
-function generateCard(item, iconColor, icon) {
-  return html`
-    <div class="trek-card animate-box" data-animate-effect="fadeInUp">
-      <div class="trek-card-inner">
-        <div class="trek-icon" style="color: ${iconColor}">
-          <i class="fas fa-${icon}"></i>
-        </div>
-        <div class="trek-info">
-          <div class="trek-name">${item.name}</div>
-          <div class="trek-meta"><i class="fa-solid fa-location-dot"></i> ${item.state}</div>
-        </div>
-        <div class="trek-height">
-          <span class="badge">${item.height}</span>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function populateTrekking(items) {
-  const trektag = document.getElementById("trekking");
-  const trekkingTemplate = html`${items.map((item) => generateCard(item, "#000", "hiking"))}`;
-  render(trekkingTemplate, trektag);
-}
-
-function populatePasses(items) {
-  const passtag = document.getElementById("passes");
-  const passesTemplate = html`${items.map((item) => generateCard(item, "#000", "road"))}`;
-  render(passesTemplate, passtag);
-}
-
 function populateBlogs(items, id) {
   const projectdesign = document.getElementById(id);
   const createCategoryBadges = (categories) => html`
@@ -352,8 +321,6 @@ fetchReposFromGit(gitRepo);
 fetchGitConnectedData(gitConnected);
 
 populateExp_Edu(experience, "experience");
-populateTrekking(trekking);
-populatePasses(passes);
 populateExp_Edu(education, "education");
 
 populateLinks(footer, "footer");
