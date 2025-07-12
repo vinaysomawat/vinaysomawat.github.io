@@ -1,6 +1,6 @@
 export const bio = [
-  "Hello, I'm Vinay Somawat!",
-  "Frontend Software Engineer with 4+ years of experience building scalable, user-focused web applications.",
+  "Hello, I'm Nikhitha Reddy Sama!",
+  "Java Full stack developer with 8+ years of experience building scalable, user-focused web applications.",
   "Skilled in Angular, TypeScript, and performance optimization, I aim to leverage my expertise in delivering innovative solutions that drive measurable business outcomes.",
   "Passionate about mentoring, teamwork, and continuous improvement in engineering processes.",
 ];
