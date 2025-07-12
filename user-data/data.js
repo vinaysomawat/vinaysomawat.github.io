@@ -199,8 +199,8 @@ export const passes = [
 export const education = [
   {
     title: "B.Tech. in Computer Science and Engineering",
-    duration: "2016 - 2020",
-    subtitle: "National Institute of Technology, Warangal",
+    Graduated: "2017",
+    subtitle: "Jawaharlal Nehru Technological University, Hyderabad",
     details: [],
     tags: [
       "Data Structures",
@@ -214,7 +214,7 @@ export const education = [
   {
     title: "Class 12th in Science and Mathematics",
     duration: "",
-    subtitle: "Board of Secondary Education, Rajasthan",
+    subtitle: "Board of Secondary Education, Hyderabad
     details: [],
     tags: ["Physics", "Chemistry", "Mathematics"],
     icon: "book",
@@ -231,7 +231,7 @@ export const footer = [
       },
       {
         text: "Github",
-        link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+        link: "https://github.com/nikhithareddysama/nikhithareddysama.github.io",
       },
     ],
   },
@@ -246,6 +246,6 @@ export const footer = [
   },
   {
     label: "copyright-text",
-    data: ["Made with love by Vinay Somawat"],
+    data: ["Nikhitha Reddy Sama"],
   },
 ];
