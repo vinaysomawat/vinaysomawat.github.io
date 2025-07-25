@@ -3,9 +3,8 @@ import {
   skills,
   education,
   experience,
-  trekking,
-  passes,
   footer,
+  contactLinks,
 } from "./user-data/data.js";
 import { html, render } from "https://unpkg.com/lit-html?module";
 
@@ -111,18 +110,10 @@ function populateBlogs(items, id) {
               <p class="blog-heading">${item.title}</p>
               <p class="publish-date">${getBlogDate(item.pubDate)}</p>
               <p class="blog-description">
-                ${(/<p>(.*?)<\/p>/g.exec(item.content) || [])[1] || ""}
+                ${item.content.replace(/<[^>]*>/g, '').trim()}
               </p>
               ${createCategoryBadges(item.categories)}
             </a>
-          </div>
-          <div class="blog-image">
-            <img
-              src="${(/<img[^>]+src="([^"]+)"/i.exec(item.content) || [])[1] ||
-              "/assets/placeholder.jpg"}"
-              alt="${item.title}"
-              loading="lazy"
-            />
           </div>
         </div>
       `
@@ -274,6 +265,25 @@ function populateLinks(items, id) {
   render(footerTemplate, footer);
 }
 
+function populateContactLinks(items, id) {
+  const contactLinks = document.getElementById(id);
+  if (!contactLinks || !items?.length) return;
+  const contactLinkTemplate = (item) => html`
+    <li class="profile-card" style="padding: 6px 12px">
+      <a href="${item.link}" target="_blank" class="contact-link">
+        <i class="${item.icon}"></i>
+        <span class="contact-label">${item.label}</span>
+      </a>
+    </li>
+  `;
+  const contactLinksTemplate = html`
+    <ul class="contact-links-list">
+      ${items.map((item) => contactLinkTemplate(item))}
+    </ul>
+  `;
+  render(contactLinksTemplate, contactLinks);
+}
+
 function getElement(tagName, className) {
   let item = document.createElement(tagName);
   item.className = className;
@@ -324,3 +334,4 @@ populateExp_Edu(experience, "experience");
 populateExp_Edu(education, "education");
 
 populateLinks(footer, "footer");
+populateContactLinks(contactLinks, 'contact-links');

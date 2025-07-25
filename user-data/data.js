@@ -237,6 +237,29 @@ export const education = [
   },
 ];
 
+export const contactLinks = [
+  {
+    label: 'Email',
+    link: 'mailto:vinaysomawat40@gmail.com',
+    icon: 'fa fa-envelope',
+  },
+  {
+    label: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/vinaysomawat/',
+    icon: 'fa-brands fa-linkedin',
+  },
+  {
+    label: 'GitHub',
+    link: 'https://github.com/vinaysomawat',
+    icon: 'fa-brands fa-github',
+  },
+  {
+    label: 'Buy me a coffee',
+    link: 'https://www.buymeacoffee.com/r194dME8y',
+    icon: 'fa fa-coffee',
+  },
+]
+
 export const footer = [
   {
     label: "Links",
@@ -262,6 +285,6 @@ export const footer = [
   },
   {
     label: "copyright-text",
-    data: ["Made with love by Vinay Somawat"],
+    data: ["Built with HTML, CSS, JavaScript, and ❤️"],
   },
 ];
