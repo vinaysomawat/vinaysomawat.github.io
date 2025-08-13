@@ -227,7 +227,6 @@ function populateLinks(items, id) {
     <li>
       <a
         href="${data.link || "#"}"
-        target="${data.link ? "_blank" : ""}"
         @click="${data.func || null}"
       >
         ${data.text}
