@@ -82,7 +82,7 @@ function populateSkills(items, id) {
   const skillsTag = document.getElementById(id);
 
   const skillsTemplate = html` ${items.map(
-    (item) => html` <div class="col-md-12 animate-box">
+    (item) => html` <div class="col-md-3 animate-box">
       <div class="progress-wrap">
         <li class="skill-item">${item}</li>
       </div>

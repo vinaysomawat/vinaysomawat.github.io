@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Resume JSON Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Raleway&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/animate.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    body {
+      font-family: "Open Sans", sans-serif;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    .colorlib-narrow-content {
+      padding: 0 2.5em;
+    }
+
+    .generator-section {
+      margin-top: 40px;
+    }
+
+    fieldset {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+
+    .legend {
+      color: #2c98f0;
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #2c98f0;
+      border-color: #2c98f0;
+    }
+
+    .btn-success {
+      background: #f9bf3f;
+      border-color: #f9bf3f;
+      color: #333;
+    }
+
+    .section {
+      border: 1px solid #eee;
+      border-radius: 4px;
+      padding: 15px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    #output {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .home-link-wrapper {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+
+    .home-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .home-link:hover {
+      background: #f9bf3f;
+      color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+    }
+  </style>
+      <script type="module" src="../index.js"></script>
+      <script type="module" src="../js/main.js"></script>
+</head>
+
+<body>
+  <div class="home-link-wrapper">
+    <a href="../index.html" class="home-link">
+      <i class="fa-solid fa-arrow-left"></i> Home
+    </a>
+  </div>
+
+  <div class="colorlib-narrow-content generator-section">
+    <div class="row row-bottom-padded-sm animate-box" data-animate-effect="fadeInLeft">
+      <div class="about-desc text-center">
+        <h1>Resume JSON <span style="color: #f9bf3f">Generator</span></h1>
+        <p>Generate structured JSON data for your portfolio website</p>
+      </div>
+    </div>
+
+    <form id="resumeForm">
+      <!-- Bio -->
+      <fieldset>
+        <div class="legend">Bio</div>
+        <div id="bioFields">
+          <textarea name="bio"></textarea>
+        </div>
+        <button type="button" class="btn btn-default" onclick="addField('bioFields', 'textarea')">
+          <i class="fa fa-plus"></i> Add Bio Line
+        </button>
+      </fieldset>
+
+      <!-- Skills -->
+      <fieldset>
+        <div class="legend">Skills</div>
+        <select id="skillsSelect" multiple size="20"></select>
+        <input type="text" id="newSkill" placeholder="Add new skill..." />
+        <button type="button" class="btn btn-primary" onclick="addNewSkill()">
+          <i class="fa fa-plus"></i> Add Skill
+        </button>
+      </fieldset>
+
+      <!-- Experience -->
+      <fieldset>
+        <div class="legend">Experience</div>
+        <div id="experienceFields"></div>
+        <button type="button" class="btn btn-default" onclick="addExperience()">
+          <i class="fa fa-plus"></i> Add Experience
+        </button>
+      </fieldset>
+
+      <!-- Education -->
+      <fieldset>
+        <div class="legend">Education</div>
+        <div id="educationFields"></div>
+        <button type="button" class="btn btn-default" onclick="addEducation()">
+          <i class="fa fa-plus"></i> Add Education
+        </button>
+      </fieldset>
+
+      <!-- Contact Links -->
+      <fieldset>
+        <div class="legend">Contact Links</div>
+        <div id="contactFields"></div>
+        <button type="button" class="btn btn-default" onclick="addContact()">
+          <i class="fa fa-plus"></i> Add Contact Link
+        </button>
+      </fieldset>
+
+      <!-- Footer -->
+      <fieldset>
+        <div class="legend">Footer</div>
+        <div id="footerFields"></div>
+        <button type="button" class="btn btn-default" onclick="addFooter()">
+          <i class="fa fa-plus"></i> Add Footer Section
+        </button>
+      </fieldset>
+
+      <br />
+      <button type="submit" class="btn btn-success">
+        <i class="fa fa-code"></i> Generate JSON
+      </button>
+      <button type="button" class="btn btn-info" onclick="copyJSON()">
+        <i class="fa fa-copy"></i> Copy to Clipboard
+      </button>
+    </form>
+
+    <pre id="output"></pre>
+
+    <script>
+      const skillsList = [
+        "JavaScript",
+        "TypeScript",
+        "Angular",
+        "AngularJS",
+        "React",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Material UI",
+        "Bootstrap",
+        "RxJS",
+        "NGXS",
+        "NGRX",
+        "WebSockets",
+        "Module Federation",
+        "Signals API",
+        "Micro-frontend Architecture",
+        "StencilJS",
+        "Storybook",
+        "Webpack",
+        "Git",
+        "GitHub Copilot",
+        "OpenAI APIs",
+        "Chrome DevTools",
+        "Performance Optimization",
+        "Responsive Design",
+        "Web Accessibility",
+        "Unit Testing",
+        "ESLint",
+        "Prettier",
+      ];
+
+      const skillsSelect = document.getElementById("skillsSelect");
+
+      function populateSkills() {
+        skillsSelect.innerHTML = "";
+        skillsList.forEach((skill) => {
+          const opt = document.createElement("option");
+          opt.value = skill;
+          opt.textContent = skill;
+          skillsSelect.appendChild(opt);
+        });
+      }
+      populateSkills();
+
+      function addNewSkill() {
+        const newSkill = document.getElementById("newSkill").value.trim();
+        if (newSkill && !skillsList.includes(newSkill)) {
+          skillsList.push(newSkill);
+          populateSkills();
+          document.getElementById("newSkill").value = "";
+        }
+      }
+
+      function addField(containerId, type) {
+        const container = document.getElementById(containerId);
+        const el = document.createElement(type);
+        if (type === "textarea") el.name = containerId;
+        if (type === "input") el.type = "text";
+        el.name = containerId;
+        container.appendChild(el);
+      }
+
+      function addExperience() {
+        const container = document.getElementById("experienceFields");
+        const div = document.createElement("div");
+        div.className = "section";
+        div.innerHTML = `
+    <input type="text" placeholder="Title" name="exp_title">
+    <input type="text" placeholder="Duration" name="exp_duration">
+    <input type="text" placeholder="Subtitle" name="exp_subtitle">
+    <textarea placeholder="Details (comma separated)" name="exp_details"></textarea>
+    <select name="exp_tags" multiple size="5">
+      ${skillsList
+            .map((skill) => `<option value="${skill}">${skill}</option>`)
+            .join("")}
+    </select>
+    <input type="text" placeholder="Icon" name="exp_icon">
+  `;
+        container.appendChild(div);
+      }
+
+      function addEducation() {
+        const container = document.getElementById("educationFields");
+        const div = document.createElement("div");
+        div.className = "section";
+        div.innerHTML = `
+    <input type="text" placeholder="Title" name="edu_title">
+    <input type="text" placeholder="Duration" name="edu_duration">
+    <input type="text" placeholder="Subtitle" name="edu_subtitle">
+    <textarea placeholder="Details (comma separated)" name="edu_details"></textarea>
+    <select name="edu_tags" multiple size="5">
+      ${skillsList
+            .map((skill) => `<option value="${skill}">${skill}</option>`)
+            .join("")}
+    </select>
+    <input type="text" placeholder="Icon" name="edu_icon">
+  `;
+        container.appendChild(div);
+      }
+
+      function addContact() {
+        const container = document.getElementById("contactFields");
+        const div = document.createElement("div");
+        div.className = "section";
+        div.innerHTML = `
+    <input type="text" placeholder="Label" name="contact_label">
+    <input type="text" placeholder="Link" name="contact_link">
+    <input type="text" placeholder="Icon" name="contact_icon">
+  `;
+        container.appendChild(div);
+      }
+
+      function addFooter() {
+        const container = document.getElementById("footerFields");
+        const div = document.createElement("div");
+        div.className = "section";
+        div.innerHTML = `
+    <input type="text" placeholder="Label" name="footer_label">
+    <textarea placeholder="Footer items (text|link, one per line)" name="footer_data"></textarea>
+  `;
+        container.appendChild(div);
+      }
+
+      document
+        .getElementById("resumeForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const bioArr = Array.from(
+            document.querySelectorAll("#bioFields textarea")
+          )
+            .map((el) => el.value)
+            .filter(Boolean);
+          const skillsArr = Array.from(
+            document.querySelectorAll("#skillsSelect option:checked")
+          ).map((el) => el.value);
+
+          const experienceArr = Array.from(
+            document.querySelectorAll("#experienceFields .section")
+          ).map((sec) => ({
+            title: sec.querySelector("[name=exp_title]").value,
+            duration: sec.querySelector("[name=exp_duration]").value,
+            subtitle: sec.querySelector("[name=exp_subtitle]").value,
+            details: sec
+              .querySelector("[name=exp_details]")
+              .value.split(",")
+              .map((s) => s.trim())
+              .filter(Boolean),
+            tags: sec
+              .querySelector("[name=exp_tags]")
+              .value.split(",")
+              .map((tag) => tag.trim())
+              .filter(Boolean),
+            icon: sec.querySelector("[name=exp_icon]").value,
+          }));
+
+          const educationArr = Array.from(
+            document.querySelectorAll("#educationFields .section")
+          ).map((sec) => ({
+            title: sec.querySelector("[name=edu_title]").value,
+            duration: sec.querySelector("[name=edu_duration]").value,
+            subtitle: sec.querySelector("[name=edu_subtitle]").value,
+            details: sec
+              .querySelector("[name=edu_details]")
+              .value.split(",")
+              .map((s) => s.trim())
+              .filter(Boolean),
+            tags: Array.from(
+              sec.querySelector("[name=edu_tags]").selectedOptions
+            ).map((opt) => opt.value),
+            icon: sec.querySelector("[name=edu_icon]").value,
+          }));
+
+          const contactLinksArr = Array.from(
+            document.querySelectorAll("#contactFields .section")
+          ).map((sec) => ({
+            label: sec.querySelector("[name=contact_label]").value,
+            link: sec.querySelector("[name=contact_link]").value,
+            icon: sec.querySelector("[name=contact_icon]").value,
+          }));
+
+          const footerArr = Array.from(
+            document.querySelectorAll("#footerFields .section")
+          ).map((sec) => ({
+            label: sec.querySelector("[name=footer_label]").value,
+            data: sec
+              .querySelector("[name=footer_data]")
+              .value.split("\n")
+              .map((line) => {
+                const [text, link] = line.split("|").map((s) => s.trim());
+                return link ? { text, link } : text;
+              })
+              .filter(Boolean),
+          }));
+
+          const json = {
+            bio: bioArr,
+            skills: skillsArr,
+            experience: experienceArr,
+            education: educationArr,
+            contactLinks: contactLinksArr,
+            footer: footerArr,
+          };
+
+          document.getElementById("output").textContent = JSON.stringify(
+            json,
+            null,
+            2
+          );
+        });
+
+      function copyJSON() {
+        const text = document.getElementById("output").textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          alert("JSON copied to clipboard!");
+        });
+      }
+      // --- Prefill Data ---
+      const prefillData = {
+        bio: [
+          "Hi, I'm Vinay Somawat — a Frontend Engineer with 5+ years of experience building scalable, high-performance web applications using Angular and React.",
+          "I specialize in component architecture, performance optimization, and modern frontend tooling like Storybook, Stencil, and Module Federation. I actively leverage GitHub Copilot and OpenAI APIs to accelerate UI development, automate workflows, and improve developer productivity.",
+          "I’m passionate about clean code, mentoring, and driving engineering excellence through collaboration, automation, and continuous improvement.",
+        ],
+        skills: [
+          "JavaScript",
+          "TypeScript",
+          "Angular",
+          "AngularJS",
+          "React",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Material UI",
+          "Bootstrap",
+          "RxJS",
+          "NGXS",
+          "NGRX",
+          "WebSockets",
+          "Module Federation",
+          "Signals API",
+          "Micro-frontend Architecture",
+          "StencilJS",
+          "Storybook",
+          "Webpack",
+          "Git",
+          "GitHub Copilot",
+          "OpenAI APIs",
+          "Chrome DevTools",
+          "Performance Optimization",
+          "Responsive Design",
+          "Web Accessibility",
+          "Unit Testing",
+          "ESLint",
+          "Prettier",
+        ],
+        experience: [
+          {
+            title: "SS&C Technologies",
+            duration: "August 2025 - Present",
+            subtitle: "Senior Software Engineer",
+            details: ["coming soon..."],
+            tags: [],
+            icon: "money",
+          },
+          {
+            title: "Shiprocket Limited",
+            duration: "September 2023 - August 2025",
+            subtitle: "Software Engineer",
+            details: [
+              "Migrated 30+ AngularJS modules to Angular 19 using standalone components and lazy loading, improving maintainability and performance.",
+              "Built a reusable design system with StencilJS and Storybook, reducing UI defects by 35% and halving development time for new components.",
+              "Developed a prompt-based courier rule engine with OpenAPI, automating 20+ manual steps and reducing operational workload by 60%.",
+              "Implemented global search with deep linking and keyboard shortcuts, boosting agent task throughput by 30%.",
+              "Integrated GitHub Copilot and ChatGPT into the dev workflow, improving developer productivity by 25%.",
+              "Led mentorship initiatives and enforced code quality through ESLint, Prettier, and Git hooks.",
+            ],
+            tags: [
+              "Angular 19",
+              "Stencil",
+              "Storybook",
+              "TypeScript",
+              "OpenAPI",
+              "GitHub Copilot",
+              "ChatGPT",
+            ],
+            icon: "truck",
+          },
+          {
+            title: "Biofourmis India Pvt. Ltd.",
+            duration: "April 2022 - July 2023",
+            subtitle: "Software Engineer",
+            details: [
+              "Spearheaded micro-frontend architecture using Module Federation, enabling team-level deploy independence.",
+              "Implemented multi-region deployment logic with dynamic API routing and failover, enhancing global reliability.",
+              "Integrated Twilio Video, Countly, and NGXS WebSockets to enable real-time remote patient monitoring and collaboration tools.",
+              "Recognized with the Bravo Award for building multi-region operational support across the platform.",
+            ],
+            tags: [
+              "Angular 13",
+              "NGXS",
+              "RxJS",
+              "TypeScript",
+              "Twilio",
+              "Module Federation",
+              "WebSockets",
+            ],
+            icon: "heartbeat",
+          },
+          {
+            title: "Novopay Solutions Pvt. Ltd.",
+            duration: "July 2020 - April 2022",
+            subtitle: "Software Engineer",
+            details: [
+              "Developed Aadhaar-enabled banking features (eKYC, cash withdrawal, balance inquiry) for 100K+ retail agents in rural India.",
+              "Created wallet QR-code flow, reducing transaction errors by 25% and increasing user adoption.",
+              "Integrated Clevertap analytics, Freshdesk support, and chatbot tools to cut issue resolution time by 40%.",
+            ],
+            tags: [
+              "Angular",
+              "JavaScript",
+              "Bootstrap",
+              "Node.js",
+              "Jenkins",
+              "Clevertap",
+              "Freshdesk",
+            ],
+            icon: "qrcode",
+          },
+        ],
+        education: [
+          {
+            title: "B.Tech. in Computer Science and Engineering",
+            duration: "2016 - 2020",
+            subtitle: "National Institute of Technology, Warangal",
+            details: [],
+            tags: [
+              "Data Structures",
+              "Algorithms",
+              "Database",
+              "Computer Networks",
+              "Cloud Computing",
+            ],
+            icon: "graduation-cap",
+          },
+          {
+            title: "Class 12th in Science and Mathematics",
+            duration: "",
+            subtitle: "Board of Secondary Education, Rajasthan",
+            details: [],
+            tags: ["Physics", "Chemistry", "Mathematics"],
+            icon: "book",
+          },
+        ],
+        contactLinks: [
+          {
+            label: "Email",
+            link: "mailto:vinaysomawat40@gmail.com",
+            icon: "fa fa-envelope",
+          },
+          {
+            label: "LinkedIn",
+            link: "https://www.linkedin.com/in/vinaysomawat/",
+            icon: "fa-brands fa-linkedin",
+          },
+          {
+            label: "GitHub",
+            link: "https://github.com/vinaysomawat",
+            icon: "fa-brands fa-github",
+          },
+          {
+            label: "Buy me a coffee",
+            link: "https://www.buymeacoffee.com/r194dME8y",
+            icon: "fa fa-coffee",
+          },
+        ],
+        footer: [
+          {
+            label: "Links",
+            data: [
+              {
+                text: "Buy me a coffee",
+                link: "https://www.buymeacoffee.com/r194dME8y",
+              },
+              {
+                text: "Github",
+                link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+              },
+            ],
+          },
+          {
+            label: "Pages",
+            data: [
+              {
+                text: "Trekking & Himalayan Pass Adventures",
+                link: "./pages/adventure.html",
+              },
+            ],
+          },
+          {
+            label: "copyright-text",
+            data: ["Built with HTML, CSS, JavaScript, and ❤️"],
+          },
+        ],
+      };
+
+      // --- Populate on Load ---
+      window.addEventListener("DOMContentLoaded", () => {
+        // Bio
+        const bioContainer = document.getElementById("bioFields");
+        bioContainer.innerHTML = "";
+        prefillData.bio.forEach((line) => {
+          const t = document.createElement("textarea");
+          t.value = line;
+          bioContainer.appendChild(t);
+        });
+
+        // Skills
+        populateSkills();
+        Array.from(skillsSelect.options).forEach((opt) => {
+          if (prefillData.skills.includes(opt.value)) opt.selected = true;
+        });
+
+        prefillData.experience.forEach((exp) => {
+          addExperience();
+          const sec = document.querySelectorAll("#experienceFields .section");
+          const last = sec[sec.length - 1];
+          last.querySelector("[name=exp_title]").value = exp.title;
+          last.querySelector("[name=exp_duration]").value = exp.duration;
+          last.querySelector("[name=exp_subtitle]").value = exp.subtitle;
+          last.querySelector("[name=exp_details]").value = exp.details.join(", ");
+          Array.from(last.querySelector("[name=exp_tags]").options).forEach(
+            (opt) => {
+              if (exp.tags.includes(opt.value)) opt.selected = true;
+            }
+          );
+          last.querySelector("[name=exp_icon]").value = exp.icon;
+        });
+
+
+        // Education
+        prefillData.education.forEach((edu) => {
+          addEducation();
+          const sec = document.querySelectorAll("#educationFields .section");
+          const last = sec[sec.length - 1];
+          last.querySelector("[name=edu_title]").value = edu.title;
+          last.querySelector("[name=edu_duration]").value = edu.duration;
+          last.querySelector("[name=edu_subtitle]").value = edu.subtitle;
+          last.querySelector("[name=edu_details]").value =
+            edu.details.join(", ");
+          Array.from(last.querySelector("[name=edu_tags]").options).forEach(
+            (opt) => {
+              if (edu.tags.includes(opt.value)) opt.selected = true;
+            }
+          );
+          last.querySelector("[name=edu_icon]").value = edu.icon;
+        });
+
+        // Contact Links
+        prefillData.contactLinks.forEach((contact) => {
+          addContact();
+          const sec = document.querySelectorAll("#contactFields .section");
+          const last = sec[sec.length - 1];
+          last.querySelector("[name=contact_label]").value = contact.label;
+          last.querySelector("[name=contact_link]").value = contact.link;
+          last.querySelector("[name=contact_icon]").value = contact.icon;
+        });
+
+        // Footer
+        prefillData.footer.forEach((foot) => {
+          addFooter();
+          const sec = document.querySelectorAll("#footerFields .section");
+          const last = sec[sec.length - 1];
+          last.querySelector("[name=footer_label]").value = foot.label;
+          last.querySelector("[name=footer_data]").value = foot.data
+            .map((item) =>
+              typeof item === "string"
+                ? item
+                : `${item.text}|${item.link || ""}`
+            )
+            .join("\n");
+        });
+      });
+    </script>
+</body>
+
+</html>
