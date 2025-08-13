@@ -13,9 +13,21 @@ export const skills = [
 
 export const experience = [
   {
+    title: "SS&C Technologies",
+    duration: "August 2025 - Present",
+    subtitle: "Senior Software Engineer",
+    details: [
+      "coming soon..."
+    ],
+    tags: [
+
+    ],
+    icon: "money",
+  },
+  {
     title: "Shiprocket Limited",
-    duration: "September 2023 - Present",
-    subtitle: "Software Engineer – Frontend",
+    duration: "September 2023 - August 2025",
+    subtitle: "Software Engineer",
     details: [
       "Migrated 30+ AngularJS modules to Angular 19 using standalone components and lazy loading, improving maintainability and performance.",
       "Built a reusable design system with StencilJS and Storybook, reducing UI defects by 35% and halving development time for new components.",
@@ -38,7 +50,7 @@ export const experience = [
   {
     title: "Biofourmis India Pvt. Ltd.",
     duration: "April 2022 - July 2023",
-    subtitle: "Frontend Engineer",
+    subtitle: "Software Engineer",
     details: [
       "Spearheaded micro-frontend architecture using Module Federation, enabling team-level deploy independence.",
       "Implemented multi-region deployment logic with dynamic API routing and failover, enhancing global reliability.",
@@ -75,16 +87,6 @@ export const experience = [
       "Freshdesk",
     ],
     icon: "qrcode",
-  },
-  {
-    title: "ThinkPedia LLP",
-    duration: "April 2019 - June 2019",
-    subtitle: "Software Engineer Intern",
-    details: [
-      "Built a social media dashboard with scheduling and analytics capabilities, increasing collaboration efficiency by 50%.",
-    ],
-    tags: ["Angular", "JavaScript", "Bootstrap", "Java", "Spring Boot"],
-    icon: "group",
   },
 ];
 
