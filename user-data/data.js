@@ -52,19 +52,10 @@ const data ={
       "duration": "September 2023 - August 2025",
       "subtitle": "Software Engineer",
       "details": [
-        "Migrated 30+ AngularJS modules to Angular 19 using standalone components and lazy loading",
-        "improving maintainability and performance.",
-        "Built a reusable design system with StencilJS and Storybook",
-        "reducing UI defects by 35% and halving development time for new components.",
-        "Developed a prompt-based courier rule engine with OpenAPI",
-        "automating 20+ manual steps and reducing operational workload by 60%.",
-        "Implemented global search with deep linking and keyboard shortcuts",
-        "boosting agent task throughput by 30%.",
-        "Integrated GitHub Copilot and ChatGPT into the dev workflow",
-        "improving developer productivity by 25%.",
-        "Led mentorship initiatives and enforced code quality through ESLint",
-        "Prettier",
-        "and Git hooks."
+        "Led the migration of 30+ high-traffic modules (serving 300K+ active sellers) from AngularJS to Angular 19, conducting in-depth analysis of legacy code, identifying and addressing functional gaps in updated designs, executing testing across multiple user roles, and delivering a seamless rollout in a live production environment.",
+        "Engineered a ChatGPT-style courier rule engine using OpenAPI schema, automating 20+ ops tasks; built global search with deep linking and keyboard shortcuts, boosting efficiency by 30%",
+        "Contributed to the Shiprocket UI Design System using StencilJS + Storybook with atomic design, cutting UI bugs by 35% and halving feature delivery time across teams.",
+        "Integrated GitHub Copilot and ChatGPT into dev workflows, accelerating code generation and debugging; enforced linting pratices and mentored 5+ engineers in modern Angular."
       ],
       "tags": [
         "TypeScript",
@@ -78,14 +69,9 @@ const data ={
       "duration": "April 2022 - July 2023",
       "subtitle": "Software Engineer",
       "details": [
-        "Spearheaded micro-frontend architecture using Module Federation",
-        "enabling team-level deploy independence.",
-        "Implemented multi-region deployment logic with dynamic API routing and failover",
-        "enhancing global reliability.",
-        "Integrated Twilio Video",
-        "Countly",
-        "and NGXS WebSockets to enable real-time remote patient monitoring and collaboration tools.",
-        "Recognized with the Bravo Award for building multi-region operational support across the platform."
+        "Spearheaded micro-frontend adoption with Module Federation, eliminating shared deployment blockers and enabling team- wise independent releases.",
+        "Architected multi-region deployment support with dynamic API routing and failover, improving global latency.",
+        "Integrated real-time collaboration tools (Twilio Video, Countly, NGXS WebSockets) to enable 24/7 patient monitoring and synchronous team interactions."
       ],
       "tags": [
         "TypeScript",
@@ -101,14 +87,9 @@ const data ={
       "duration": "July 2020 - April 2022",
       "subtitle": "Software Engineer",
       "details": [
-        "Developed Aadhaar-enabled banking features (eKYC",
-        "cash withdrawal",
-        "balance inquiry) for 100K+ retail agents in rural India.",
-        "Created wallet QR-code flow",
-        "reducing transaction errors by 25% and increasing user adoption.",
-        "Integrated Clevertap analytics",
-        "Freshdesk support",
-        "and chatbot tools to cut issue resolution time by 40%."
+        "Built Aadhaar-enabled banking modules (eKYC, withdrawal, balance inquiry) for 100K+ retail agents, ensuring secure financial access in rural areas.",
+        "Designed QR-code wallet flow, reducing transaction failures and increasing user adoption across merchants.",
+        "Integrated Clevertap, Freshdesk, and chatbot support, cutting average support resolution time by 40%."
       ],
       "tags": [
         "JavaScript",
