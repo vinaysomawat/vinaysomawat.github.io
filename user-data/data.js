@@ -40,13 +40,45 @@ export const experience = [
     duration: "May 2025 - Present​",
     subtitle: "Senior Product Security Engineer",
     details: [
-      "Led full-stack product security ownership by embedding security across the SDLC — \
-      from threat modeling and secure architecture design to code reviews, \
-      automated security testing, and production hardening.",
-      "Championed enterprise-wide security initiatives by building security frameworks, \
-      defining secure coding standards, training 250+ security champions, and \
-      partnering with product and platform teams to ensure compliance with global \
-      security and privacy standards.",
+  "Executed Code Yellow Vulnerability Remediation Initiative – \
+    Led a company-wide security sprint across the engineering organization \
+    to remediate 35,500 vulns identified in SBOM reports. \
+    Coordinated cross-functional teams across Product, DevOps and Security \
+    to prioritize, triage and patch vulns in a one-month deadline \
+    to meet urgent requirements. \
+    Automated dependency analysis using Syft, Grype and Arnica into Jira for tracking. \
+    Established a risk-based remediation framework aligned with CVSS, \
+    reducing vulnerability backlog by 95% while strengthening \
+    the company's supply chain security posture",
+
+  "Conducting security architecture reviews of AI features, \
+    MCP servers and LLM integrations from Engineering teams \
+    providing actionable guidelines on prompt injection, \
+    model output validation, data minimization, model-access controls, \
+    secure agent design etc. ensuring teams ship resilient \
+    and compliant AI-powered applications",
+
+  "Autonomous AI Security Testing (Strix) – \
+    Operationalized Strix - an open-source, AI-agent-powered pentesting platform \
+    across the product portfolio. \
+    Integrated into CI/CD pipelines for continuous, automated vulnerability detection \
+    with proof-of-concept validation. \
+    Reduced external pentest dependency and accelerated remediation cycles \
+    by delivering validated findings directly to engineering teams",
+
+  "Leading the Security Champions program across 250+ product teams \
+to scale secure engineering practices and integrate security into SDLC \
+via threat modeling (STRIDE). \
+Led workshops on - secure code reviews, OWASP Top 10 etc.. \
+Led the assessment of security tooling - Wiz, Arnica, Chainguard, \
+Black Duck, Pixee.ai, Primesec.ai, GitHub Advanced Security, \
+Traceable, HackerOne, Bugcrowd and Semgrep \
+as part of the company's application security revamp initiative",
+
+  "Designed and implemented automated DAST for public-facing APIs \
+by integrating OWASP ZAP into CI/CD pipelines \
+across dev and test environments, \
+enabling early vulnerability detection"
     ],
     tags: [ "Threat Modeling", "Red Teaming", "STRIDE",  
       "SOC 2", "AI pipelines",  
