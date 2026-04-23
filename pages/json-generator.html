@@ -397,7 +397,7 @@
             skills: skillsArr,
             experience: experienceArr,
             education: educationArr,
-            contactLinks: contactLinksArr,
+            contact: contactLinksArr,
             footer: footerArr,
           };
 
@@ -551,7 +551,7 @@
             icon: "book",
           },
         ],
-        contactLinks: [
+        contact: [
           {
             label: "Email",
             link: "mailto:vinaysomawat40@gmail.com",
@@ -656,7 +656,7 @@
         });
 
         // Contact Links
-        prefillData.contactLinks.forEach((contact) => {
+        prefillData.contact.forEach((contact) => {
           addContact();
           const sec = document.querySelectorAll("#contactFields .section");
           const last = sec[sec.length - 1];

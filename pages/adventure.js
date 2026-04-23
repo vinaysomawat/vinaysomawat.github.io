@@ -7,7 +7,6 @@ const trekking = [
     height: "9,711 ft",
     details:
       "A beautiful trek in the Parvati Valley, known for its hot springs and scenic views.",
-
     icon: "hiking",
     duration: "2 Days",
     level: "Moderate",
@@ -18,7 +17,6 @@ const trekking = [
     height: "9,350 ft",
     details:
       "A popular trek near Dharamshala, offering stunning views of the Dhauladhar range.",
-
     icon: "hiking",
     duration: "2 Days",
     level: "Easy",
@@ -29,7 +27,6 @@ const trekking = [
     height: "12,500 ft",
     details:
       "A winter trek known for its snow-covered trails and breathtaking views.",
-
     icon: "hiking",
     duration: "6 Days",
     level: "Moderate",
@@ -40,7 +37,6 @@ const trekking = [
     height: "10,800 ft",
     details:
       "A scenic trek that offers panoramic views of the Himalayas and lush green valleys.",
-
     icon: "hiking",
     duration: "1 Day",
     level: "Easy",
@@ -51,10 +47,19 @@ const trekking = [
     height: "5,200 ft",
     details:
       "A pilgrimage trek to the famous Vaishno Devi temple, known for its spiritual significance.",
-
     icon: "hiking",
     duration: "2 Days",
     level: "Easy",
+  },
+  {
+    name: "Chandrashila Trek",
+    state: "Uttarakhand",
+    height: "13,123 ft",
+    details:
+      "A rewarding summit trek via Tungnath, the highest Shiva temple, offering panoramic 360° views of Himalayan peaks.",
+    icon: "hiking",
+    duration: "3 Days",
+    level: "Moderate",
   },
 ];
 

@@ -937,6 +937,12 @@ footer ul {
   color: #fff;
 }
 
+.golden-badge {
+  background: linear-gradient(135deg, #ffdd99, #f9bf3f);
+  border: 1px solid #b8962e;
+  color: #000000;
+}
+
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -1211,7 +1217,7 @@ strong {
   margin: 0px;
 }
 
-.contact-links-list {
+.contact-list {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -1324,4 +1330,8 @@ strong {
 	  padding: 8px 16px;
 	  font-size: 14px;
 	}
+  }
+
+  .bio-p {
+    margin-bottom: 0px;
   }
