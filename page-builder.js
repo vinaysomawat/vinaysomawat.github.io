@@ -5,6 +5,7 @@ import {
   experience,
   footer,
   contact,
+  adventures,
 } from "./user-data/data.js";
 import { render } from "https://unpkg.com/lit-html?module";
 import {
@@ -15,6 +16,7 @@ import {
   footerTemplate,
   contactLinksTemplate,
   repoTemplate,
+  adventureTemplate,
 } from "./js/templates.js";
 
 import { URLs } from "./user-data/urls.js";
@@ -92,6 +94,7 @@ buildContainer(bio, "bio", bioTemplate);
 buildContainer(skills, "skills", skillsTemplate);
 buildContainer(experience, "experience", timelineTemplate);
 buildContainer(education, "education", timelineTemplate);
+buildContainer(adventures, "adventures", adventureTemplate);
 buildContainer(footer, "footer", footerTemplate);
 buildContainer(contact, "contact", contactLinksTemplate);
 

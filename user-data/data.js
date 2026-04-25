@@ -103,6 +103,100 @@ export const education = [
   },
 ];
 
+export const adventures = [
+  {
+    title: "Treks Completed",
+    icon: "fa-solid fa-person-hiking",
+    accent: "green",
+    items: [
+      {
+        name: "Kheerganga Trek",
+        state: "Himachal Pradesh",
+        height: "9,711 ft",
+        duration: "2 Days",
+        level: "Moderate",
+      },
+      {
+        name: "Triund Trek",
+        state: "Himachal Pradesh",
+        height: "9,350 ft",
+        duration: "2 Days",
+        level: "Easy",
+      },
+      {
+        name: "Kedarkantha Trek",
+        state: "Uttarakhand",
+        height: "12,500 ft",
+        duration: "6 Days",
+        level: "Moderate",
+      },
+      {
+        name: "Jalori Pass Trek",
+        state: "Himachal Pradesh",
+        height: "10,800 ft",
+        duration: "1 Day",
+        level: "Easy",
+      },
+      {
+        name: "Shri Mata Vaishno Devi Trek",
+        state: "Jammu & Kashmir",
+        height: "5,200 ft",
+        duration: "2 Days",
+        level: "Easy",
+      },
+      {
+        name: "Chandrashila Trek",
+        state: "Uttarakhand",
+        height: "13,123 ft",
+        duration: "3 Days",
+        level: "Moderate",
+      },
+    ],
+  },
+  {
+    title: "Mountain Passes Explored",
+    icon: "fa-solid fa-road",
+    accent: "gold",
+    items: [
+      {
+        name: "Baralacha La Pass",
+        state: "Himachal Pradesh",
+        height: "16,040 ft",
+      },
+      {
+        name: "Nakeela Pass",
+        state: "Himachal Pradesh",
+        height: "15,547 ft",
+      },
+      {
+        name: "Lachung La Pass",
+        state: "Ladakh",
+        height: "16,616 ft",
+      },
+      {
+        name: "Tanglang La Pass",
+        state: "Ladakh",
+        height: "17,480 ft",
+      },
+      {
+        name: "Khardung La Pass",
+        state: "Ladakh",
+        height: "18,379 ft",
+      },
+      {
+        name: "Chang La Pass",
+        state: "Ladakh",
+        height: "17,590 ft",
+      },
+      {
+        name: "ZojiLa Pass",
+        state: "Jammu & Kashmir",
+        height: "11,575 ft",
+      },
+    ],
+  },
+];
+
 export const contact = [
   {
     label: "Email",
@@ -115,9 +209,19 @@ export const contact = [
     icon: "fa-brands fa-linkedin",
   },
   {
-    label: "GitHub",
+    label: "GitHub Profile",
     link: "https://github.com/vinaysomawat",
     icon: "fa-brands fa-github",
+  },
+  {
+    label: "Portfolio Source",
+    link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
+    icon: "fa-solid fa-code-branch",
+  },
+  {
+    label: "JSON Generator",
+    link: "./pages/json-generator.html",
+    icon: "fa-solid fa-code",
   },
   {
     label: "Buy me a coffee",
@@ -127,32 +231,6 @@ export const contact = [
 ];
 
 export const footer = [
-  {
-    label: "Links",
-    data: [
-      {
-        text: "Buy me a coffee",
-        link: "https://www.buymeacoffee.com/r194dME8y",
-      },
-      {
-        text: "Github",
-        link: "https://github.com/vinaysomawat/vinaysomawat.github.io",
-      },
-    ],
-  },
-  {
-    label: "Pages",
-    data: [
-      {
-        text: "Trekking & Himalayan Pass Adventures",
-        link: "./pages/adventure.html",
-      },
-      {
-        text: "Generate JSON data",
-        link: "./pages/json-generator.html",
-      },
-    ],
-  },
   {
     label: "copyright-text",
     data: ["Built with HTML, CSS, JavaScript, and ❤️"],

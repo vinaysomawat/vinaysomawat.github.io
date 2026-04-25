@@ -97,6 +97,44 @@ export const repoTemplate = (items) => html`
   </div>
 `;
 
+const adventureItemTemplate = (item) => html`
+  <li class="adventure-item">
+    <div class="adventure-item-main">
+      <span class="adventure-name">${item.name}</span>
+      <span class="adventure-state">
+        <i class="fa-solid fa-location-dot"></i>
+        ${item.state}
+      </span>
+    </div>
+    <div class="adventure-meta-row">
+      <span class="adventure-height">${item.height}</span>
+      ${item.duration ? html`<span>${item.duration}</span>` : ""}
+      ${item.level ? html`<span>${item.level}</span>` : ""}
+    </div>
+  </li>
+`;
+
+const adventureGroupTemplate = (group) => html`
+  <article class="adventure-group adventure-${group.accent}">
+    <div class="adventure-group-header">
+      <span class="adventure-group-icon"><i class="${group.icon}"></i></span>
+      <div>
+        <h3>${group.title}</h3>
+        <p>${group.items.length} adventures</p>
+      </div>
+    </div>
+    <ul class="adventure-items">
+      ${group.items.map((item) => adventureItemTemplate(item))}
+    </ul>
+  </article>
+`;
+
+export const adventureTemplate = (items) => html`
+  <div class="adventure-summary">
+    ${items.map((group) => adventureGroupTemplate(group))}
+  </div>
+`;
+
 export const timelineTemplate = (items) => html`
   ${items.map(
     (item) => html`
@@ -160,9 +198,15 @@ export const footerTemplate = (items) => html`
 `;
 
 const contactLinkTemplate = (item) => html`
-  <li class="profile-card" style="padding: 6px 12px">
-    <a href="${item.link}" target="_blank" class="contact-link">
-      <i class="${item.icon}"></i>
+  <li class="contact-item">
+    <a
+      href="${item.link}"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact-link"
+      aria-label="${item.label}"
+    >
+      <span class="contact-icon"><i class="${item.icon}"></i></span>
       <span class="contact-label">${item.label}</span>
     </a>
   </li>
