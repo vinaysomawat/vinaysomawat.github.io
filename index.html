@@ -30,13 +30,72 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="css/portfolio-features.css" />
 
     <script src="js/modernizr-2.6.2.min.js"></script>
     <script type="module" src="js/page-builder.js"></script>
     <script type="module" src="js/profile-card.js"></script>
     <script type="module" src="js/visitor-counter.js"></script>
+    <script defer src="js/portfolio-features.js"></script>
   </head>
   <body>
+    <div class="scroll-progress no-print" aria-hidden="true">
+      <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+    </div>
+    <div class="quick-actions no-print" aria-label="Portfolio shortcuts">
+      <button
+        type="button"
+        class="quick-action"
+        id="themeToggle"
+        aria-label="Toggle color theme"
+        title="Toggle theme"
+      >
+        <i class="fa-solid fa-moon"></i>
+      </button>
+      <button
+        type="button"
+        class="quick-action"
+        id="commandPaletteToggle"
+        aria-label="Open command palette"
+        title="Quick jump"
+      >
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+      <button
+        type="button"
+        class="quick-action back-to-top"
+        id="backToTop"
+        aria-label="Back to top"
+        title="Back to top"
+      >
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+    <div
+      class="command-palette no-print"
+      id="commandPalette"
+      aria-hidden="true"
+    >
+      <div class="command-palette-panel" role="dialog" aria-modal="true">
+        <div class="command-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="search"
+            id="commandSearch"
+            placeholder="Jump to a section or link..."
+            aria-label="Search portfolio commands"
+          />
+          <button
+            type="button"
+            id="commandPaletteClose"
+            aria-label="Close command palette"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="command-list" id="commandList"></div>
+      </div>
+    </div>
     <div id="colorlib-page">
       <div class="container-wrap">
         <a

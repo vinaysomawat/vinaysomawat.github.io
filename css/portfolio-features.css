@@ -1,0 +1,224 @@
+:root {
+  --feature-bg: #ffffff;
+  --feature-surface: #ffffff;
+  --feature-text: #161616;
+  --feature-muted: #666666;
+  --feature-border: #eeeeee;
+  --feature-shadow: 0 14px 36px rgba(0, 0, 0, 0.16);
+  --feature-gold: #f9bf3f;
+  --feature-gold-light: #ffdd99;
+}
+
+[data-theme="dark"] {
+  --feature-bg: #141414;
+  --feature-surface: #1e1e1e;
+  --feature-text: #f7f1df;
+  --feature-muted: #b7b1a2;
+  --feature-border: #313131;
+  --feature-shadow: 0 16px 40px rgba(0, 0, 0, 0.36);
+}
+
+[data-theme="dark"] body {
+  background: var(--feature-bg);
+  color: var(--feature-text);
+}
+
+[data-theme="dark"] #colorlib-main {
+  background: var(--feature-bg);
+}
+
+[data-theme="dark"] .timeline-label,
+[data-theme="dark"] .repo-card,
+[data-theme="dark"] .blog-card,
+[data-theme="dark"] .adventure-group,
+[data-theme="dark"] .contact-link,
+[data-theme="dark"] footer,
+[data-theme="dark"] .profile-card {
+  border-color: var(--feature-border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .blog-description,
+[data-theme="dark"] .adventure-state,
+[data-theme="dark"] .contact-intro,
+[data-theme="dark"] .publish-date,
+[data-theme="dark"] .profile-url,
+[data-theme="dark"] .stat-label {
+  color: var(--feature-muted);
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.scroll-progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--feature-gold-light), var(--feature-gold));
+  transition: width 0.12s ease;
+}
+
+.quick-actions {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1900;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-action {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(198, 138, 12, 0.2);
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--feature-gold-light), var(--feature-gold));
+  color: #111111;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quick-action:hover,
+.quick-action:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.command-palette {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  display: none;
+  padding: 18vh 18px 18px;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(6px);
+}
+
+.command-palette.is-open {
+  display: block;
+}
+
+.command-palette-panel {
+  max-width: 680px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--feature-border);
+  border-radius: 10px;
+  background: var(--feature-surface);
+  color: var(--feature-text);
+  box-shadow: var(--feature-shadow);
+}
+
+.command-search {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--feature-border);
+}
+
+.command-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--feature-text);
+  font-size: 15px;
+}
+
+.command-search button {
+  border: 0;
+  background: transparent;
+  color: var(--feature-muted);
+}
+
+.command-list {
+  max-height: 360px;
+  overflow: auto;
+  padding: 8px;
+}
+
+.command-item {
+  width: 100%;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--feature-text);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.command-item:hover,
+.command-item:focus,
+.command-item.is-active {
+  background: rgba(249, 191, 63, 0.18);
+}
+
+.command-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--feature-gold-light), var(--feature-gold));
+  color: #111111;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+}
+
+.command-item-label {
+  display: block;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.command-item-meta {
+  display: block;
+  color: var(--feature-muted);
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.command-empty {
+  padding: 20px;
+  color: var(--feature-muted);
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .quick-actions {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .quick-action {
+    width: 40px;
+    height: 40px;
+  }
+}

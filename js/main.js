@@ -140,17 +140,5 @@
     clickMenu();
     navigationSection();
     mobileMenuOutsideClick();
-    detectDayNightMode();
   });
 })();
-
-function enableDarkMode() {
-  document.body.classList.toggle("dark-mode");
-}
-
-function detectDayNightMode() {
-  const hours = new Date().getHours();
-  if (hours <= 6 || hours >= 20) {
-    enableDarkMode();
-  }
-}
