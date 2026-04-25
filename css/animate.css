@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
 .animated {
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+	animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
@@ -1020,8 +1022,8 @@
 @-webkit-keyframes fadeInDown {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(0, -50px, 0);
-		transform: translate3d(0, -50px, 0);
+		-webkit-transform: translate3d(0, -18px, 0);
+		transform: translate3d(0, -18px, 0);
 	}
 	to {
 		opacity: 1;
@@ -1033,8 +1035,8 @@
 @keyframes fadeInDown {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(0, -50px, 0);
-		transform: translate3d(0, -50px, 0);
+		-webkit-transform: translate3d(0, -18px, 0);
+		transform: translate3d(0, -18px, 0);
 	}
 	to {
 		opacity: 1;
@@ -1082,8 +1084,8 @@
 @-webkit-keyframes fadeInLeft {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(-50px, 0, 0);
-		transform: translate3d(-50px, 0, 0);
+		-webkit-transform: translate3d(-20px, 0, 0);
+		transform: translate3d(-20px, 0, 0);
 	}
 	to {
 		opacity: 1;
@@ -1095,8 +1097,8 @@
 @keyframes fadeInLeft {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(-50px, 0, 0);
-		transform: translate3d(-50px, 0, 0);
+		-webkit-transform: translate3d(-20px, 0, 0);
+		transform: translate3d(-20px, 0, 0);
 	}
 	to {
 		opacity: 1;
@@ -1144,8 +1146,8 @@
 @-webkit-keyframes fadeInRight {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(50px, 0, 0);
-		transform: translate3d(50px, 0, 0);
+		-webkit-transform: translate3d(20px, 0, 0);
+		transform: translate3d(20px, 0, 0);
 	}
 	to {
 		opacity: 1;
@@ -1157,8 +1159,8 @@
 @keyframes fadeInRight {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(50px, 0, 0);
-		transform: translate3d(50px, 0, 0);
+		-webkit-transform: translate3d(20px, 0, 0);
+		transform: translate3d(20px, 0, 0);
 	}
 	to {
 		opacity: 1;
@@ -1206,8 +1208,8 @@
 @-webkit-keyframes fadeInUp {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(0, 40px, 0);
-		transform: translate3d(0, 40px, 0);
+		-webkit-transform: translate3d(0, 18px, 0);
+		transform: translate3d(0, 18px, 0);
 	}
 	to {
 		opacity: 1;
@@ -1219,8 +1221,8 @@
 @keyframes fadeInUp {
 	from {
 		opacity: 0;
-		-webkit-transform: translate3d(0, 40px, 0);
-		transform: translate3d(0, 40px, 0);
+		-webkit-transform: translate3d(0, 18px, 0);
+		transform: translate3d(0, 18px, 0);
 	}
 	to {
 		opacity: 1;

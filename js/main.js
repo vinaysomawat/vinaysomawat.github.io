@@ -46,8 +46,8 @@
                   el.addClass(effect ? `${effect} animated` : "fadeInUp animated");
                   el.removeClass("item-animate");
                 },
-                k * 200,
-                "easeInOutExpo"
+                k * 80,
+                "easeOutQuart"
               );
             });
           }, 100);

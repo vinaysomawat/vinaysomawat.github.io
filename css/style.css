@@ -748,6 +748,7 @@ body.offcanvas .colorlib-nav-toggle {
 
 .js .animate-box {
   opacity: 0;
+  will-change: opacity, transform;
 }
 
 ul {
@@ -953,7 +954,7 @@ hr {
 .repo-card {
   border-radius: 5px;
   margin: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
   flex: 1 0 48%;
   padding: 10px;
   font-size: 14px;
@@ -1124,7 +1125,8 @@ strong {
   font-size: 14px;
   background: linear-gradient(135deg, #ffdd99, #f9bf3f);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
 }
 
 .profile-header {
@@ -1335,3 +1337,18 @@ strong {
   .bio-p {
     margin-bottom: 0px;
   }
+
+/* === Animation improvements === */
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
+}
+
+#colorlib-main {
+  animation: pageFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.blog-card,
+.trek-card {
+  will-change: transform;
+}
