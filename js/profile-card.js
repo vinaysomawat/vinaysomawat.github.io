@@ -77,42 +77,6 @@ function githubCardTemplate(user) {
   `;
 }
 
-function leetcodeCardTemplate(data) {
-  const { totalSolved, totalQuestions, acceptanceRate, ranking } = data;
-
-  const leetUrl = "https://leetcode.com/vinaysomawat/";
-
-  return html`
-    <a href="${leetUrl}" target="_blank" class="profile-card">
-      <div class="profile-header">
-        <img
-          class="profile-avatar"
-          src="https://cdn.iconscout.com/icon/free/png-512/free-leetcode-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-4-pack-logos-icons-2944960.png?f=webp&w=512"
-          alt="LeetCode avatar"
-        />
-        <div>
-          <div class="profile-badge badge-leetcode">LeetCode</div>
-          <p class="profile-url">${leetUrl}</p>
-        </div>
-      </div>
-      <div class="profile-stats">
-        ${[
-          { label: "SOLVED", value: `${totalSolved}/${totalQuestions}` },
-          { label: "RANK", value: `#${ranking}` },
-          { label: "ACCEPTANCE", value: `${acceptanceRate}%` },
-        ].map(
-          (stat) => html`
-            <div>
-              <p class="stat-label">${stat.label}</p>
-              <p class="stat-value">${stat.value}</p>
-            </div>
-          `
-        )}
-      </div>
-    </a>
-  `;
-}
-
 window.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll(".stack-card").forEach(async (el) => {
     const userId = el.getAttribute("user-id");
@@ -126,13 +90,5 @@ window.addEventListener("DOMContentLoaded", async () => {
     const username = el.getAttribute("username");
     const data = await get(`https://api.github.com/users/${username}`);
     render(githubCardTemplate(data), el);
-  });
-
-  document.querySelectorAll(".leetcode-card").forEach(async (el) => {
-    const username = el.getAttribute("username");
-    const data = await get(
-      `https://leetcode-stats-api.herokuapp.com/${username}`
-    );
-    render(leetcodeCardTemplate(data), el);
   });
 });

@@ -16,20 +16,6 @@
     }
   };
 
-  var counterWayPoint = function () {
-    if ($("#colorlib-counter").length > 0) {
-      $("#colorlib-counter").waypoint(
-        function (direction) {
-          if (direction === "down" && !$(this.element).hasClass("animated")) {
-            setTimeout(counter, 400);
-            $(this.element).addClass("animated");
-          }
-        },
-        { offset: "90%" }
-      );
-    }
-  };
-
   var contentWayPoint = function () {
     var i = 0;
     $(".animate-box").waypoint(
@@ -149,7 +135,6 @@
 
   $(function () {
     fullHeight();
-    counterWayPoint();
     contentWayPoint();
     burgerMenu();
     clickMenu();
@@ -158,27 +143,6 @@
     detectDayNightMode();
   });
 })();
-
-var Accordion = function (el, multiple) {
-  this.el = el || {};
-  this.multiple = multiple || false;
-  var links = this.el.find(".link");
-  links.on("click", { el: this.el, multiple: this.multiple }, this.dropdown);
-};
-
-Accordion.prototype.dropdown = function (e) {
-  var $el = e.data.el;
-  var $this = $(this), $next = $this.next();
-
-  $next.slideToggle();
-  $this.parent().toggleClass("open");
-
-  if (!e.data.multiple) {
-    $el.find(".submenu").not($next).slideUp().parent().removeClass("open");
-  }
-};
-
-var accordion = new Accordion($("#accordion"), false);
 
 function enableDarkMode() {
   document.body.classList.toggle("dark-mode");

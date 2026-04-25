@@ -354,19 +354,12 @@ body.offcanvas .colorlib-nav-toggle {
   }
 }
 
-.no-gutters {
-  margin: 0;
-  padding: 0;
-}
-
 .colorlib-experience,
 .colorlib-skills,
 .colorlib-profile,
-.colorlib-projects,
 .colorlib-education,
 .colorlib-blogs,
 .colorlib-adventures,
-.colorlib-work,
 .colorlib-about,
 .colorlib-footer,
 .colorlib-contact {
@@ -385,10 +378,8 @@ body.offcanvas .colorlib-nav-toggle {
   .colorlib-experience,
   .colorlib-skills,
   .colorlib-profile,
-  .colorlib-projects,
   .colorlib-education,
   .colorlib-adventures,
-  .colorlib-work,
   .colorlib-about,
   .colorlib-contact {
     padding-top: 1em;
@@ -411,13 +402,6 @@ body.offcanvas .colorlib-nav-toggle {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-}
-
-.about-img {
-  width: 100%;
-  height: 600px;
-  margin-bottom: 10px;
-  margin-left: 10px;
 }
 
 .about-desc h3 {
@@ -506,16 +490,6 @@ body.offcanvas .colorlib-nav-toggle {
   background: brown;
   color: white;
 }
-.timeline-centered
-  .timeline-entry
-  .timeline-entry-inner
-  .timeline-icon.color-none {
-  background: #fff;
-  width: 20px;
-  height: 20px;
-  margin-left: 10px;
-}
-
 .timeline-centered .timeline-entry .timeline-entry-inner .timeline-label {
   position: relative;
   background: linear-gradient(135deg, rgb(255, 221, 153), rgb(249, 191, 63));
@@ -611,10 +585,6 @@ body.offcanvas .colorlib-nav-toggle {
     padding: 0px;
     padding-left: 0px;
   }
-}
-
-#message {
-  height: 130px;
 }
 
 .colorlib-nav-toggle {
@@ -733,21 +703,6 @@ body.offcanvas .colorlib-nav-toggle {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .col-xxs-12 {
-    float: none;
-    width: 100%;
-  }
-}
-
-.row-pt-md {
-  padding-top: 3em;
-}
-
-.col-padding {
-  padding: 10px !important;
-}
-
 .js .animate-box {
   opacity: 0;
   will-change: opacity, transform;
@@ -767,46 +722,6 @@ ul {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 5px;
-}
-
-.accordion .link {
-  cursor: pointer;
-  display: block;
-  padding: 15px 15px 15px 15px;
-  font-weight: 700;
-  border-bottom: 1px solid #000;
-  position: relative;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.accordion li:last-child .link {
-  border-bottom: 0;
-}
-
-.accordion li i {
-  position: absolute;
-  top: 16px;
-  left: 12px;
-  font-size: 18px;
-  color: #595959;
-  -webkit-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-}
-
-.accordion li i.fa-chevron-down {
-  right: 12px;
-  left: auto;
-  font-size: 16px;
-}
-
-.accordion li.open i.fa-chevron-down {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  transform: rotate(180deg);
 }
 
 .submenu {
@@ -834,14 +749,6 @@ ul {
   -webkit-transition: all 0.25s ease;
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
-}
-
-.subheading {
-  margin-bottom: 0px;
-}
-
-.subheading p {
-  font-size: 12px;
 }
 
 .publish-date {
@@ -968,14 +875,6 @@ hr {
 .repo-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-}
-
-.repo-language,
-.repo-stars,
-.repo-forks {
-  font-size: 14px;
-  color: #444;
-  margin-top: 12px;
 }
 
 .repo-link {
@@ -1143,22 +1042,6 @@ strong {
   border-radius: 50%;
 }
 
-.profile-info {
-  flex-grow: 1;
-}
-
-.profile-name {
-  margin: 0;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.profile-username {
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: #555;
-}
-
 .profile-stats {
   margin-top: 10px;
   display: flex;
@@ -1199,12 +1082,6 @@ strong {
   background-color: #000;
   border: 1px solid #333;
   color: #fff;
-}
-
-.badge-leetcode {
-  background-color: #ffc01e;
-  border: 1px solid #ffb300;
-  color: #111;
 }
 
 .profile-url {
@@ -1290,13 +1167,6 @@ strong {
 .exp-heading {
   display: flex;
   gap: 10px;
-}
-
-.adventure-intro {
-  max-width: 760px;
-  color: #444;
-  line-height: 1.6;
-  margin-bottom: 18px;
 }
 
 .adventure-summary {
@@ -1448,100 +1318,9 @@ strong {
   flex-wrap: wrap;
 }
 
-.adventure-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.bio-p {
+  margin-bottom: 0px;
 }
-
-.trek-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 5px 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.trek-card-inner {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.trek-icon {
-  font-size: 24px;
-  margin-right: 15px;
-}
-
-.trek-info {
-  flex: 1;
-}
-
-.trek-name {
-  font-weight: 600;
-  font-size: 14px;
-  color: #000;
-}
-
-.trek-meta {
-  font-size: 10px;
-  color: #666;
-}
-
-.trek-height .badge {
-  background-color: #f9bf3f;
-  color: #000;
-  border-radius: 20px;
-  padding: 5px 12px;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.trek-details {
-  font-size: 10px;
-  color: #000;
-  line-height: 1.4;
-  margin-left: 0px;
-}
-
-.home-link-wrapper {
-	position: fixed;
-	top: 20px;
-	left: 20px;
-	z-index: 1000;
-  }
-  
-  .home-link {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 10px 20px;
-	background: rgba(0, 0, 0, 0.7);
-	color: #fff;
-	border-radius: 30px;
-	text-decoration: none;
-	font-weight: 500;
-	transition: all 0.3s ease;
-  }
-  
-  .home-link:hover {
-	background: #f9bf3f;
-	color: #000;
-	transform: translateX(-5px);
-  }
-  
-  @media (max-width: 768px) {
-	.home-link {
-	  padding: 8px 16px;
-	  font-size: 14px;
-	}
-  }
-
-  .bio-p {
-    margin-bottom: 0px;
-  }
 
 /* === Animation improvements === */
 @keyframes pageFadeIn {
@@ -1553,7 +1332,6 @@ strong {
   animation: pageFadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.blog-card,
-.trek-card {
+.blog-card {
   will-change: transform;
 }
