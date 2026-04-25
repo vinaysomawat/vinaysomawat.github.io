@@ -32,8 +32,9 @@
     />
 
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <script type="module" src="page-builder.js"></script>
+    <script type="module" src="js/page-builder.js"></script>
     <script type="module" src="js/profile-card.js"></script>
+    <script type="module" src="js/visitor-counter.js"></script>
   </head>
   <body>
     <div id="colorlib-page">
@@ -61,8 +62,7 @@
           <nav
             id="colorlib-main-menu"
             role="navigation"
-            class="navbar"
-            style="padding-top: 2em"
+            class="navbar sidebar-nav"
           >
             <div id="navbar" class="collapse">
               <ul>
@@ -130,7 +130,7 @@
                 data-animate-effect="fadeInLeft"
               >
                 <div class="about-desc">
-                  <h1>Work <span style="color: #f9bf3f">Experience</span></h1>
+                  <h1>Work <span class="accent-text">Experience</span></h1>
                 </div>
               </div>
               <div class="timeline-centered" id="experience"></div>
@@ -159,29 +159,26 @@
                   <a
                     href="https://github.com/vinaysomawat"
                     target="_blank"
-                    style="color: inherit"
+                    class="section-heading-link"
                   >
                     <h1>
-                      Top <span style="color: #f9bf3f">Repositories</span>
+                      Top <span class="accent-text">Repositories</span>
                       <i
-                        class="fa fa-external-link"
+                        class="fa fa-external-link section-heading-icon"
                         aria-hidden="true"
-                        style="font-size: 30px"
                       ></i>
                     </h1>
                   </a>
                 </div>
               </div>
               <ul
-                id="accordion"
                 class="accordion animate-box"
                 data-animate-effect="fadeInLeft"
               >
                 <li class="open">
                   <ul
                     id="repos"
-                    class=""
-                    style="display: block; padding: 0px"
+                    class="content-list repo-list"
                   ></ul>
                 </li>
               </ul>
@@ -197,29 +194,26 @@
                   <a
                     href="https://vinaysomawat.medium.com/"
                     target="_blank"
-                    style="color: inherit"
+                    class="section-heading-link"
                   >
                     <h1>
-                      Latest <span style="color: #f9bf3f">Blogs</span>
+                      Latest <span class="accent-text">Blogs</span>
                       <i
-                        class="fa fa-external-link"
+                        class="fa fa-external-link section-heading-icon"
                         aria-hidden="true"
-                        style="font-size: 30px"
                       ></i>
                     </h1>
                   </a>
                 </div>
               </div>
               <ul
-                id="accordion"
                 class="accordion animate-box"
                 data-animate-effect="fadeInLeft"
               >
                 <li class="open">
                   <ul
                     id="blogs"
-                    class="submenu"
-                    style="display: flex; flex-direction: column; gap: 20px"
+                    class="content-list blog-list"
                   ></ul>
                 </li>
               </ul>
@@ -233,7 +227,7 @@
               >
                 <div class="about-desc">
                   <h1>
-                    Mountain <span style="color: #f9bf3f">Adventures</span>
+                    Mountain <span class="accent-text">Adventures</span>
                   </h1>
                 </div>
                 <div id="adventures"></div>
@@ -274,65 +268,5 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/main.js"></script>
-
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyBM5-cQema1PzjpTPtCxIdmvTrWH2p1nc8",
-        authDomain: "vinaysomawat-portfolio.firebaseapp.com",
-        projectId: "vinaysomawat-portfolio",
-        storageBucket: "vinaysomawat-portfolio.firebasestorage.app",
-        messagingSenderId: "996992279996",
-        appId: "1:996992279996:web:f296555eef216d501337b9",
-        measurementId: "G-8PVX0MLGSK",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-
-      import {
-        getFirestore,
-        doc,
-        getDoc,
-        setDoc,
-        updateDoc,
-      } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-
-      // Initialize Firestore
-      const db = getFirestore(app);
-
-      // Reference to the visitor count document
-      const counterRef = doc(db, "visitors", "counter");
-
-      // Function to update visitor count
-      async function updateVisitorCount() {
-        try {
-          const docSnap = await getDoc(counterRef);
-
-          if (docSnap.exists()) {
-            let newCount = docSnap.data().count + 1;
-            await updateDoc(counterRef, { count: newCount });
-            document.getElementById("visitorCount").innerText = newCount;
-          } else {
-            await setDoc(counterRef, { count: 1 });
-            document.getElementById("visitorCount").innerText =
-              "Visitor Count: 1";
-          }
-        } catch (error) {
-          console.error("Error updating visitor count:", error);
-        }
-      }
-
-      // Call function on page load
-      updateVisitorCount();
-    </script>
   </body>
 </html>

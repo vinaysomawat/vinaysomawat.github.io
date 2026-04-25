@@ -36,6 +36,18 @@ a:focus {
   text-decoration: none !important;
 }
 
+.accent-text {
+  color: #f9bf3f;
+}
+
+.section-heading-link {
+  color: inherit;
+}
+
+.section-heading-icon {
+  font-size: 30px;
+}
+
 p {
   margin-bottom: 1.3em;
   font-family: "Montserrat", sans-serif;
@@ -177,6 +189,10 @@ figure figcaption {
 #colorlib-aside #colorlib-main-menu {
   display: block;
   width: 100%;
+}
+
+#colorlib-aside #colorlib-main-menu.sidebar-nav {
+  padding-top: 2em;
 }
 #colorlib-aside #colorlib-main-menu .collapse {
   display: block !important;
@@ -722,6 +738,20 @@ ul {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 5px;
+}
+
+.content-list {
+  padding: 0;
+}
+
+.repo-list {
+  display: block;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .submenu {
