@@ -38,14 +38,12 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
 }
 
-[data-theme="dark"] .blog-description,
-[data-theme="dark"] .adventure-state,
+/* [data-theme="dark"] .adventure-state,
 [data-theme="dark"] .contact-intro,
-[data-theme="dark"] .publish-date,
 [data-theme="dark"] .profile-url,
 [data-theme="dark"] .stat-label {
   color: var(--feature-muted);
-}
+} */
 
 .scroll-progress {
   position: fixed;

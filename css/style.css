@@ -1301,7 +1301,7 @@ strong {
   justify-content: flex-end;
   gap: 5px;
   flex-wrap: wrap;
-  max-width: 190px;
+  max-width: 220px;
 }
 
 .adventure-meta-row span {
