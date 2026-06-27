@@ -1,4 +1,5 @@
 import { html } from "https://unpkg.com/lit-html?module";
+import { timeAgo } from "./utils.js";
 
 export const bioTemplate = (items) => html` ${items.map(
     (bioItem) => html`<p class="bio-p">${bioItem}</p>`
@@ -65,7 +66,7 @@ export const blogTemplate = (items) => html`
         <div class="blog-content">
           <a href="${item.link}" target="_blank" class="blog-link">
             <p class="blog-heading">${item.title}</p>
-            <p class="publish-date">${getBlogDate(item.pubDate)}</p>
+            <p class="publish-date">${timeAgo(item.pubDate)}</p>
             <p class="blog-description">
               ${item.content.replace(/<[^>]*>/g, "").trim()}
             </p>
@@ -218,34 +219,3 @@ export const contactLinksTemplate = (items) => html`
   </ul>
 `;
 
-function getBlogDate(publishDate) {
-  const elapsed = Date.now() - Date.parse(publishDate);
-
-  // Time conversions in milliseconds
-  const msPerSecond = 1000;
-  const msPerMinute = msPerSecond * 60;
-  const msPerHour = msPerMinute * 60;
-  const msPerDay = msPerHour * 24;
-  const msPerMonth = msPerDay * 30;
-  const msPerYear = msPerDay * 365;
-
-  if (elapsed < msPerMinute) {
-    const seconds = Math.floor(elapsed / msPerSecond);
-    return `${seconds} seconds ago`;
-  } else if (elapsed < msPerHour) {
-    const minutes = Math.floor(elapsed / msPerMinute);
-    return `${minutes} minutes ago`;
-  } else if (elapsed < msPerDay) {
-    const hours = Math.floor(elapsed / msPerHour);
-    return `${hours} hours ago`;
-  } else if (elapsed < msPerMonth) {
-    const days = Math.floor(elapsed / msPerDay);
-    return days == 1 ? `${days} day ago` : `${days} days ago`;
-  } else if (elapsed < msPerYear) {
-    const months = Math.floor(elapsed / msPerMonth);
-    return months == 1 ? `${months} month ago` : `${months} months ago`;
-  } else {
-    const years = Math.floor(elapsed / msPerYear);
-    return years == 1 ? `${years} year ago` : `${years} years ago`;
-  }
-}

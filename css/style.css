@@ -1365,3 +1365,16 @@ strong {
 .blog-card {
   will-change: transform;
 }
+
+.fetch-error {
+  color: #999;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+}
+
+.section-loading {
+  color: #bbb;
+  font-size: 0.9rem;
+  list-style: none;
+  padding: 1rem 0;
+}

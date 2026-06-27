@@ -1,34 +1,30 @@
 (function () {
   "use strict";
 
-  var isMobile = {
-    any: function () {
-      return /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent);
-    },
+  const isMobile = {
+    any: () => /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(navigator.userAgent),
   };
 
-  var fullHeight = function () {
+  const fullHeight = () => {
     if (!isMobile.any()) {
       $(".js-fullheight").css("height", $(window).height());
-      $(window).resize(function () {
+      $(window).resize(() => {
         $(".js-fullheight").css("height", $(window).height());
       });
     }
   };
 
-  var contentWayPoint = function () {
-    var i = 0;
+  const contentWayPoint = () => {
     $(".animate-box").waypoint(
       function (direction) {
         if (direction === "down" && !$(this.element).hasClass("animated")) {
-          i++;
           $(this.element).addClass("item-animate");
-          setTimeout(function () {
+          setTimeout(() => {
             $("body .animate-box.item-animate").each(function (k) {
-              var el = $(this);
+              const el = $(this);
               setTimeout(
-                function () {
-                  var effect = el.data("animate-effect");
+                () => {
+                  const effect = el.data("animate-effect");
                   el.addClass(effect ? `${effect} animated` : "fadeInUp animated");
                   el.removeClass("item-animate");
                 },
@@ -43,25 +39,25 @@
     );
   };
 
-  var burgerMenu = function () {
+  const burgerMenu = () => {
     $(".js-colorlib-nav-toggle").on("click", function (event) {
       event.preventDefault();
-      var $this = $(this);
+      const $this = $(this);
       $("body").toggleClass("offcanvas");
       $this.toggleClass("active");
     });
   };
 
-  var mobileMenuOutsideClick = function () {
-    $(document).click(function (e) {
-      var container = $("#colorlib-aside, .js-colorlib-nav-toggle");
+  const mobileMenuOutsideClick = () => {
+    $(document).click((e) => {
+      const container = $("#colorlib-aside, .js-colorlib-nav-toggle");
       if (!container.is(e.target) && container.has(e.target).length === 0) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
       }
     });
 
-    $(window).scroll(function () {
+    $(window).scroll(() => {
       if ($("body").hasClass("offcanvas")) {
         $("body").removeClass("offcanvas");
         $(".js-colorlib-nav-toggle").removeClass("active");
@@ -69,16 +65,14 @@
     });
   };
 
-  var clickMenu = function () {
+  const clickMenu = () => {
     $('#navbar a:not([class="external"])').click(function (event) {
-      var section = $(this).data("nav-section"),
-        navbar = $("#navbar");
+      const section = $(this).data("nav-section");
+      const navbar = $("#navbar");
 
-      if ($('[data-section="' + section + '"]').length) {
+      if ($(`[data-section="${section}"]`).length) {
         $("html, body").animate(
-          {
-            scrollTop: $('[data-section="' + section + '"]').offset().top - 55,
-          },
+          { scrollTop: $(`[data-section="${section}"]`).offset().top - 55 },
           500
         );
       }
@@ -94,36 +88,30 @@
     });
   };
 
-  var navActive = function (section) {
-    var $el = $("#navbar > ul");
+  const navActive = (section) => {
+    const $el = $("#navbar > ul");
     $el.find("li").removeClass("active");
     $el.each(function () {
       $(this)
-        .find('a[data-nav-section="' + section + '"]')
+        .find(`a[data-nav-section="${section}"]`)
         .closest("li")
         .addClass("active");
     });
   };
 
-  var navigationSection = function () {
-    var $section = $("section[data-section]");
+  const navigationSection = () => {
+    const $section = $("section[data-section]");
 
     $section.waypoint(
       function (direction) {
-        if (direction === "down") {
-          navActive($(this.element).data("section"));
-        }
+        if (direction === "down") navActive($(this.element).data("section"));
       },
-      {
-        offset: "150px",
-      }
+      { offset: "150px" }
     );
 
     $section.waypoint(
       function (direction) {
-        if (direction === "up") {
-          navActive($(this.element).data("section"));
-        }
+        if (direction === "up") navActive($(this.element).data("section"));
       },
       {
         offset: function () {

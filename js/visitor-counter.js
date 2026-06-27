@@ -9,6 +9,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
 import { firebaseConfig } from "../user-data/firebase.js";
 
+const SESSION_KEY = "portfolio-visited";
+
 const app = initializeApp(firebaseConfig);
 getAnalytics(app);
 
@@ -21,18 +23,27 @@ async function updateVisitorCount() {
 
   try {
     const docSnap = await getDoc(counterRef);
+    const alreadyCounted = sessionStorage.getItem(SESSION_KEY);
 
     if (docSnap.exists()) {
-      const newCount = docSnap.data().count + 1;
-      await updateDoc(counterRef, { count: newCount });
-      visitorCount.innerText = newCount;
-      return;
-    }
+      const current = docSnap.data().count;
 
-    await setDoc(counterRef, { count: 1 });
-    visitorCount.innerText = "Visitor Count: 1";
+      if (alreadyCounted) {
+        visitorCount.innerText = current;
+        return;
+      }
+
+      const newCount = current + 1;
+      await updateDoc(counterRef, { count: newCount });
+      sessionStorage.setItem(SESSION_KEY, "1");
+      visitorCount.innerText = newCount;
+    } else {
+      await setDoc(counterRef, { count: 1 });
+      sessionStorage.setItem(SESSION_KEY, "1");
+      visitorCount.innerText = 1;
+    }
   } catch (error) {
-    console.error("Error updating visitor count:", error);
+    console.error("Visitor counter error:", error);
   }
 }
 
