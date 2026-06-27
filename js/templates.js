@@ -12,7 +12,7 @@ export const skillsTemplate = (items) => html` ${items.map(
     </div>`
   )}`;
 
-export const tagsTemplate = (tags) => html`
+const tagsTemplate = (tags) => html`
   <div class="tags-container">
     ${tags.map(
       (tag) => html`<div class="profile-badge brown-badge">${tag}</div>`
@@ -20,7 +20,7 @@ export const tagsTemplate = (tags) => html`
   </div>
 `;
 
-export const statsTemplate = (item) => html`
+const statsTemplate = (item) => html`
   <div class="stats-row">
     <div class="language-div">
       <span class="language-dot"></span>
@@ -43,7 +43,7 @@ export const statsTemplate = (item) => html`
   </div>
 `;
 
-export const detailsTemplate = (details) => html`
+const detailsTemplate = (details) => html`
   ${details.map(
     (detail) => html` <p class="timeline-text">&blacksquare; ${detail}</p> `
   )}
@@ -162,7 +162,7 @@ export const timelineTemplate = (items) => html`
   </article>
 `;
 
-export const linkTemplate = (data) => html`
+const linkTemplate = (data) => html`
   <li>
     <a href="${data.link || "#"}" @click="${data.func || null}">
       ${data.text}
@@ -170,7 +170,7 @@ export const linkTemplate = (data) => html`
   </li>
 `;
 
-export const columnTemplate = (item) => html`
+const columnTemplate = (item) => html`
   <span class="col">
     <p class="col-title">${item.label}</p>
     <nav class="col-list">
@@ -181,7 +181,7 @@ export const columnTemplate = (item) => html`
   </span>
 `;
 
-export const copyrightTemplate = (item) => html`
+const copyrightTemplate = (item) => html`
   <div class="copyright-text no-print">
     ${item.data.map((copyright) => html`<p>${copyright}</p>`)}
   </div>
