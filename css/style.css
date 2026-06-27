@@ -26,8 +26,8 @@
   --sidebar-link-active: #000000;
 
   /* Cards — light */
-  --card-bg:     var(--accent-gradient);
-  --card-border: rgba(184, 150, 46, 0.20);
+  --card-bg:     #ffffff;
+  --card-border: rgba(220, 174, 50, 0.32);
   --card-text:   #1a1a1a;
 
   /* Timeline */
@@ -66,9 +66,9 @@
   --sidebar-link-active: #f9bf3f;
 
   /* Cards */
-  --card-bg:     linear-gradient(135deg, #1e1c0e, #231f0a);
-  --card-border: rgba(249, 191, 63, 0.13);
-  --card-text:   #ede8dc;
+  --card-bg:     #1b1910;
+  --card-border: rgba(249, 191, 63, 0.14);
+  --card-text:   #e8e0ce;
 
   /* Timeline */
   --timeline-icon-bg: #8b5e3c;
@@ -117,10 +117,11 @@ a:hover, a:active, a:focus {
 }
 
 h1 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.3px;
   color: var(--text);
   margin: 0 0 28px;
 }
@@ -132,9 +133,9 @@ h2 {
 }
 
 h3 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 600;
-  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
   margin: 0 0 16px;
   color: var(--text);
 }
@@ -147,8 +148,8 @@ h4 {
 }
 
 h5, h6 {
-  font-family: "Playfair Display", Georgia, serif;
-  font-weight: 500;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
   margin: 0 0 20px;
   color: var(--text);
 }
@@ -516,10 +517,24 @@ body.offcanvas .colorlib-nav-toggle {
 [data-theme="dark"] .golden-badge { color: #1a1000; }
 
 .brown-badge {
-  background: #6b2121;
-  border: 1px solid #4a1515;
-  color: #ffe4cc;
+  background: #1c1610;
+  border: 1px solid rgba(249, 191, 63, 0.18);
+  color: #e8d5a8;
   box-shadow: var(--shadow-sm);
+}
+
+[data-theme="dark"] .brown-badge {
+  background: rgba(249, 191, 63, 0.10);
+  border: 1px solid rgba(249, 191, 63, 0.22);
+  color: var(--accent-light);
+}
+
+.accent-text {
+  color: var(--accent-dark);
+}
+
+[data-theme="dark"] .accent-text {
+  color: var(--accent);
 }
 
 /* ============================================================
