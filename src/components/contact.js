@@ -1,7 +1,7 @@
 import { html } from "https://unpkg.com/lit-html?module";
 import { mount } from "../utils/dom.js";
 import { contact } from "../../user-data/data.js";
-import { CONTACT_FORM_ENDPOINT } from "../constants/urls.js";
+import { CONTACT_FORM_ENDPOINT, WEB3FORMS_ACCESS_KEY } from "../constants/urls.js";
 
 const contactLink = (item) => html`
   <li>
@@ -113,9 +113,16 @@ export function initContactForm() {
         const res = await fetch(CONTACT_FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, message }),
+          body: JSON.stringify({
+            access_key: WEB3FORMS_ACCESS_KEY,
+            subject: `Portfolio contact from ${name}`,
+            name,
+            email,
+            message,
+          }),
         });
-        if (!res.ok) throw new Error("submission failed");
+        const data = await res.json();
+        if (!res.ok || !data.success) throw new Error("submission failed");
       } else {
         // No form backend configured yet — hand off to the visitor's mail client instead
         // of silently pretending a submission succeeded.
