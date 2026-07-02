@@ -7,6 +7,9 @@ export const qsa = (selector, root = document) => [...root.querySelectorAll(sele
 export function mount(id, templateResult) {
   const el = document.getElementById(id);
   if (!el) return null;
+  // lit-html's render() only clears nodes it previously rendered itself — it won't touch
+  // static skeleton markup already sitting in the container, so wipe it first.
+  el.replaceChildren();
   render(templateResult, el);
   return el;
 }

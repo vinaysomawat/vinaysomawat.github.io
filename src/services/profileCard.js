@@ -27,6 +27,7 @@ const profileCardTemplate = ({ avatar, badgeClass, badgeLabel, url, urlLabel, st
 
 async function hydrateGithubCard(el) {
   const username = el.dataset.username;
+  el.replaceChildren();
   try {
     const data = await fetchJson(`https://api.github.com/users/${username}`, "GitHub");
     render(
@@ -51,6 +52,7 @@ async function hydrateGithubCard(el) {
 
 async function hydrateStackCard(el) {
   const userId = el.dataset.userId;
+  el.replaceChildren();
   try {
     const { items } = await fetchJson(
       `https://api.stackexchange.com/2.2/users/${userId}?site=stackoverflow`,
