@@ -1,0 +1,310 @@
+/* Shared primitives reused across every component — avoids per-section duplication. */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin-inline: auto;
+  padding-inline: var(--space-5);
+}
+
+.section {
+  padding-block: var(--space-9);
+  position: relative;
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-7);
+}
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent-cyan);
+  margin-bottom: var(--space-3);
+}
+
+.section-eyebrow::before {
+  content: "";
+  width: 24px;
+  height: 2px;
+  background: var(--gradient-cyan);
+  border-radius: var(--radius-full);
+}
+
+.section-title {
+  font-size: var(--text-3xl);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--color-text-secondary);
+  font-size: var(--text-lg);
+  margin-top: var(--space-3);
+  line-height: var(--leading-relaxed);
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-text-animated {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--color-accent-cyan),
+    var(--color-accent-purple),
+    var(--color-accent)
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient-shift 6s linear infinite;
+}
+
+/* Glass surface — the site's signature card treatment */
+.glass {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--duration-base) var(--ease-out-expo),
+    box-shadow var(--duration-base) var(--ease-out-expo),
+    transform var(--duration-base) var(--ease-out-expo),
+    background var(--duration-base) var(--ease-out-expo);
+}
+
+.glass-interactive:hover,
+.glass-interactive:focus-within {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-hover);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform var(--duration-fast) var(--ease-spring),
+    box-shadow var(--duration-base) var(--ease-out-expo),
+    border-color var(--duration-base) var(--ease-out-expo),
+    background var(--duration-base) var(--ease-out-expo);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #fff;
+  box-shadow: 0 8px 24px -8px rgba(79, 140, 255, 0.55);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 32px -6px rgba(79, 140, 255, 0.7);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-hover);
+  border-color: var(--color-accent);
+}
+
+.btn-ghost {
+  color: var(--color-text-secondary);
+  padding-inline: var(--space-3);
+}
+
+.btn-ghost:hover {
+  color: var(--color-text);
+}
+
+/* Button shine sweep */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: translateX(-120%) skewX(-15deg);
+  pointer-events: none;
+}
+
+.btn:hover::after {
+  animation: button-shine 900ms var(--ease-out-expo);
+}
+
+/* Ripple (click feedback) — dot positioned via JS custom properties --ripple-x/--ripple-y */
+.ripple::before {
+  content: "";
+  position: absolute;
+  left: var(--ripple-x, 50%);
+  top: var(--ripple-y, 50%);
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ripple.is-rippling::before {
+  animation: ripple-out 550ms var(--ease-out-expo);
+}
+
+/* Chips / tags */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+/* Animated underline (nav links, inline links) */
+.underline-link {
+  position: relative;
+}
+
+.underline-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration-base) var(--ease-out-expo);
+}
+
+.underline-link:hover::after,
+.underline-link.is-active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Card glow-on-hover accent */
+.glow-card {
+  position: relative;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--gradient-primary);
+  opacity: 0;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: opacity var(--duration-base) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.glow-card:hover::before,
+.glow-card:focus-within::before {
+  opacity: 1;
+}
+
+/* Tilt wrapper — perspective for src/animations/interactions.js */
+.tilt {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+/* Magnetic buttons */
+.magnetic {
+  will-change: transform;
+  transition: transform var(--duration-fast) var(--ease-spring);
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding-block: var(--space-8);
+  }
+}
+
+/* Cursor glow — appended by src/animations/interactions.js on fine-pointer devices */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(79, 140, 255, 0.16),
+    rgba(123, 97, 255, 0.08) 45%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform;
+  transition: opacity var(--duration-base) var(--ease-out-expo);
+}
+
+.cursor-glow.is-active {
+  background: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 0.22),
+    rgba(79, 140, 255, 0.1) 45%,
+    transparent 70%
+  );
+}

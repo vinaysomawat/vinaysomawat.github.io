@@ -10,11 +10,11 @@ A zero-build, data-driven portfolio site using vanilla JavaScript ES modules and
 
 | Layer | Technology |
 |---|---|
-| Templating | [lit-html](https://unpkg.com/lit-html?module) (loaded from CDN) |
-| DOM/animations | jQuery 3.7.1 + jquery.waypoints |
-| Styling | CSS3 custom properties, Bootstrap 3, Font Awesome 6 |
+| Templating | [lit-html](https://unpkg.com/lit-html?module) (loaded from CDN), no Shadow DOM |
+| Styling | Hand-written CSS3 custom properties (design tokens), no CSS framework |
+| Animation | Hand-written CSS keyframes + a few small vanilla JS modules (scroll reveal, magnetic buttons, card tilt, cursor glow) — no animation library |
 | Visitor counter | Firebase Firestore + Firebase Analytics |
-| External data | GitHub pinned repos API, Medium RSS, gitconnected, StackOverflow API |
+| External data | GitHub pinned repos API, GitHub contribution graph, Medium RSS, gitconnected, StackOverflow API |
 | Hosting | GitHub Pages |
 
 ---
@@ -22,24 +22,31 @@ A zero-build, data-driven portfolio site using vanilla JavaScript ES modules and
 ## Project Structure
 
 ```
-├── index.html              # Single-page entry point; contains empty placeholder divs
+├── index.html                  # Single-page entry point; empty section placeholders
+├── robots.txt / sitemap.xml
 ├── user-data/
-│   ├── data.js             # All portfolio content (bio, skills, experience, etc.)
-│   ├── urls.js             # External API endpoint configuration
-│   └── firebase.js         # Firebase project config
-├── js/
-│   ├── page-builder.js     # Entry module; imports data and renders each section
-│   ├── templates.js        # lit-html template functions for every section
-│   ├── portfolio-features.js  # Theme toggle, command palette (⌘K), scroll UI
-│   ├── main.js             # jQuery nav: waypoints, mobile menu, active highlighting
-│   ├── profile-card.js     # GitHub + StackOverflow profile stat cards
-│   └── visitor-counter.js  # Firebase Firestore read/increment for visitor count
+│   └── data.js                 # All portfolio content (bio, skills, experience, etc.)
+├── src/
+│   ├── main.js                 # Entry module — mounts every component, wires services
+│   ├── components/             # One lit-html module per section (hero, about, nav, ...)
+│   ├── services/                # theme, command palette, scrollspy/back-to-top,
+│   │                            #   easter eggs, profile cards, visitor counter
+│   ├── animations/              # scrollReveal (IntersectionObserver), interactions
+│   │                            #   (magnetic buttons, card tilt, cursor glow, ripple)
+│   ├── utils/                    # dom.js (mount/qs/qsa), fetch.js (fetchJson, timeAgo)
+│   ├── constants/                # urls.js (API endpoints), firebase.js (project config)
+│   └── styles/
+│       ├── tokens.css            # Color palette, type scale, spacing, motion tokens
+│       ├── base.css              # Reset, focus states, reduced-motion, scrollbar
+│       ├── animations.css        # Keyframes + scroll-reveal / skeleton classes
+│       ├── utilities.css         # Shared primitives: buttons, glass cards, chips, etc.
+│       └── components/           # One stylesheet per section, mirrors src/components
 ├── pages/
-│   └── json-generator.html # Standalone tool to generate data.js JSON
+│   └── json-generator.html      # Standalone tool to generate data.js JSON (independent —
+│                                 #   still uses css/style.css, css/animate.css, Bootstrap)
 └── css/
-    ├── style.css           # Main layout and section styles
-    ├── portfolio-features.css  # Theme variables, command palette, quick-action buttons
-    └── animate.css         # Scroll-triggered CSS animations
+    ├── style.css / animate.css  # Legacy styles kept only for the JSON generator tool
+    └── json-generator.css
 ```
 
 ---
@@ -52,7 +59,7 @@ A zero-build, data-driven portfolio site using vanilla JavaScript ES modules and
 - _(Optional)_ A Medium account for the blogs section
 - _(Optional)_ A Firebase project for the visitor counter
 
-> **Why a local server?** `page-builder.js` uses ES module `import` statements and fetches from external APIs. Browsers block both over `file://` due to CORS. You must serve the project over HTTP.
+> **Why a local server?** `src/main.js` uses ES module `import` statements and fetches from external APIs. Browsers block both over `file://` due to CORS. You must serve the project over HTTP.
 
 ---
 
@@ -87,18 +94,18 @@ Open `http://localhost:8000` in your browser. Do **not** open `index.html` direc
 
 ### Step 1 — Update your profile identifiers
 
-Edit `user-data/urls.js`:
+Edit `src/constants/urls.js`:
 
 ```js
 const githubUsername = "your-github-username";
 const mediumUsername = "your-medium-username"; // leave blank string if unused
 ```
 
-Edit `index.html` — find the StackOverflow card and replace the `user-id`:
+Edit `src/components/github.js` — find the `data-github-card` / `data-stack-card` elements and replace the identifiers:
 
 ```html
-<div class="stack-card" user-id="YOUR_STACKOVERFLOW_USER_ID"></div>
-<div class="github-card" username="your-github-username"></div>
+<div data-github-card data-username="your-github-username"></div>
+<div data-stack-card data-user-id="YOUR_STACKOVERFLOW_USER_ID"></div>
 ```
 
 To find your StackOverflow user ID, go to your profile page — it's the number in the URL: `stackoverflow.com/users/USER_ID/username`.
@@ -152,7 +159,7 @@ The visitor counter uses Firebase Firestore. To use your own counter instead of 
    ```
 4. Enable **Google Analytics** for the project (used by `firebase-analytics`).
 5. In Project Settings → General → Your apps, register a Web app and copy the config.
-6. Replace the contents of `user-data/firebase.js` with your config:
+6. Replace the contents of `src/constants/firebase.js` with your config:
    ```js
    export const firebaseConfig = {
      apiKey: "...",
@@ -197,12 +204,13 @@ Then configure your DNS provider to point to `<your-username>.github.io`.
 
 ## How the Rendering Works
 
-`page-builder.js` is the ES module entry point loaded via `<script type="module">`. On page load it:
+`src/main.js` is the ES module entry point loaded via `<script type="module">`. On page load it:
 
-1. Calls `buildContainer(dataArray, domId, templateFn)` for each static section — this runs `lit-html`'s `render()` into the matching `<div id="...">` placeholder in `index.html`
-2. Fetches Medium blogs, GitHub pinned repos, and gitconnected profile in parallel and renders them once resolved
+1. Mounts every static section (`mountNav`, `mountHero`, `mountAbout`, ...) — each is a `src/components/*.js` module that builds a `lit-html` template and renders it into the matching `<section id="...">` placeholder in `index.html` via `mount()` (`src/utils/dom.js`)
+2. Initializes services: theme, command palette, scrollspy/back-to-top/progress bar, micro-interactions, contact form validation, GitHub/StackOverflow profile cards, visitor counter, easter eggs
+3. Fetches Medium blogs, GitHub pinned repos, and gitconnected profile in parallel (`Promise.allSettled`, error-isolated) and re-renders those two sections once resolved
 
-`portfolio-features.js` is loaded with `defer` (not a module) and wires up the theme toggle, command palette (`Cmd/Ctrl + K`), scroll progress bar, and back-to-top button independently of the data rendering.
+Command palette: `Cmd/Ctrl + K`. Konami code (`↑↑↓↓←→←→ b a`) and a styled `console.log` greeting are hidden in `src/services/easterEgg.js`.
 
 ---
 
@@ -211,11 +219,10 @@ Then configure your DNS provider to point to `<your-username>.github.io`.
 | Symptom | Cause | Fix |
 |---|---|---|
 | Blank page / sections missing | Opened `index.html` via `file://` | Use a local HTTP server |
-| Blogs section empty | Medium username wrong or RSS feed rate-limited | Verify `mediumUsername` in `urls.js`; check browser console for network errors |
-| Repos section empty | GitHub username wrong or no pinned repos | Verify `githubUsername` in `urls.js`; pin repos on your GitHub profile |
-| Visitor counter stuck on "Loading..." | Firebase not configured or Firestore rules blocking writes | Set up your own Firebase project (Step 3 above) |
-| Profile image not loading | Medium fetch failed | Check console for CORS or network errors on `api.rss2json.com` |
-| Command palette not working | `portfolio-features.js` failed to load | Check console for JS errors; ensure `defer` script loads after DOM elements exist |
+| Blogs section empty | Medium username wrong or RSS feed rate-limited | Verify `mediumUsername` in `src/constants/urls.js`; check browser console for network errors |
+| Repos section empty | GitHub username wrong or no pinned repos | Verify `githubUsername` in `src/constants/urls.js`; pin repos on your GitHub profile |
+| Visitor counter stuck on "—" | Firebase not configured or Firestore rules blocking writes | Set up your own Firebase project (Step 3 above) |
+| Command palette not working | `src/main.js` failed to load | Check console for JS errors; confirm the page is served over HTTP, not `file://` |
 
 ---
 

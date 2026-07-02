@@ -16,60 +16,60 @@ Then open `http://localhost:8000`. Opening `index.html` directly as a `file://` 
 
 ## Architecture
 
-This is a **no-build, vanilla JS portfolio site** using ES modules loaded from CDN at runtime. There is no `package.json`, no bundler, and no test suite.
+This is a **no-build, vanilla JS portfolio site** using ES modules and [lit-html](https://lit.dev/docs/libraries/standalone-templates/) (no Shadow DOM / custom elements) loaded from CDN at runtime. There is no `package.json`, no bundler, and no test suite. No CSS framework and no animation library — every style and animation is hand-written.
 
 ### Data Flow
 
 ```
-user-data/data.js        ← all portfolio content (bio, skills, experience, etc.)
-user-data/urls.js        ← external API endpoint constructors
-user-data/firebase.js    ← Firebase config for visitor counter
+user-data/data.js         ← all portfolio content (bio, skills, experience, etc.)
         ↓
-js/page-builder.js       ← entry point; imports data, calls buildContainer() per section
+src/main.js                ← entry point; mounts every component, wires every service
         ↓
-js/templates.js          ← lit-html template functions for each section type
+src/components/*.js        ← one lit-html module per section (template + mount fn)
         ↓
-index.html placeholders  ← empty divs (id="bio", "skills", "experience", etc.)
+index.html section placeholders  ← empty <section id="..."> elements
 ```
 
-`buildContainer(dataItems, dataId, template)` is the core rendering primitive: it selects a DOM element by id and calls `lit-html`'s `render()` with the appropriate template function.
+`mount(id, templateResult)` (`src/utils/dom.js`) is the core rendering primitive: it selects a DOM element by id and calls `lit-html`'s `render()`. Dynamic sections (GitHub repos, Medium blog, gitconnected title) are fetched in `src/main.js` via `Promise.allSettled` — each is error-isolated so one failing API never blocks the rest of the page.
 
-### JS Modules
+### Directory Layout
 
-| File | Role |
+| Path | Role |
 |---|---|
-| `js/page-builder.js` | Imports all data, renders static sections, fetches dynamic data (Medium blogs, GitHub repos, gitconnected profile title) |
-| `js/templates.js` | All lit-html template exports (`bioTemplate`, `timelineTemplate`, `repoTemplate`, `blogTemplate`, `adventureTemplate`, `contactLinksTemplate`, `footerTemplate`) |
-| `js/portfolio-features.js` | Dark/light theme (persisted in localStorage), command palette (Cmd+K), scroll progress bar, back-to-top button — loaded with `defer`, no ES module |
-| `js/main.js` | jQuery-based nav: waypoint scroll animations, mobile menu toggle, active nav highlighting |
-| `js/profile-card.js` | Fetches and renders GitHub and StackOverflow profile stat cards |
-| `js/visitor-counter.js` | Firebase Firestore read/increment for visitor count display |
+| `src/main.js` | Entry point — imports data, mounts every section, initializes every service, kicks off dynamic fetches |
+| `src/components/` | One module per section (`hero.js`, `nav.js`, `about.js`, `experience.js`, `skills.js`, `github.js`, `blog.js`, `adventures.js`, `contact.js`, `footer.js`) — each exports a `mount*()` function and, where content is fetched later, a `*ListTemplate()` for re-rendering |
+| `src/services/` | Cross-cutting behavior: `theme.js` (dark/light, persisted in localStorage), `commandPalette.js` (⌘K), `nav-scroll.js` (scrollspy, scroll progress, back-to-top, mobile menu), `easterEgg.js` (Konami code + console greeting), `profileCard.js` (GitHub/StackOverflow stat cards), `visitorCounter.js` (Firebase Firestore) |
+| `src/animations/` | `scrollReveal.js` (IntersectionObserver-driven `[data-reveal]` fade-ins — call `observeReveals()` after mounting new content), `interactions.js` (magnetic buttons, card tilt, cursor glow, ripple — all event-delegated on `document` so they work on dynamically mounted content without re-init) |
+| `src/utils/` | `dom.js` (`mount`, `qs`, `qsa`, `showError`), `fetch.js` (`fetchJson` with timeout, `timeAgo`) |
+| `src/constants/` | `urls.js` (external API endpoints, resume path, contact form endpoint placeholder), `firebase.js` (Firebase project config) |
+| `src/styles/tokens.css` | Single source of truth for color palette, type scale, spacing, radius, shadow, and motion tokens (dark theme is default; light theme overrides via `[data-theme="light"]`) |
+| `src/styles/base.css` | Reset, focus-visible, `prefers-reduced-motion`, scrollbar, skip link |
+| `src/styles/animations.css` | Keyframes and the `[data-reveal]` / `.skeleton` classes |
+| `src/styles/utilities.css` | Shared primitives reused across every component: `.glass`, `.btn-*`, `.chip`, `.section*`, `.magnetic`, `.tilt`, `.ripple`, `.glow-card`, `.underline-link`, `.cursor-glow` |
+| `src/styles/components/` | One stylesheet per section, mirroring `src/components/` |
 
 ### External APIs
 
-- **lit-html** — loaded from `https://unpkg.com/lit-html?module` and `https://unpkg.com/lit@latest?module`
-- **Firebase** — loaded from `https://www.gstatic.com/firebasejs/11.4.0/` (analytics + Firestore)
+- **lit-html** — `https://unpkg.com/lit-html?module`
+- **Firebase** — `https://www.gstatic.com/firebasejs/11.4.0/` (analytics + Firestore), config in `src/constants/firebase.js`
 - **Medium RSS** — via `api.rss2json.com` (top 3 posts shown)
 - **GitHub pinned repos** — via `pinned.berrysauce.dev` (top 4 shown)
-- **gitconnected** — for setting the page `<title>` from profile basics
-- **StackOverflow / GitHub APIs** — for profile stat cards in `profile-card.js`
+- **GitHub contribution graph** — image widget via `ghchart.rshah.org`
+- **gitconnected** — sets the page `<title>` from profile basics
+- **StackOverflow / GitHub APIs** — profile stat cards in `src/services/profileCard.js`
 
 ### Customization Points
 
-All portfolio content lives in `user-data/data.js` — editing this file is the primary way to update the site. The exports (`bio`, `skills`, `experience`, `education`, `adventures`, `contact`, `footer`) map 1:1 to DOM section ids and their corresponding template functions in `templates.js`.
+All portfolio content lives in `user-data/data.js` — editing this file is the primary way to update the site. `skills` is intentionally kept as a **flat array of strings** (not categorized) so that `pages/json-generator.html` keeps working; `src/components/skills.js` applies its own display-only category grouping on top.
 
-To change which external accounts are used, update the username constants in `user-data/urls.js`.
+To change which external accounts are used, external API endpoints, or the (placeholder) contact-form/resume asset paths, edit `src/constants/urls.js`.
+
+There is no Featured Projects / Achievements / Certifications / Developer Philosophy / Current Learning / AI Workflow / Open Source section — those were intentionally left out of the redesign because there's no real content for them yet. Add real content to `user-data/data.js` and a matching `src/components/*.js` module if/when that content exists; don't fabricate placeholder claims about the site owner.
 
 ### CSS
 
-| File | Purpose |
-|---|---|
-| `css/style.css` | Main layout and section styles |
-| `css/portfolio-features.css` | Theme variables, command palette, quick-action buttons, profile cards |
-| `css/animate.css` | Scroll-triggered CSS animations (triggered by waypoints in `main.js`) |
-
-Theme switching is done via `data-theme="dark|light"` on `<html>` — CSS custom properties in `portfolio-features.css` handle the color swaps.
+Dark mode is the primary, fully-designed theme (per the design brief: `#050816` background, `#4F8CFF`/`#7B61FF`/`#00D4FF` accents, glassmorphism, gradients). Light mode exists as a toggled alternative via `[data-theme="light"]` token overrides in `tokens.css`, sharing the same component CSS.
 
 ### Pages
 
-`pages/json-generator.html` + `js/json-generator.js` + `css/json-generator.css` is a standalone tool for generating the `data.js` JSON structure — it is independent of the main portfolio page.
+`pages/json-generator.html` + `js/json-generator.js` + `css/json-generator.css` is a standalone tool for generating the `data.js` JSON structure — it is intentionally independent of the redesigned portfolio and still depends on `css/style.css`, `css/animate.css`, and the Bootstrap 3 CDN. Don't delete those two CSS files or change `data.js` export shapes without checking this tool first.

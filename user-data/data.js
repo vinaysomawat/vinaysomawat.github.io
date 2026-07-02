@@ -8,14 +8,15 @@ export const skills = [
   "TypeScript",
   "Angular",
   "React",
+  "Signals",
   "RxJS",
   "NgRx",
+  "NGXS",
+  "WebSockets",
   "Nx",
   "Microfrontends",
   "Module Federation",
-  "Signals",
   "Storybook",
-  "WebSockets",
   "Playwright",
   "OpenAI",
 ];
@@ -30,7 +31,7 @@ export const experience = [
       "Own secure API integration (JWT/Keycloak), route guards/interceptors, and delivery quality via unit and e2e testing in CI/CD pipelines.",
     ],
     tags: ["Angular", "Nx", "NgRx", "Keycloak", "Playwright"],
-    icon: "money",
+    icon: "sack-dollar",
   },
   {
     title: "Shiprocket Limited",
@@ -42,7 +43,7 @@ export const experience = [
       "Co-authored the Shiprocket UI Design System (StencilJS + Storybook), reducing UI bugs 35% and halving feature delivery time across teams.",
     ],
     tags: ["TypeScript", "Angular", "StencilJS", "Storybook", "OpenAI"],
-    icon: "truck",
+    icon: "truck-fast",
   },
   {
     title: "Biofourmis India Pvt. Ltd.",
@@ -54,7 +55,7 @@ export const experience = [
       "Integrated Twilio Video and NGXS WebSockets for 24/7 real-time patient monitoring and synchronous team collaboration.",
     ],
     tags: ["Angular", "RxJS", "NGXS", "Module Federation", "WebSockets"],
-    icon: "heartbeat",
+    icon: "heart-pulse",
   },
   {
     title: "Novopay Solutions Pvt. Ltd.",
@@ -178,7 +179,7 @@ export const contact = [
   {
     label: "vinaysomawat40@gmail.com",
     link: "mailto:vinaysomawat40@gmail.com",
-    icon: "fa fa-envelope",
+    icon: "fa-solid fa-envelope",
   },
   {
     label: "LinkedIn",

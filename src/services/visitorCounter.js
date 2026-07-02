@@ -7,19 +7,18 @@ import {
   setDoc,
   updateDoc,
 } from "https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js";
-import { firebaseConfig } from "../user-data/firebase.js";
+import { firebaseConfig } from "../constants/firebase.js";
 
 const SESSION_KEY = "portfolio-visited";
 
-const app = initializeApp(firebaseConfig);
-getAnalytics(app);
-
-const db = getFirestore(app);
-const counterRef = doc(db, "visitors", "counter");
-const visitorCount = document.getElementById("visitorCount");
-
-async function updateVisitorCount() {
+export async function initVisitorCounter() {
+  const visitorCount = document.getElementById("visitorCount");
   if (!visitorCount) return;
+
+  const app = initializeApp(firebaseConfig);
+  getAnalytics(app);
+  const db = getFirestore(app);
+  const counterRef = doc(db, "visitors", "counter");
 
   try {
     const docSnap = await getDoc(counterRef);
@@ -46,5 +45,3 @@ async function updateVisitorCount() {
     console.error("Visitor counter error:", error);
   }
 }
-
-updateVisitorCount();
