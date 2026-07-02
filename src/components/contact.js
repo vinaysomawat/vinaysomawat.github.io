@@ -47,6 +47,11 @@ const contactTemplate = () => html`
         <p class="form-error" id="contactEmailError" role="alert"></p>
       </div>
       <div class="form-field">
+        <label for="contactSubject">Subject</label>
+        <input type="text" id="contactSubject" name="subject" autocomplete="off" required />
+        <p class="form-error" id="contactSubjectError" role="alert"></p>
+      </div>
+      <div class="form-field">
         <label for="contactMessage">Message</label>
         <textarea id="contactMessage" name="message" rows="4" required></textarea>
         <p class="form-error" id="contactMessageError" role="alert"></p>
@@ -70,6 +75,7 @@ const FIELDS = {
     errorId: "contactEmailError",
     validate: (v) => (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? "" : "Enter a valid email address."),
   },
+  contactSubject: { errorId: "contactSubjectError", validate: (v) => (v.trim() ? "" : "Please enter a subject.") },
   contactMessage: {
     errorId: "contactMessageError",
     validate: (v) => (v.trim().length >= 10 ? "" : "Message should be at least 10 characters."),
@@ -106,7 +112,7 @@ export function initContactForm() {
     submitBtn.disabled = true;
     status.textContent = "";
 
-    const [name, email, message] = inputs.map((input) => input.value.trim());
+    const [name, email, subject, message] = inputs.map((input) => input.value.trim());
 
     try {
       if (CONTACT_FORM_ENDPOINT) {
@@ -115,7 +121,7 @@ export function initContactForm() {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             access_key: WEB3FORMS_ACCESS_KEY,
-            subject: `Portfolio contact from ${name}`,
+            subject: `Portfolio contact: ${subject}`,
             name,
             email,
             message,
@@ -126,9 +132,9 @@ export function initContactForm() {
       } else {
         // No form backend configured yet — hand off to the visitor's mail client instead
         // of silently pretending a submission succeeded.
-        const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+        const mailtoSubject = encodeURIComponent(subject);
         const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
-        window.location.href = `mailto:vinaysomawat40@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:vinaysomawat40@gmail.com?subject=${mailtoSubject}&body=${body}`;
       }
       form.classList.add("is-success");
       status.textContent = "Thanks — your message is on its way.";
